@@ -30,7 +30,7 @@ session_destroy();
     <td width="24%"><div align="center">
 
 	<!-- Menu -->
-	<?php include("menu.php"); ?>
+	<?php  include("menu.php"); ?>
 
 	</div></td>
     <td width="76%">

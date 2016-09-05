@@ -1,10 +1,8 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- header("location: index.php");
- exit(); 
- }
- ?>
+<?php
+    //include "./lib/std.php";
+   // include "./lib/helper.php";
+    //include "./lib/dbConnector.php";
+?>
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -66,7 +64,7 @@ function Button(theButton){
         </tr> 
 		
 		
-<form name ="frm" method="post" action="" >
+<form name ="frm" method="post" action="product1-test.php" >
 <table width="900" border="0" align="center" cellpadding="0" cellspacing="0" >		
 		<tr>
               <td>&nbsp;</td>
@@ -104,28 +102,18 @@ function Button(theButton){
         </tr>
 	
 <?php
-$idper=$_POST[idper];
+$idper=$_REQUEST['idper'];
 
-if(isset($_POST['allsearch']) || !isset($_POST['search'])){
-
-$dbhost="localhost";
-$dbuser="root";  
-$dbpass="1234";
-$dbname="Project";
-mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
-mysql_select_db($dbname) or die("MySQL select database failed");
-mysql_query("SET NAMES UTF8 ") or die (mysql_error());
-
-
+if(isset($_REQUEST['allsearch']) || !isset($_REQUEST['search'])){
 		//$sql = "select * from person  where Person_Fname like '%$idper%' and Person_Position='staff'";
 		//ของstaff จัดการข้อมูลนิสิต และอาจารย์ 
 		$sql = "select * from product  where Product_Name Like '%$idper%' ";
-		
+                mysql_query("SET NAMES 'utf8'");
 		$result = mysql_query($sql) or die (mysql_error());
 		$row = mysql_num_rows($result);		
 				$Per_Page = 10;   // Per Page
-				$Page = $_GET["Page"];
-				if(!$_GET["Page"])
+				$Page = $_GET["page"];
+				if(!$_GET["page"])
 					{$Page=1;}
 				$Prev_Page = $Page-1;
 				$Next_Page = $Page+1; 
@@ -232,16 +220,8 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 </tr>
 <?php
     
-}else{
-$dbhost="localhost";
-$dbuser="root";  
-$dbpass="aimax0824978018";
-$dbname="project2";
-mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
-mysql_select_db($dbname) or die("MySQL select database failed");
-mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
-		$idper=$_POST['idper'];
+		$idper=$_REQUEST['idper'];
 		$sql = "select * from product  where Product_Name Like '%$idper%' ";
 		$result = mysql_query($sql) or die (mysql_error());
 		$num=mysql_num_rows($result);
@@ -324,8 +304,6 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 		<? echo	"Search &nbsp; ชื่อสินค้า  &nbsp; '$idper' &nbsp; Show &nbsp;  $num  &nbsp;Record	&nbsp;"; ?>	
 		</td></tr>
 <?
-
-}
 ?>  
 
 
@@ -360,6 +338,3 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 </body>
 </head>
 </html>
-
-</table>	
-</body>

@@ -19,7 +19,7 @@ Password :
 <input type="password" name ='txtPassword'> 
 <? echo $code_error;?>
 <br>
-<br><input type="submit" name="Submit" value="Login">
+<br><input type="submit" name="Submit" value="เข้าระบบ">
 </form>
 
 

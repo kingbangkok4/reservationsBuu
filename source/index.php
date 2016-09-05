@@ -17,7 +17,7 @@
  <html>
   <head><title> เข้าสู่เว็บไซต์  </title></head>
        <body>
-               <a href="page1.php">เข้าสู่เว็บไซต์  </a><p>     
+               <a href="page1.php?page=page1">เข้าสู่เว็บไซต์  </a><p>     
 	
 	</b><center>
 	
