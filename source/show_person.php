@@ -1,19 +1,18 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- //header("location: index.php");
- exit(); 
+<?php 
+    session_start();
+    if($_SESSION["strUsername"] ==  null){
+    header("location: index.php");
+    exit(); 
  }
-
  ?>
  <body bgcolor=#FFCC99>
 <?php include"header.php";?>
 <table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
+<tr> 
   
 
 
-    <td width="80%" valign="top">	
+    <td width="80%" valign="top" class="text-center">	
 		<table width="750" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#FF6666">		
 	<tr>
 			  <td colspan="2" height = "40" bgcolor="#FF6666"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
@@ -23,70 +22,97 @@ if($_SESSION["strUsername"] ==  null){
 
     <td width="80%" valign="top">
 	<table width="750" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
-      <tr>
+<tr>
         <td>&nbsp;</td>
-      </tr>	
+</tr>	
 			
 	
       <tr>
-<td>
+<td class="text-center">
 	<?php
-	include "config.php";
+	include "./lib/dbConnector.php";
+	                 
+        $strSQL = "SELECT * FROM person WHERE Person_Username= '{$_SESSION['strUsername']}' ";
+        mysql_query("SET NAMES 'utf8'");
+        //$query = mysql_query($this->sql);
+	$query = mysql_query($strSQL);
+        if ($query) {
+            $result = array();
+            while ($row = mysql_fetch_array($query, MYSQL_ASSOC)) {
+                $data[] = $row;
+            }
+        }      
+        $objResult = $data[0];
+        
+       // echo($objResult['Person_Fname']);
+	//$objResult = $objQuery->fetch_assoc();
+	$Fname=$objResult['Person_Fname'];
+	$Lname=$objResult['Person_Lname'];
+	$Birthday=$objResult['Person_Birthday'];
+	$Email=$objResult['Person_email'];
+	$Phone=$objResult['Person_Phone'];
+	$Username=$objResult['Person_Username'];
+	$Password=$objResult['Person_Password'];
+	$UniCode=$objResult['Person_UniversityCode'];
+	$Position=$objResult['Person_Position'];
 	
-	$strSQL = "SELECT * FROM person WHERE Person_Username='".$_SESSION[strUsername]."'";
-	$objQuery = $mysqli->query($strSQL);
-	$objResult = $objQuery->fetch_assoc();
-	$Fname=$objResult[Person_Fname];
-	$Lname=$objResult[Person_Lname];
-	$Birthday=$objResult[Person_Birthday];
-	$Email=$objResult[Person_email];
-	$Phone=$objResult[Person_Phone];
-	$Username=$objResult[Person_Username];
-	$Password=$objResult[Person_Password];
-	$UniCode=$objResult[Person_UniversityCode];
-	$Position=$objResult[Person_Position];
+        $strSQLfaculty = "SELECT * FROM faculty WHERE Fac_Id = {$objResult['Fac_Id']}";
+        mysql_query("SET NAMES 'utf8'");
+        $query = mysql_query($strSQLfaculty);
+        if ($query) {
+            $result = array();
+            while ($row = mysql_fetch_array($query, MYSQL_ASSOC)) {
+                $data1[] = $row;
+            }
+        }      
+        $objResultfaculty = $data1[0];
+	//$objQueryfaculty = $mysqli->query($strSQLfaculty);
+	//$objResultfaculty = $objQueryfaculty->fetch_assoc();
+	$Faculty = $objResultfaculty['Fac_Name'];
 	
-	$strSQLfaculty = "SELECT * FROM faculty WHERE Fac_Id='".$objResult[Fac_Id]."'";
-	$objQueryfaculty = $mysqli->query($strSQLfaculty);
-	$objResultfaculty = $objQueryfaculty->fetch_assoc();
-	$Faculty=$objResultfaculty[Fac_Name];
+	$strSQLbranch = "SELECT * FROM branch WHERE Branch_Id='".$objResult['Branch_Id']."'";
+        mysql_query("SET NAMES 'utf8'");
+        $query = mysql_query($strSQLbranch);
+        if ($query) {
+            $result = array();
+            while ($row = mysql_fetch_array($query, MYSQL_ASSOC)) {
+                $data3[] = $row;
+            }
+        }      
+        $objResultbranch = $data3[0];
+	//$objQuerybranch = $mysqli->query($strSQLbranch);
+	//$objResultbranch = $objQuerybranch->fetch_assoc();
+	$Branch = $objResultbranch['Branch_Name'];
 	
-	$strSQLbranch = "SELECT * FROM branch WHERE Branch_Id='".$objResult[Branch_Id]."'";
-	$objQuerybranch = $mysqli->query($strSQLbranch);
-	$objResultbranch = $objQuerybranch->fetch_assoc();
-	$Branch=$objResultbranch[Branch_Name];
-	
-  if ($result->num_rows >0){
+  /*if ($result->num_rows >0){
 	while($row = $result->fetch_assoc()){
 		header("page2.php");	
 	}
  }else {
  
- }
-$mysqli->close();
+ } */
+//$mysqli->close();
 	?>
 </td>
       </tr>	
-<?	  
-		echo "ชื่อจริง: ".$Fname."<br>";
-		echo "นามสกุล: ".$Lname."<br>";
-		echo "วันเดือนปีเกิด: ".$Birthday."<br>";
-		echo "อีเมล์: ".$Email."<br>";
-		echo "เบอร์โทร: ".$Phone."<br>";
-		echo "ชื่อผู้ใช้งาน: ".$Username."<br>";
-		echo "รหัสผู้ใช้งาน: ".$Password."<br>";
-		echo "รหัสประจำตัว: ".$UniCode."<br>";
-		echo "สถานะ: ".$Position."<br>";
-        echo "คณะ: ".$Faculty."<br>";
-        echo "สาขา: ".$Branch."<br>";
+    <td style="text-align: center">
+    <?php	  
+            echo "ชื่อจริง: ".$Fname."<br>";
+            echo "นามสกุล: ".$Lname."<br>";
+            echo "วันเดือนปีเกิด: ".$Birthday."<br>";
+            echo "อีเมล์: ".$Email."<br>";
+            echo "เบอร์โทร: ".$Phone."<br>";
+            echo "ชื่อผู้ใช้งาน: ".$Username."<br>";
+            echo "รหัสผู้ใช้งาน: ".$Password."<br>";
+            echo "รหัสประจำตัว: ".$UniCode."<br>";
+            echo "สถานะ: ".$Position."<br>";
+            echo "คณะ: ".$Faculty."<br>";
+            echo "สาขา: ".$Branch."<br>";
 
-		$sql_insert="INSERT INTO person (Person_Fname ,Person_Lname ,Person_Birthday ,Person_email ,Person_Phone ,Person_Username ,Person_Password ,Person_UniversityCode, Person_Position, Fac_Id, Branch_Id)
-		VALUES('".$Fname."', '".$Lname."', '".$Birthday."', '".$Email."', ".$Phone.", '".$Username."',  '".$Password."', ".$UniCode.",'".$Position."',".$Faculty.",".$Branch.");";
-?>
-
-
-
-
+                    $sql_insert="INSERT INTO person (Person_Fname ,Person_Lname ,Person_Birthday ,Person_email ,Person_Phone ,Person_Username ,Person_Password ,Person_UniversityCode, Person_Position, Fac_Id, Branch_Id)
+                    VALUES('".$Fname."', '".$Lname."', '".$Birthday."', '".$Email."', ".$Phone.", '".$Username."',  '".$Password."', ".$UniCode.",'".$Position."',".$Faculty.",".$Branch.");";
+    ?>
+   </td>
 </tr>
 	  
 		  
@@ -95,16 +121,16 @@ $mysqli->close();
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td colspan="2"><label></label>
-              <label>
+              <td colspan="2" class="text-center">
+              <label class="text-center">
 	  
               
-              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Person.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Password.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
+             <div class="text-center"><a href="edit_Person.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div>
+             <div class="text-center"><a href="edit_Password.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div>
 			 <!--&nbsp;&nbsp;<center><div align="center"></div> <a href="page2.php?Person_Id=<?=$Person_Id;?>"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>-->
             <!--<center><a href="page2.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center></a>-->
-			<center><input type="button" onclick="window.location='page4.php'" value="ยกเลิก"></center>
-			</label></td>
+			<center><input class="btn btn-danger" type="button" onclick="window.location='page4.php?page=page4'" value="ยกเลิก"></center>
+	</label></td>
 			
           </tr>
 <tr>

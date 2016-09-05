@@ -1,4 +1,10 @@
-
+<?php 
+    session_start();
+    if($_SESSION["strUsername"] ==  null){
+    header("location: index.php");
+    exit(); 
+ }
+ ?>
 <script>
 	$(document).ready(function() {
 		$('#ooo').hover(function() {
@@ -15,7 +21,7 @@
   <center><b>MENU</b></center>
   </tr>
   <tr>
-    <td><div align="center">สวัสดี <b><?=$_SESSION["strUsername"]?></b></a></div></td>
+    <td><div align="center">สวัสดี <b><?=$_SESSION['strUsername']?></b></a></div></td>
   </tr>
   <tr>
     <td><div align="center"><a href="index.php?page=home"><b>Home</b></a></div></td>
