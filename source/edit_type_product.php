@@ -1,5 +1,6 @@
-<?
+<?php
  session_start();
+ header('Content-Type: text/html; charset=utf-8');
 if($_SESSION["strUsername"] ==  null){
  //header("location: index.php");
  exit(); 
@@ -7,6 +8,7 @@ if($_SESSION["strUsername"] ==  null){
  
 	include "config.php";
 	$strSQL = "SELECT * FROM type_product WHERE TypeP_Id='".$_GET[TypeP_Id]."'";
+        mysql_query("SET NAMES 'utf8'");
 	$objQuery = $mysqli->query($strSQL);
 	$objResult = $objQuery->fetch_assoc();
 	$TypeP_Nametype=$objResult[TypeP_Nametype];
