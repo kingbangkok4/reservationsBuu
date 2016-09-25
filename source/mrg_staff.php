@@ -29,7 +29,7 @@ if($_SESSION["strUsername"] ==  null){
 </td>
   <td width="75%" >
   
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
 
     <td width="80%" valign="top">
@@ -95,6 +95,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 		$sql = "select * from person  where Person_Fname like '%$idper%' and Person_Position='staff'";
 		//ของstaff จัดการข้อมูลนิสิต และอาจารย์ $sql = "select * from person  where Person_Fname like '%$idper%' and Person_Position='student' and Person_Position='teacher'";
 		$result = mysql_query($sql) or die (mysql_error());
+		$num_rows = mysql_num_rows($result);
 		
 		$row = mysql_num_rows($result);		
 				$Per_Page = 10;   // Per Page
@@ -152,9 +153,9 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
         </tr>
 	<?php
 	}?>
-				<tr><td colspan="8" align = "right">
+				<tr><td colspan="10" align = "right">
 							<br>
-							Total <?php echo $row;?> Record : <?php echo $Num_Pages;?> Page :
+							Total <?php echo $num_rows;?> Record : <?php echo $Num_Pages;?> Page :
 							<?php
 							if($Prev_Page)
 								{echo " <a href='$_SERVER[SCRIPT_NAME]?Page=$Prev_Page'><< Back</a> ";}
@@ -180,9 +181,9 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 		$idper=$_POST['idper'];
 		$result = mysql_query("select * from person  where Person_Fname like '%$idper%' order by Person_Id ASC ");
-		$num=mysql_num_rows($result);
+		$num_rows=mysql_num_rows($result);
 	
-if(mysql_num_rows($result)==0) {
+if($num_rows == 0) {
 echo "<script>alert('ไม่พบข้อมูลที่ต้องการค้นหา')</script>";
 }		
 		
@@ -216,16 +217,16 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 
 		  
  		  
-          <td align="center"><a href="edit_mrg.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
-          <td align="center"><a href="edit_mrg_password.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg.php?Person_Id=<?=$row["Person_Id"]?>&Search_Key=<?=$idper?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg_password.php?Person_Id=<?=$row["Person_Id"]?>&Search_Key=<?=$idper?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
           <td align="center"><a href="delete_mrg.php?Person_Id=<?=$row["Person_Id"]?>" onclick="return confirm ('ยืนยันการลบข้อมูลบุคลากร') "><img src="image/4del.png" width="24" height="24" border="0" /></a></td>
          </tr>
 	<?php
 	}
 	
 	?>
-		<tr><td colspan="8" align = "right"><br>
-		<? echo	"Search &nbsp; ชื่อ-สกุล  &nbsp; '$idper' &nbsp; Show &nbsp;  $num  &nbsp;Record	&nbsp;"; ?>	
+		<tr><td colspan="10" align = "right"><br>
+		<? echo	"Search &nbsp; ชื่อ-สกุล  &nbsp; '$idper' &nbsp; Show &nbsp;  $num_rows  &nbsp;Record	&nbsp;"; ?>	
 		</td></tr>
 <?
 		
