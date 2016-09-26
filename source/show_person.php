@@ -6,8 +6,27 @@ if($_SESSION["strUsername"] ==  null){
  }
 
  ?>
- <body bgcolor=#FFCC99>
+ 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<head>
+
+<body bgcolor=#FFCC99>
+<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
+  <tr align="center"> 
+  <td width="100%" colspan="2">
 <?php include"header.php";?>
+</td>
+  </tr > 
+  <tr align="center">
+  <td colspan="2">
+
+
 <table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
   
@@ -101,9 +120,9 @@ $mysqli->close();
               
               &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Person.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Password.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
-			 <!--&nbsp;&nbsp;<center><div align="center"></div> <a href="page2.php?Person_Id=<?=$Person_Id;?>"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>-->
+			 <!--&nbsp;&nbsp;<center><div align="center"></div> <a href="page2.php?Person_Id=<?=Person_Id;?>"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>-->
             <!--<center><a href="page2.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center></a>-->
-			<center><input type="button" onclick="window.location='page4.php'" value="ยกเลิก"></center>
+								&nbsp;&nbsp;<center><div align="center"></div> <a href="page4.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>
 			</label></td>
 			
           </tr>
