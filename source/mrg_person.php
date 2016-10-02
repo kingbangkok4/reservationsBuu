@@ -30,7 +30,7 @@ if($_SESSION["strUsername"] ==  null){
 </td>
   <td width="75%" >
   
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
 
     <td width="80%" valign="top">

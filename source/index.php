@@ -1,3 +1,4 @@
+<!--
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -23,3 +24,26 @@
 	
     </td>
 </tr>
+-->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ระบบสั่งจองสินค้าในมหาวิทยาลัยบุรพา วิทยาเขตสระแก้ว</title>
+        <meta charset="UTF-8">
+    </head>
+<body style="background-color: #FFCC99;">
+    <table style="width: 100%;border-collapse: collapse;">
+        <tr>
+<td style="border-style: none;">
+<img src="./image/index.jpg" alt="มหาวิทยาลัยบุรพา วิทยาเขตสระแก้ว" style="width: 100%;">
+</td>
+</tr>
+<tr>
+<td style="border-style: none;background-color: #999999;text-align: center;">
+<a href="page1.php" style="font-size: 72px;">เข้าสู่เว็บไซต์</a>
+</td>
+</tr>
+</table>
+</body>
+</html>

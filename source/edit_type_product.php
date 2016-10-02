@@ -17,6 +17,26 @@ if($_SESSION["strUsername"] ==  null){
 
 
 
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<head>
+
+<body bgcolor=#FFCC99>
+
+<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
+  <tr align="center"> 
+  <td width="100%" colspan="2">
+<?php include"header.php";?>
+</td>
+  </tr > 
+  <tr align="center"> 
+  <td width="100%" colspan="2">
+
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 <tr>      	
 
@@ -244,18 +264,22 @@ echo "ชื่อประเภทสินค้า  : <input type='text' nam
 
 
 
-
-
-
-
-
+	  
+      </table>
 	  </td>
 
-
+  </tr>
   		<tr>
-              <td bgcolor="#FFDAB9" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
+              <td bgcolor="#FF9999" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
         </tr>
-		</tr>
 </table>
+
+</td>
+  </tr>  
+</table>
+   
+
+
 </body>
+</head>
 </html>
