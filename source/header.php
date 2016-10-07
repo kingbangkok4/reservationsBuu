@@ -6,8 +6,6 @@
 <script src="./js/jquery-3.1.1.js"></script>
 </head>
 <body style="background-color: #FFCC99; text-align: center;">
-
-
 	<table style="border-collapse: collapse; width: 100%;">
 		<tr>
 			<td style="padding: 0; text-align: center;"><img
@@ -19,8 +17,13 @@
 			<td style="padding: 0; text-align: center;"><marquee>ยินดีต้อนรับเข้าสู่เว็บไซต์สั่งจองสินค้าในมหาลัยบูรพา
 					วิทยาเขตสระแก้ว จังหวัดสระแก้ว</marquee></td>
 		</tr>
+		<?php
+		echo "<tr>";
+		echo "	<td style=\"padding: 0; text-align: center;\">";
+		echo "username=" . $_SESSION ['strUsername'] . "<br />";
+		echo "	</td>";
+		echo "</tr>";
+		?>
 	</table>
-
-
 </body>
 </html>

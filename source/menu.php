@@ -4,20 +4,18 @@
 <title>ระบบสั่งจองสินค้าในมหาวิทยาลัยบุรพา วิทยาเขตสระแก้ว</title>
 <meta charset="UTF-8">
 <script>
-$( document ).ready(function() {
-	$( "#product_menu, .product-menu-item" ).hover(
+$(document).ready(function() {
+	$("#product_menu, .product-menu-item").hover(
 	  function() {
-	    $( ".product-menu-item" ).show();
+	    $(".product-menu-item").show();
 	  }, function() {
-	    $( ".product-menu-item" ).hide();
+	    $(".product-menu-item").hide();
 	  }
-	).trigger( "mouseout" );
+	).trigger("mouseout");
 });
 </script>
 </head>
 <body style="background-color: #FFCC99; text-align: center;">
-
-
 	<table
 		style="border-collapse: collapse; font-weight: bold; width: 100%;">
 		<tr>
@@ -44,7 +42,5 @@ $( document ).ready(function() {
 			</td>
 		</tr>
 	</table>
-
-
 </body>
 </html>

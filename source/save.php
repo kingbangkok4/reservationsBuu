@@ -67,4 +67,4 @@ include("config.php");
         $mysqli->close();
 
 ?>
-<br><input type="button" onclick="window.location='page1.php'" value="กลับ" />
+<br><input type="button" onclick="window.location='login.php'" value="กลับ" />

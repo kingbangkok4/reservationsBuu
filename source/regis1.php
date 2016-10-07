@@ -1,42 +1,69 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- //header("location: index.php");
- exit(); 
- }
- ?>
-
-
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 <head>
-
-<body bgcolor=#FFCC99>
-
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
-  <tr align="center"> 
-  <td width="100%" colspan="2">
-<?php include"header.php";?>
-</td>
-  </tr > 
-  <tr align="center"> 
-  <td width="100%" colspan="2">
-
-
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-  
-
-
-<script language="JavaScript1" type="text/javascript">
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.alphanumeric.js"></script>
 <script>
+
+$(document).ready(function(){
+                  $("#Phone").numeric();
+                  $("#Unicode").numeric();
+                 
+                  var maxDay = 0;
+                  var conditionalSelect = $("#Day"),
+                  // Save possible options
+                  options = conditionalSelect.children(".conditional").clone();
+                  
+                  $("#Year").change(function(){
+                                        $("#Month").val("");                                         });//change
+                  
+                  $("#Month").change(function(){
+                                      var curDate = $("#Year").val();
+                                           if($("#Month").val() == "02" && curDate%4 == 0 && curDate%100 == 0 && curDate%400 == 0){
+                                           maxDay = 30; //feb is 29 day
+                                     }else if($("#Month").val() == "02" && curDate%4 == 0 && curDate%100 != 0){
+                                              maxDay = 30; //feb is 29 day
+                                     }else if($("#Month").val() == "01" || $("#Month").val() == "03" || $("#Month").val() == "05" || $("#Month").val() == "07" || $("#Month").val() == "08" || $("#Month").val() == "10" || $("#Month").val() == "12"){
+                                           maxDay = 32;
+                                           }else{
+                                           maxDay = 29; //feb is 28 day
+                                           }
+                                     
+                                           conditionalSelect.children(".conditional").remove();
+                                           for(var i=1;i<maxDay;i++){
+                                           options.clone().filter(".value"+i).appendTo(conditionalSelect);
+                                           
+                                           }
+                                      document.getElementById("showfac").innerHTML = "Fac_Id is = "+maxDay;
+                                           }).trigger("change");
+                  
+                  $("#Position").change(function(){
+                                           if($(this).val() == "teacher"){
+                                           $("#showBranch").hide();
+                                           $("#Branch").hide();
+                                           $("#Branch").val("0");
+                                           }else{
+                                           $("#showBranch").show();
+                                           $("#Branch").show();
+                                           }// if
+                                           
+                                        
+                                           });//change
+                  
+                  $("#Faculty").change(function(){
+                                       var detailBranch = $.ajax({
+                                                                 url: "data_of_branch.php",
+                                                                 type: "POST",
+                                                                 data: {fac_id : $(this).val()},
+                                                                 async: false
+                                                                 }).responseText;
+                                       $("#Branch").html(detailBranch);
+                                       
+                                       });
+                  
+                  });
 
 function chkForm(){
     
@@ -88,41 +115,27 @@ function chkForm(){
         return false;
     }
 }
-    
+
 </script>
 
-    <td width="80%" valign="top">	
-		<table width="750" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#FF8C00">		
-	<tr>
-	
-    <td width="80%" valign="top">
-	<table width="750" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
-		<tr>
-<td colspan="2" height = "40" bgcolor="#FF6666"><div align="center"><strong><font size = "5">แบบฟอร์มแก้ไขข้อมูลผู้ใช้งาน</font></strong></div></td>			  
-        </tr> 	
-      <tr>
-        <td>
-	<?php
-	
-$dbhost="localhost"; 
-$dbuser="root";  
-$dbpass="1234";
-$dbname="project";
-mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
-mysql_select_db($dbname) or die("MySQL select database failed");
-mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
+<body bgcolor=#FFCC99>
+<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
+  <tr align="center"> 
+  <td width="100%" colspan="2">
+<?php include"header.php";?>
+</td>
+  </tr > 
+ 
+  <td width="75%" >
+  
+<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
 
-	
-	$sql = "select * from person  where Person_Fname like '%$idper%'";
-		
-	$result = mysql_query($sql) or die (mysql_error());
-	$row = mysql_fetch_array($result);
-	$per_level=$row['Person_Id'];
-	?>			
-		<body>	
+</head>
+<body>	
 
-<form name="frm" action="save_mrg_staff.php" method="post" onSubmit="return chkForm();">
+<form name="frm" action="save.php" method="post" onSubmit="return chkForm();">
 
 <a id="showtitle">เลือกคำนำหน้าช่ื่อ : </a>
     <select name = "Title_Id" id="Title_Id">
@@ -141,36 +154,7 @@ echo "ชื่อจริง  : <input type='text' name ='txtFname'><br>";
 echo "นามสกุล  : <input type='text' name ='txtLname'><br>";
 echo "วันเดือนปีเกิด : ";
 ?>
-<select name = "Year" id= "Year">
-	<?php
-	$mYear = date('Y');	
-	
-			      echo "<option value = '".$mYear."'>$mYear</option>";
- 				for($i=1;$i<=100;$i++){
- 					$lYear = $mYear-$i;
- 					echo "<option value ='".$lYear."'>$lYear</option>";
-
- 				}
- 				?>
-
-</select> &nbsp;&nbsp;
-
-<select name = "Month" id="Month">
-            <option value="">เลือกเดือน</option>
-			<option value="01">มกราคม</option>
-			<option value="02">กุมภาพันธ์</option>
-			<option value="03">มีนาคม</option>
-			<option value="04">เมษายน</option>
-			<option value="05">พฤษภาคม</option>
-			<option value="06">มิถุนายน</option>
-			<option value="07">กรกฎาคม</option>
-			<option value="08">สิงหาคม</option>
-			<option value="09">กันยายน</option>
-			<option value="10">ตุลาคม</option>
-			<option value="11">พฤศจิกายน</option>
-			<option value="12">ธันวาคม</option>
-</select> &nbsp;&nbsp;
-                  <select name="Day" id="Day">
+<select name="Day" id="Day">
                   <option value="" selected="selected">เลือกวันที่</option>
                   <option class="conditional value1" value="01">1</option>
                   <option class="conditional value2" value="02">2</option>
@@ -205,6 +189,35 @@ echo "วันเดือนปีเกิด : ";
                   <option class="conditional value31" value="31">31</option>
                   </select>
 
+<select name = "Month" id="Month">
+            <option value="">เลือกเดือน</option>
+			<option value="01">มกราคม</option>
+			<option value="02">กุมภาพันธ์</option>
+			<option value="03">มีนาคม</option>
+			<option value="04">เมษายน</option>
+			<option value="05">พฤษภาคม</option>
+			<option value="06">มิถุนายน</option>
+			<option value="07">กรกฎาคม</option>
+			<option value="08">สิงหาคม</option>
+			<option value="09">กันยายน</option>
+			<option value="10">ตุลาคม</option>
+			<option value="11">พฤศจิกายน</option>
+			<option value="12">ธันวาคม</option>
+</select> &nbsp;&nbsp;
+    
+<select name = "Year" id= "Year">
+	<?php
+	$mYear = date('Y');	
+	
+			      echo "<option value = '".$mYear."'>$mYear</option>";
+ 				for($i=1;$i<=100;$i++){
+ 					$lYear = $mYear-$i;
+ 					echo "<option value ='".$lYear."'>$lYear</option>";
+
+ 				}
+ 				?>
+
+</select> &nbsp;&nbsp;	
 <br>
 
 <?php
@@ -215,9 +228,9 @@ echo "รหัสผ่าน  : <input type='password' name ='txtPassword'><br
 echo "รหัสประจำตัว  : <input type='int' name ='txtUniversityCode' id ='Unicode'><br>";
 echo "สถานะ  : ";?>
     <select name = 'txtPosition' id="Position">
-            <option value='staff'>Staff</option>
-			<!--<option value='student'>นักศึกษา</option>-->
-			<!--<option value='teacher'>อาจารย์</option>-->
+            <option value=''>เลือกสถานะ</option>
+			<option value='student'>นักศึกษา</option>
+			<option value='teacher'>อาจารย์</option>
     </select><br>
 	
     <a id="showFac">คณะ : </a>
@@ -243,76 +256,12 @@ echo "สถานะ  : ";?>
 	
     </select>
 <p><input type="submit" name="subRegis" value="สมัครสมาชิก"/>&nbsp; &nbsp;
-<a href="login.php">Cancel</a></p><p>
+<input type="button" onclick="window.location='login.php'" value="ยกเลิก" /></center></p><p>
 
 <p id="showfac"></p>
 <p id="showbra"></p>
 
-
-            <td><label>
-					 <script language="javascript">
-function CheckNum(){
-		if (event.keyCode < 48 || event.keyCode > 57){
-		      event.returnValue = false;
-	    	}
-	}
-            <td>
-			        <select name="per_level" id="per_level" style="font-size:14px">
-            <?
-			include "include/connect.php";
-			$sql1 = "select * from level";
-			$result1 = mysql_query($sql1) or die (mysql_error());
-			?>
-				<?
-				while ($row1 = mysql_fetch_array($result1)) {
-				?>
-					<? if ($per_level == $row1["per_level"] ){ ?>						
-					<option value="<?=$row1["per_level"]?>"  selected="select"><?=$row1["level_name"]?></option>	
-					<? }elseif ($per_level != $row1["per_level"] ){ ?>					
-					<option value="<?=$row1["per_level"]?>"><?=$row1["level_name"]?></option>
-					<?
-					}}
-					?>
-              </select>
-			
-			
-			
-			</td>
-          </tr>	 
-
-<tr>
-		  <td colspan="2"><hr width="80%" size="2" ></td>
-</tr> 			 
-		 	<tr>
-					<th align="center" colspan="2">
-					<input type="submit" name="button2" id="button2" value="บันทึกข้อมูล" />&nbsp;&nbsp;
-					<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
-				</th>
-		</tr> 	
-<tr>	
-		  <td colspan="2"><hr width="100%" size="30" color = "FA8072"></td>
-		  
-</tr>  		  
-        
-</table>		
- </form>
-
-
-
-      </table>
-	  </td>
-
-  </tr>
-  		<tr>
-              <td bgcolor="#FF9999" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
-</table>
-
-</td>
-  </tr>  
-</table>
-
-
+</form>
 </body>
 </head>
 </html>
