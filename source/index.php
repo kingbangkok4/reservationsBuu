@@ -15,7 +15,7 @@
 		<tr>
 			<td
 				style="background-color: #999999; padding: 0; text-align: center;">
-				<a href="login.php" style="font-size: 72px;">เข้าสู่เว็บไซต์</a>
+				<a href="home.php" style="font-size: 72px;">เข้าสู่เว็บไซต์</a>
 			</td>
 		</tr>
 	</table>

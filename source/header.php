@@ -17,13 +17,6 @@
 			<td style="padding: 0; text-align: center;"><marquee>ยินดีต้อนรับเข้าสู่เว็บไซต์สั่งจองสินค้าในมหาลัยบูรพา
 					วิทยาเขตสระแก้ว จังหวัดสระแก้ว</marquee></td>
 		</tr>
-		<?php
-		echo "<tr>";
-		echo "	<td style=\"padding: 0; text-align: center;\">";
-		echo "username=" . $_SESSION ['strUsername'] . "<br />";
-		echo "	</td>";
-		echo "</tr>";
-		?>
 	</table>
 </body>
 </html>
