@@ -22,8 +22,7 @@ $(document).ready(function() {
 			<td style="padding: 0; text-align: center;">MENU</td>
 		</tr>
 		<tr>
-			<td style="padding: 0; text-align: center;"><a
-				href="index.php?page=home">Home</a></td>
+			<td style="padding: 0; text-align: center;"><a href="index.php">Home</a></td>
 		</tr>
 		<tr>
 			<td style="padding: 0; text-align: center;"><a id="product_menu"

@@ -1,5 +1,9 @@
 <?
 session_start ();
+if (empty ( $_GET ["page"] )) {
+	session_unset ();
+	session_destroy ();
+}
 ?>
 <!DOCTYPE html>
 <html>

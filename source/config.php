@@ -1,15 +1,17 @@
 <?php
-//connect database
-global $mysqli;
-$mysqli = mysqli_connect("localhost", "root", "1234", "Project");
-mysqli_set_charset($mysqli, "UTF8");
-if ($mysqli->connect_error) {
-	echo "Failed to connect to MySQL: " . $mysqli->connect_error;
-	exit();
-}else{
-	//echo "connect";
+function getDbConn() {
+	$dbhost = "localhost";
+	$dbusername = "root";
+	$dbpassword = "1234";
+	$dbname = "Project";
+	$dbconn = new mysqli ( $dbhost, $dbusername, $dbpassword, $dbname );
+	if ($dbconn->connect_error) {
+		die ( "Connection failed: " . $dbconn->connect_error );
+	}
+	$dbconn->set_charset ( "utf8" );
+	return $dbconn;
 }
-//set language
-$mysqli->query("SET NAMES UTF8");
-
+function closeDbConn($dbconn) {
+	$dbconn->close ();
+}
 ?>
