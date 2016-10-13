@@ -1,17 +1,15 @@
 <?php
-function getDbConn() {
+function getMySQLi() {
 	$dbhost = "localhost";
 	$dbusername = "root";
 	$dbpassword = "1234";
 	$dbname = "Project";
-	$dbconn = new mysqli ( $dbhost, $dbusername, $dbpassword, $dbname );
-	if ($dbconn->connect_error) {
-		die ( "Connection failed: " . $dbconn->connect_error );
+	$mysqli = new mysqli ( $dbhost, $dbusername, $dbpassword, $dbname );
+	if ($mysqli->connect_errno) {
+		// die ( "Connection failed: " . $mysqli->connect_error );
+		exit ();
 	}
-	$dbconn->set_charset ( "utf8" );
-	return $dbconn;
-}
-function closeDbConn($dbconn) {
-	$dbconn->close ();
+	$mysqli->set_charset ( "utf8" );
+	return $mysqli;
 }
 ?>

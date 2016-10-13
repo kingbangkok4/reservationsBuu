@@ -2,7 +2,6 @@
 session_start ();
 if (empty ( $_GET ["page"] )) {
 	session_unset ();
-	session_destroy ();
 }
 ?>
 <!DOCTYPE html>
@@ -62,7 +61,14 @@ if (empty ( $_GET ["page"] )) {
 					case "welcome" :
 						include "welcome.php";
 						break;
+					case "mrg_staff" :
+						include "mrg_staff.php";
+						break;
+					case "show_person" :
+						include "show_person.php";
+						break;
 					default :
+						session_destroy ();
 						include "login.php";
 						break;
 				}
