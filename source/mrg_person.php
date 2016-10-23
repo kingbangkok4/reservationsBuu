@@ -4,6 +4,7 @@ if($_SESSION["strUsername"] ==  null){
  //header("location: index.php");
  exit(); 
  }
+ include("config.php");
  ?>
 
 
@@ -84,10 +85,6 @@ if($_SESSION["strUsername"] ==  null){
 $idper=$_POST[idper];	
 if($idper == ""){
 
-$dbhost="localhost"; 
-$dbuser="root";  
-$dbpass="1234";
-$dbname="project";
 mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
 mysql_select_db($dbname) or die("MySQL select database failed");
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
@@ -173,11 +170,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 				</td></tr>	
 <?	
 }else{
-				
-$dbhost="localhost"; 
-$dbuser="root";  
-$dbpass="1234";
-$dbname="project";
+
 mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
 mysql_select_db($dbname) or die("MySQL select database failed");
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());

@@ -15,7 +15,7 @@ if($_SESSION["strUsername"] ==  null){
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
 
-<body bgcolor=#33FF99	>
+<body bgcolor=#FFCC99	>
 
 <table width="100%" border="1">
   <tr>

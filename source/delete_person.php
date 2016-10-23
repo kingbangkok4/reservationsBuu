@@ -1,3 +1,6 @@
+<?
+ include("config.php");
+ ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -8,11 +11,7 @@
 
 <div align="center">
   <?	
-  
-$dbhost="localhost"; 
-$dbuser="root";  
-$dbpass="1234";
-$dbname="project";
+
 mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
 mysql_select_db($dbname) or die("MySQL select database failed");
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
