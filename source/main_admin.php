@@ -33,7 +33,7 @@ if($_SESSION["strUsername"]== null || $_SESSION["Login_Position"]!= "admin" ){
     <td width="24%"><div align="center">
 
 	<!-- Menu -->
-	<?php include("menu_person_1.php"); ?>
+	<?php include("menu_admin.php"); ?>
 
 	</div></td>
     <td width="76%">

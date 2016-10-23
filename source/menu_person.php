@@ -15,7 +15,7 @@
   
   <tr>
   <td width="24%"><div align="center">
-	<?php include"menu_person_1.php";?>
+	<?php include"menu_admin.php";?>
 
 	</div></td>
     <td width="76%">

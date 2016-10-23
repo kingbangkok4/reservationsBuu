@@ -32,7 +32,7 @@ if($_SESSION["strUsername"] ==  null){
     <td width="24%"><div align="center">
 
 	<!-- Menu -->
-	<?php include("menu_person_3.php"); ?>
+	<?php include("menu_staff.php"); ?>
 
 	</div></td>
     <td width="76%">

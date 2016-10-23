@@ -25,7 +25,7 @@ if($_SESSION["strUsername"] ==  null){
   </tr > 
   <tr align="center"> 
   <td width="25%" >
-<?php include"menu_person_1.php";?>
+<?php include"menu_admin.php";?>
 </td>
   <td width="75%" >
   
