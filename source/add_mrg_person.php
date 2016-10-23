@@ -15,10 +15,11 @@ if($_SESSION["strUsername"] ==  null){
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.alphanumeric.js"></script>
 <head>
 
 <body bgcolor=#FFCC99>
-
 <table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
   <tr align="center"> 
   <td width="100%" colspan="2">
@@ -26,9 +27,10 @@ if($_SESSION["strUsername"] ==  null){
 </td>
   </tr > 
   <tr align="center"> 
-  <td width="100%" colspan="2">
-
-
+  <td width="25%" >
+<?php include"menu_person_1.php";?>
+</td>
+  <td width="75%" >
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
   
@@ -243,7 +245,7 @@ echo "สถานะ  : ";?>
 	
     </select>
 <p><input type="submit" name="subRegis" value="สมัครสมาชิก"/>&nbsp; &nbsp;
-<a href="login.php">Cancel</a></p><p>
+<a href="page1.php">Cancel</a></p><p>
 
 <p id="showfac"></p>
 <p id="showbra"></p>
@@ -281,38 +283,31 @@ function CheckNum(){
           </tr>	 
 
 <tr>
-		  <td colspan="2"><hr width="80%" size="2" ></td>
+		  <td colspan="2"><hr width=80% size=2 ></td>
 </tr> 			 
 		 	<tr>
-					<th align="center" colspan="2">
+					<th align="center" colspan=2>
 					<input type="submit" name="button2" id="button2" value="บันทึกข้อมูล" />&nbsp;&nbsp;
-					<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
+					<input type="button" onclick="window.location='per_show.php'" value="ยกเลิก">
 				</th>
-		</tr> 	
-<tr>	
-		  <td colspan="2"><hr width="100%" size="30" color = "FA8072"></td>
+			</tr> 
+	
+<tr>
+		  <td colspan="2"><hr width=100% size=25 color=FF8C00></td>
+</tr>  			  
 		  
-</tr>  		  
-        
-</table>		
- </form>
+        </table>
+		</form>	
+		</td>
+		</tr>
 
+        </table>
+		</td>	
+		</tr>
 
-
-      </table>
-	  </td>
-
-  </tr>
-  		<tr>
-              <td bgcolor="#FF9999" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
-</table>
+</table>	
 
 </td>
   </tr>  
-</table>
-
-
+</table>	
 </body>
-</head>
-</html>

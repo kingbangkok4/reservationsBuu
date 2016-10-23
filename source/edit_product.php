@@ -1,6 +1,5 @@
-<?php
+<?
  session_start();
-  header('Content-Type: text/html; charset=utf-8');
 if($_SESSION["strUsername"] ==  null){
  //header("location: index.php");
  exit(); 
@@ -15,25 +14,6 @@ if($_SESSION["strUsername"] ==  null){
  ?>
 
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<head>
-
-<body bgcolor=#FFCC99>
-
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
-  <tr align="center"> 
-  <td width="100%" colspan="2">
-<?php include"header.php";?>
-</td>
-  </tr > 
-  <tr align="center"> 
-  <td width="100%" colspan="2">
 
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
 <tr>      	
@@ -84,8 +64,10 @@ function chkForm(){
 </script>
 <td width="800" valign="top">
 
-<form name="form4" id="myyes" action="save_edit_product.php" method="post" enctype="multipart/form-data" onsubmit="return checkform(this);">	  
-<table width="750" height="260" bgcolor="#FFFACD" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
+<form name="form4" id="myyes" action="save_edit_product.php" method="post" onsubmit="return checkform(this);">
+	  
+		<table width="750" height="260" bgcolor="#FFFACD" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">	
+
           <tr>
             <td colspan="2" height = "40" bgcolor="#FA8072"><div align="center"><strong><font size = "5">แบบฟอร์มแก้ไขประเภทสินค้า</font></strong></div></td>
           </tr>
@@ -117,7 +99,7 @@ echo "รหัสสินค้า  : <input type='text' name ='Product_Code' 
 echo "ชื่อสินค้า  : <input type='text' name ='Product_Name' value='$objResult[Product_Name]'><br>";
 echo "ราคา  : <input type='text' name ='Product_Price' value='$objResult[Product_Price]'><br>";
 echo "จำนวนสินค้าคงเหลือ  : <input type='text' name ='Product_Stock' value='$objResult[Product_Stock]'><br>";
-echo "รูปภาพ  : <input type='file' id ='Product_picture' name ='Product_picture'  required='' /><br>";
+echo "รูปภาพ  : <input type='file' name ='Product_picture' value='$objResult[Product_picture]'>$objResult[Product_picture]<br>";
 
 ?>
 
@@ -181,10 +163,10 @@ echo "รูปภาพ  : <input type='file' id ='Product_picture' name ='Prod
 </tr>-->
 		  
 		<tr>
-                    <th colspan="2" align="center">
-                    <input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
-                    <input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
-                    </th>
+				<th colspan="2" align="center">
+				<input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
+				<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
+				</th>
 		</tr> 	
 <tr>	
 		  <td colspan="2"><hr width=100% size=30 color = "FA8072"></td>
@@ -198,22 +180,15 @@ echo "รูปภาพ  : <input type='file' id ='Product_picture' name ='Prod
 
 
 
-	  
-      </table>
+
+
 	  </td>
 
-  </tr>
+
   		<tr>
-              <td bgcolor="#FF9999" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
+              <td bgcolor="#FFDAB9" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
         </tr>
+		</tr>
 </table>
-
-</td>
-  </tr>  
-</table>
-   
-
-
 </body>
-</head>
 </html>

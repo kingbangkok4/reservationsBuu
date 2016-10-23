@@ -17,7 +17,7 @@ if($_SESSION["strUsername"] ==  null){
 
 <body bgcolor=#FFCC99>
 
-<table width="100%" border="1" cellpadding="0" cellspacing="0">
+<table width="100%" border="1">
   <tr>
   
     <td colspan="2"><div align="center">

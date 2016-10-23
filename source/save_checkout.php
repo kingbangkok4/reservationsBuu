@@ -14,7 +14,7 @@ if (!$objCon) {
 mysqli_set_charset($objCon, "utf8");
     
     if($_SESSION["strPerson_Id"] == ""){
-        header("location: login.php");
+        header("location: page1.php");
         exit();
     }else{
 

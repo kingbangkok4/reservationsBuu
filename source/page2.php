@@ -18,7 +18,7 @@ if($_SESSION["strUsername"]== null || $_SESSION["Login_Position"]!= "admin" ){
 
 <body  bgcolor=#FFCC66>
 
-<table width="100%" border="1" cellpadding="0" cellspacing="0">
+<table width="100%" border="1">
   <tr>
   
     <td colspan="2"><div align="center">

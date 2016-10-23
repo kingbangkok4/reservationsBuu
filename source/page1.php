@@ -1,65 +1,69 @@
 <?
-session_start ();
-session_destroy ();
+session_start();
+session_destroy();
 ?>
 
-
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>ระบบสั่งจองสินค้าในมหาวิทยาลัยบุรพา วิทยาเขตสระแก้ว</title>
-<meta charset="UTF-8">
+<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 </head>
-<body style="background-color: #FFCC99; text-align: center;">
 
+<body bgcolor=#FFCC99>
 
-	<table
-		style="border: 1px solid black; border-collapse: collapse; width: 100%;">
-		<tr>
-			<td colspan="2"
-				style="border: 1px solid black; padding: 0; text-align: center;">
-				<?php
-				include "header.php";
-				?>
-			</td>
-		</tr>
-		<tr>
-			<td
-				style="width: 25%; border: 1px solid black; padding: 0; text-align: center;">
-				<?php
-				include "menu.php";
-				?>
-			</td>
-			<td
-				style="width: 75%; border: 1px solid black; padding: 0; text-align: center;">
-				<!-- content -->
-				<?php
-				switch ($_GET ["page"]) {
-					case "home" :
-						echo "Home";
-						include "5.php";
-						break;
-					case "product" :
-						echo "Home -> Product";
-						include "product.php";
-						break;
-					default :
-						include "page_button_register.php";
-						break;
-				}
-				?>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2"
-				style="border: 1px solid black; padding: 0; text-align: center;">
-				<?php
-				include "footer.php";
-				?>
-			</td>
-		</tr>
-	</table>
+<table width="100%" border="1">
+  <tr>
+  
+    <td colspan="2"><div align="center">
 
+	<!-- Header -->
+	<?php include("header.php"); ?>
 
+	</div></td>
+  </tr>
+  <tr>
+  
+    <td width="24%"><div align="center">
+
+	<!-- Menu -->
+	<?php include("menu.php"); ?>
+
+	</div></td>
+    <td width="76%">
+
+	<!-- Container -->
+	<?php 
+	switch ($_GET["page"]) {
+	case "home":
+		echo "Home";
+		include("5.php");
+		break;
+	
+	case "product":
+		echo "Home -> Product";
+		include("product.php");
+		break;
+	
+	default:
+		
+		include("page_button_register.php");
+	}
+	?>
+</tr>
+	</td>
+  </tr>
+  <tr>
+    <td colspan=2"><div align="center">
+
+	<!-- Footer -->
+	<?php include("footer.php"); ?>
+
+	</div></td>
+  </tr>
+</table>
 </body>
 </html>

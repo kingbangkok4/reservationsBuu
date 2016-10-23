@@ -37,6 +37,6 @@
   </div>
  <!--<div> <a href="mrg_staff.php"><b>จัดการเจ้าหน้าที่</b></a></div>-->
  <div> <a href="show_person.php"><b>แก้ไขข้อมูลส่วนตัว</b></a></div>
- <div> <a href="login.php"><b>ออกจากระบบ</b></a></div>
+ <div> <a href="page1.php"><b>ออกจากระบบ</b></a></div>
  
   

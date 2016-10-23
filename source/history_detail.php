@@ -13,7 +13,7 @@ session_start();
 if(!isset($_SESSION["strPerson_Id"]))
 {
 	
-    header("location:login.php");
+    header("location:page1.php");
 	exit();
 }
 

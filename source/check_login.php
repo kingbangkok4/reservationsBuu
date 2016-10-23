@@ -1,27 +1,35 @@
-<?php
-session_start ();
-require "config.php";
-$mysqli = getMySQLi ();
-// begin check login
-$query = "SELECT * FROM person WHERE Person_Username='" . $_POST ["txtUsername"] . "' and Person_Password='" . $_POST ["txtPassword"] . "'";
-if ($result = $mysqli->query ( $query )) {
-	while ( $row = $result->fetch_assoc () ) {
-		$_SESSION ["strUsername"] = $_POST ["txtUsername"];
-		$_SESSION ["strPerson_Id"] = $row ["Person_Id"];
-		switch ($row ["Person_Position"]) {
-			case "admin" :
-			case "staff" :
-				$_SESSION ["Login_Position"] = $row ["Person_Position"];
-				break;
-			default :
-				$_SESSION ["Login_Position"] = "";
-				break;
-		}
+<?
+ session_start();
+include("config.php");
+
+ $strUsername = $_POST['txtUsername'];
+ $strPassword = $_POST['txtPassword'];
+// คำสั่ง SQL และสั่งให้ทำงาน
+$sql = "SELECT * FROM person WHERE Person_Username='".$strUsername."' and Person_Password='".$strPassword."' ;";
+$result = $mysqli->query($sql);
+
+  if ($result->num_rows >0){
+	while($row = $result->fetch_assoc()){
+		$_SESSION["strUsername"] = $strUsername;
+        $_SESSION["strPerson_Id"] = $row["Person_Id"];
+	  if($row[Person_Position]=="admin"){
+		  
+		$_SESSION["Login_Position"] = "admin";
+		header("location: page2.php");
+		
+	  }else if($row[Person_Position]=="staff"){
+		  
+		$_SESSION["Login_Position"] = "staff";
+		header("location: page4.php");
+		  
+	  }else{
+		header("location: page3.php");
+		  
+	  }
 	}
-	header ( "location: home.php?page=welcome" );
-	$result->free ();
-} else {
-}
-// end check login
-$mysqli->close ();
+ }else {
+  header("location: page1.php");
+ }
+$mysqli->close();
+
 ?>

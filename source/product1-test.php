@@ -56,7 +56,7 @@ function Button(theButton){
 </td>
   <td width="75%" >
   
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
   <tr> 
 
     <td width="80%" valign="top">
@@ -122,8 +122,6 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 		$sql = "select * from product  where Product_Name Like '%$idper%' ";
 		
 		$result = mysql_query($sql) or die (mysql_error());
-        $num_rows = mysql_num_rows($result);
-
 		$row = mysql_num_rows($result);		
 				$Per_Page = 10;   // Per Page
 				$Page = $_GET["Page"];
@@ -218,7 +216,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 <!-แสดงหน้า->
 				<tr><td colspan="8" align = "right">
 							<br>
-							Total <?php echo $num_rows;?> Record : <?php echo $Num_Pages;?> Page :
+							Total <?php echo $row;?> Record : <?php echo $Num_Pages;?> Page :
 							<?php
 							if($Prev_Page)
 								{echo " <a href='$_SERVER[SCRIPT_NAME]?Page=$Prev_Page'><< Back</a> ";}

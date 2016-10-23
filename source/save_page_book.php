@@ -50,4 +50,4 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
         $mysqli->close();
 		
 ?>
-<br><a href="login.php">BACK</a><p> 
+<br><a href="page1.php">BACK</a><p> 
