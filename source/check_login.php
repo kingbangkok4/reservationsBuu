@@ -15,20 +15,20 @@ $result = $mysqli->query($sql);
 	  if($row[Person_Position]=="admin"){
 		  
 		$_SESSION["Login_Position"] = "admin";
-		header("location: page2.php");
+		header("location: main_admin.php");
 		
 	  }else if($row[Person_Position]=="staff"){
 		  
 		$_SESSION["Login_Position"] = "staff";
-		header("location: page4.php");
+		header("location: main_staff.php");
 		  
 	  }else{
-		header("location: page3.php");
+		header("location: main_user.php");
 		  
 	  }
 	}
  }else {
-  header("location: page1.php");
+  header("location: login.php");
  }
 $mysqli->close();
 

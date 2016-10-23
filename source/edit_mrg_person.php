@@ -98,7 +98,7 @@ function chkForm(){
 
   if ($result->num_rows >0){
 	while($row = $result->fetch_assoc()){
-		header("location: page2.php");	
+		header("location: main_admin.php");	
 	}
  }else {
  

@@ -57,7 +57,7 @@ if(document.form4.Person_confirm.value == ""){
 	include "config.php";
 	if ($result->num_rows >0){
 	while($row = $result->fetch_assoc()){
-		header("page2.php");	
+		header("main_admin.php");	
 	}
  }else {
  

@@ -53,4 +53,4 @@ include("config.php");
         $mysqli->close();
 
 ?>
-<br><a href="page1.php">BACK</a><p> 
+<br><a href="login.php">BACK</a><p> 

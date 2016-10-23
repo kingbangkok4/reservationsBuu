@@ -58,7 +58,7 @@ if($_SESSION["strUsername"] ==  null){
 	
   if ($result->num_rows >0){
 	while($row = $result->fetch_assoc()){
-		header("page2.php");	
+		header("main_admin.php");	
 	}
  }else {
  
@@ -101,8 +101,8 @@ $mysqli->close();
               
               &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Person.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Password.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
-			 <!--&nbsp;&nbsp;<center><div align="center"></div> <a href="page2.php?Person_Id=<?=$Person_Id;?>"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>-->
-            <center><a href="page3.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center></a></p><p>
+			 <!--&nbsp;&nbsp;<center><div align="center"></div> <a href="main_admin.php?Person_Id=<?=$Person_Id;?>"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>-->
+            <center><a href="main_user.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center></a></p><p>
 			</label></td>
 			
           </tr>
