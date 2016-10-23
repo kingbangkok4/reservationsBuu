@@ -36,7 +36,7 @@
   <div><a href="history.php"><b>ประวัติการสั่งซื้อ</b></div>
   </div>
  <!--<div> <a href="mrg_staff.php"><b>จัดการเจ้าหน้าที่</b></a></div>-->
- <div> <a href="show_person.php"><b>แก้ไขข้อมูลส่วนตัว</b></a></div>
+ <div> <a href="show_person_user.php"><b>แก้ไขข้อมูลส่วนตัว</b></a></div>
  <div> <a href="login.php"><b>ออกจากระบบ</b></a></div>
  
   

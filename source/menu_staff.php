@@ -38,7 +38,7 @@
   </div>
   <center>
  <div> <a href="mrg_person.php"><b>จัดการข้อมูลใช้งาน</b></a></div>
- <div> <a href="show_person.php"><b>แก้ไขข้อมูลส่วนตัว</b></a></div>
+ <div> <a href="show_person_staff.php"><b>แก้ไขข้อมูลส่วนตัว</b></a></div>
  <div> <a href="report.php"><b>รายงานสินค้าคงเหลือ</b></a></div>
  
  <div> <a href="login.php"><b>ออกจากระบบ</b></a></div>
