@@ -6,7 +6,7 @@
 
 
 </head>
-<body>
+<body bgcolor=#FFCC99>
 <table border="0" width="100%" height="600">
 <tr bgcolor="#999999">
 	<td colspan="2" height="100" >
