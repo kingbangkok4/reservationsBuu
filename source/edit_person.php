@@ -31,9 +31,13 @@ if($_SESSION["strUsername"] ==  null){
 	$Branch=$objResultbranch[Branch_Name];
  ?>
 
-
+ <body bgcolor=#FFCC99>
+<?php include"header.php";?>
 
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  	<td><br /></td>
+  </tr>
 <tr>      	
 
 <script >
@@ -272,7 +276,7 @@ echo "สถานะ  : ";?>
 
 
   		<tr>
-              <td bgcolor="#FFDAB9" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
+              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
         </tr>
 		</tr>
 </table>

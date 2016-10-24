@@ -9,6 +9,9 @@ if($_SESSION["strUsername"] ==  null){
  <body bgcolor=#FFCC99>
 <?php include"header.php";?>
 <table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  	<td><br /></td>
+  </tr>
   <tr> 
   
 
@@ -105,9 +108,6 @@ $mysqli->close();
 			</label></td>
 			
           </tr>
-<tr>
-              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
       </table>
 	  </td>
 	  
@@ -117,6 +117,12 @@ $mysqli->close();
 
 	  
   </tr>
+  <tr>
+  	<td><br /></td>
+  </tr>
+  <tr>
+              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
+        </tr>
 </table>
 
   

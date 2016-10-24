@@ -219,7 +219,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 	}
 	
 	?>
-		<tr><td colspan="8" align = "right"><br>
+		<tr><td colspan="10" align = "right"><br>
 		<? echo	"Search &nbsp; ชื่อ-สกุล  &nbsp; '$idper' &nbsp; Show &nbsp;  $num  &nbsp;Record	&nbsp;"; ?>	
 		</td></tr>
 <?

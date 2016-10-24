@@ -18,6 +18,7 @@
  
  
 </table>
+<!-- 
  <div id="ooo"> <a href="product.php?page=product"><b>Product</b></a>
   <div id="xxx" style="display: none">
 	<a href="product1-test.php">อุปกรณ์</a><br>
@@ -26,4 +27,4 @@
 	
   </div>
 
-  
+   -->

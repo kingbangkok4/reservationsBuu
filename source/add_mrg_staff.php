@@ -242,7 +242,7 @@ echo "สถานะ  : ";?>
 	
     </select>
 <p><input type="submit" name="subRegis" value="สมัครสมาชิก"/>&nbsp; &nbsp;
-<a href="login.php">Cancel</a></p><p>
+<a href="mrg_staff.php">Cancel</a></p><p>
 
 <p id="showfac"></p>
 <p id="showbra"></p>

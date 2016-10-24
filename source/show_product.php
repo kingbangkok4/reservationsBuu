@@ -1,5 +1,6 @@
 <?php
 session_start();
+include("config.php");
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
@@ -19,10 +20,6 @@ if(!isset($_SESSION["intLineBuy"]) && !isset($_SESSION["intLineReserv"]))
 }
 
 
-$serverName = "localhost";
-$userName = "root";
-$userPassword = "1234";
-$dbName = "project";
 
 $objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
 if (!$objCon) {

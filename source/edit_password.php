@@ -4,10 +4,13 @@ if($sess_id == ""){
 // header("Location:../index.php"); exit(); 
  } 
  ?>
-
+ <body bgcolor=#FFCC99>
 <?php include"header.php";?>
 
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+  	<td><br /></td>
+  </tr>
       	
 
 <script language="JavaScript1" type="text/javascript">
@@ -117,7 +120,7 @@ if(document.form4.Person_confirm.value == ""){
 		</td>
 		
   		<tr>
-              <td bgcolor="#FFDAB9" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
+              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
         </tr>
 </table>
 </body>
