@@ -22,9 +22,16 @@ if(!isset($_SESSION["strPerson_Id"]))
 
 
 ?>
-
-<table width="400"  border="1">
-  <tr>
+<body bgcolor=#FFCC99>
+<?php include"header.php";?>
+<table width="100%"  border="0">
+<tr>
+<td><br /></td>
+</tr>
+<tr>
+<td>
+<table width="400"  border="1" align="center">
+  <tr bgcolor="#FF6666">
     <td width="100"><center>Order ID</center></td>
     <td width="100"><center>Product Code</center></td>
     <td width="100"><center>Product Name</center></td>
@@ -71,7 +78,20 @@ if(!isset($_SESSION["strPerson_Id"]))
 
         
 </table>
-<br><br><a href="print.php?Order_Id=<?$_POST["txtOrder_Id"]?>">Print</a>
+</td>
+</tr>
+<tr>
+<td style="text-align: center;">
+<a href="print.php?Order_Id=<?$_POST["txtOrder_Id"]?>">Print</a>
+</td>
+</tr>
+<tr>
+<td><br /></td>
+</tr>
+<tr>
+              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
+        </tr>
+</table>
 <?php
 mysqli_close($mysqli);
 ?>

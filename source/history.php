@@ -21,10 +21,17 @@ if(!isset($_SESSION["strPerson_Id"]))
     include("config.php");
 
 
-?>
-
-<table width="400"  border="1">
-  <tr>
+?> 
+<body bgcolor=#FFCC99>
+<?php include"header.php";?>
+<table width="100%"  border="0">
+<tr>
+<td><br /></td>
+</tr>
+<tr>
+<td>
+<table width="400"  border="1" align="center">
+  <tr bgcolor="#FF6666">
     <td width="100"><center>Order ID</center></td>
     <td width="100"><center>Order Date</center></td>
     <td width="80"><center>View</center></td>
@@ -74,9 +81,15 @@ if(!isset($_SESSION["strPerson_Id"]))
 
         
 </table>
-
-
-
+</td>
+</tr>
+<tr>
+<td><br /></td>
+</tr>
+<tr>
+              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
+        </tr>
+</table>
 <?php
 mysqli_close($mysqli);
 ?>
