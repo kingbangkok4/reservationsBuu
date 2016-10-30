@@ -88,7 +88,7 @@ function Button(theButton){
         </tr>
             <tr bgcolor="#FFB6C1">
 				<td valign="top" bgcolor="#FFB6C1" align="">&nbsp;ค้นหาชื่อสินค้า(จากบางคำ):</td>
-				<td align="center" width=""><input type="text" name="idper" id="idper" /></td>
+				<td align="center" width=""><input type="text" name="idper" id="idper" value="<?=$_POST[idper]?>" /></td>
 				<td align="left">
 					<button type="submit" name="search" id="button" onclick = "return chkNull();"><img src="image/search.png" title="ปุ่มค้นหา "/> </button>
                     <input type ="submit" name="allsearch" value ="แสดงสินค้าทั้งหมด">
@@ -160,7 +160,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 	?>	
         <tr>
         <form name ="addproduct" method="post" action="">
-          <!--<td align="center"><?=$row["Product_Id"]?></td>-->		  
+          <!--<td align="center"><=$row["Product_Id"]?></td>-->		  
           <td align="center"><?=$row["Product_Code"]?></td>
 		  <td align="center"><?=$row["Product_Name"]?></td>
           <td align="center"><?=$row["Product_Price"]?></td>
@@ -245,10 +245,10 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 <?php
     
 }else{
-$dbhost="localhost";
-$dbuser="root";  
-$dbpass="aimax0824978018";
-$dbname="project2";
+//$dbhost="localhost";
+//$dbuser="root";  
+//$dbpass="aimax0824978018";
+//$dbname="project2";
 mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
 mysql_select_db($dbname) or die("MySQL select database failed");
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
@@ -269,7 +269,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 	?>	
         <tr>
         <form name ="addproduct" method="post">
-          <td align="center"><?=$row["Product_Id"]?></td>		  
+          <!--<td align="center"><=$row["Product_Id"]?></td>-->	  
           <td align="center"><?=$row["Product_Code"]?></td>
 		  <td align="center"><?=$row["Product_Name"]?></td>
           <td align="center"><?=$row["Product_Price"]?></td>

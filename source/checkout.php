@@ -13,13 +13,8 @@ if(!isset($_SESSION["intLineBuy"]) && !isset($_SESSION["intLineReserv"]))
 	echo "Cart Empty";
 	exit();
 }
-
-$serverName = "localhost";
-$userName = "root";
-$userPassword = "1234";
-$dbName = "project";
-
-$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+include("config.php");
+$objCon = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname );
 if (!$objCon) {
     echo $objCon->connect_error;
     exit();

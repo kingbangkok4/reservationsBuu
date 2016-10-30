@@ -21,7 +21,7 @@ if(!isset($_SESSION["intLineBuy"]) && !isset($_SESSION["intLineReserv"]))
 
 
 
-$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+$objCon = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname );
 if (!$objCon) {
     echo $objCon->connect_error;
     exit();
