@@ -1,12 +1,11 @@
-﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
-<head>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-<script type="text/javascript" src="jquery.alphanumeric.js"></script>
-<script>
+﻿<?php
+//session_start ();
+include ("layout.php");
+?>
+<div id="kk-content">
+	<div class="w3-container">
 
+<script type="text/javascript">
 $(document).ready(function(){
                   $("#Phone").numeric();
                   $("#Unicode").numeric();
@@ -36,7 +35,7 @@ $(document).ready(function(){
                                            options.clone().filter(".value"+i).appendTo(conditionalSelect);
                                            
                                            }
-                                      document.getElementById("showfac").innerHTML = "Fac_Id is = "+maxDay;
+                                      //document.getElementById("showfac").innerHTML = "Fac_Id is = "+maxDay;
                                            }).trigger("change");
                   
                   $("#Position").change(function(){
@@ -64,25 +63,6 @@ $(document).ready(function(){
                                        });
                   
                   });
-
-
-</script>
-
-
-<body bgcolor=#FFCC99>
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
-  <tr align="center"> 
-  <td width="100%" colspan="2">
-<?php include"header.php";?>
-</td>
-  </tr > 
- 
-  <td width="75%" >
-  
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-
-<script>
 
 function chkForm(){
     
@@ -139,11 +119,9 @@ function chkForm(){
     
 
 </script>
-</head>
-<body>	
 
 <form name="frm" action="save.php" method="post" onSubmit="return chkForm();">
-
+<br/>
 <a id="showtitle">เลือกคำนำหน้าช่ื่อ : </a>
     <select name = "Title_Id" id="Title_Id">
     <option value="">เลือกคำนำหน้าชื่อ</option>
@@ -262,13 +240,14 @@ echo "สถานะ  : ";?>
 	<option value='9'>สาขาวิชาการจัดการ</option>
 	
     </select>
-<p><input type="submit" name="subRegis" value="สมัครสมาชิก"/>&nbsp; &nbsp;
-<a href="login.php">Cancel</a></p><p>
+    <br/><br/>
+<input type="submit" name="subRegis" value="สมัครสมาชิก"/>&nbsp; &nbsp;
+<input type="button" value="กลับ" onclick="window.location.href="/>
+<a href="login.php" disabled></a>
 
 <p id="showfac"></p>
 <p id="showbra"></p>
 
 </form>
-</body>
-</head>
-</html>
+</div>
+</div>
