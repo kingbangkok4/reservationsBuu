@@ -1,8 +1,54 @@
-<?
+<?php
 session_start();
 session_destroy();
+include("layout_header.php");
+?>
+  <p>In this example, the sidenav is hidden (style="display:none") and is only shown when you click on the menu icon in the top left corner. When it is opened, it shifts the page content to the right (we use JavaScript to add a 25% left margin to the div element with id="main" when this happens. The value "25%" matches the value used to set the width of the sidenav. Tip: If you change the left margin to 40%, you should change the width of the sidenav to 40% as well.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<?php
+include("layout_footer.php");
 ?>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
 "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -19,37 +65,25 @@ session_destroy();
   <tr>
   
     <td colspan="2"><div align="center">
-
-	<!-- Header -->
-	<?php include("header.php"); ?>
-
+	<php include("header.php"); ?>
 	</div></td>
   </tr>
   <tr>
-  
     <td width="24%"><div align="center">
-
-	<!-- Menu -->
-	<?php include("menu.php"); ?>
-
+	<php include("menu.php"); ?>
 	</div></td>
     <td width="76%">
-
-	<!-- Container -->
-	<?php 
+	<php 
 	switch ($_GET["page"]) {
 	case "home":
 		echo "Home";
 		include("5.php");
 		break;
-	
 	case "product":
 		echo "Home -> Product";
 		include("product.php");
 		break;
-	
 	default:
-		
 		include("page_button_register.php");
 	}
 	?>
@@ -58,12 +92,10 @@ session_destroy();
   </tr>
   <tr>
     <td colspan=2"><div align="center">
-
-	<!-- Footer -->
-	<?php include("footer.php"); ?>
-
+	<php include("footer.php"); ?>
 	</div></td>
   </tr>
 </table>
 </body>
 </html>
+-->
