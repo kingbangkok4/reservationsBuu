@@ -107,7 +107,19 @@ Person_Position='$Person_Position',Fac_Id='$Fac_Id',Branch_Id='$Branch_Id' where
 			//$result = "แก้ไขข้อมูลเสร็จเรียบร้อย<br/><a href='show_cus.php'>ข้อมูลส่วนตัว</a>";
 			echo "<script> alert('แก้ไขข้อมูลส่วนตัวเรียบร้อย')</script>";
 			if($_POST[Person_Id]==null){
-					echo" <meta http-equiv='refresh' content='0; url=show_person.php' />";
+					//echo" <meta http-equiv='refresh' content='0; url=show_person.php' />";
+					if ($_SESSION["Login_Position"] == "admin") {
+						//header("location: show_person_admin.php");
+						echo" <meta http-equiv='refresh' content='0; url=show_person_admin.php' />";
+					} elseif ($_SESSION["Login_Position"] == "staff") {
+						//header("location: show_person_staff.php");
+						echo" <meta http-equiv='refresh' content='0; url=show_person_staff.php' />";
+					} elseif ($_SESSION["Login_Position"] == "student" || $_SESSION["Login_Position"] == "teacher") {
+						//header("location: show_person_user.php");
+						echo" <meta http-equiv='refresh' content='0; url=show_person_user.php' />";
+					} else {
+						 
+					}
 			}else if($_POST[status]=="person"){
 					echo" <meta http-equiv='refresh' content='0; url=mrg_person.php' />";
 			}else {

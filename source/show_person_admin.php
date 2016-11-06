@@ -64,18 +64,19 @@ $mysqli->close();
 	?>
 </td>
       </tr>	
+      <br />
 <?	  
-		echo "ชื่อจริง: ".$Fname."<br>";
-		echo "นามสกุล: ".$Lname."<br>";
-		echo "วันเดือนปีเกิด: ".$Birthday."<br>";
-		echo "อีเมล์: ".$Email."<br>";
-		echo "เบอร์โทร: ".$Phone."<br>";
-		echo "ชื่อผู้ใช้งาน: ".$Username."<br>";
-		echo "รหัสผู้ใช้งาน: ".$Password."<br>";
-		echo "รหัสประจำตัว: ".$UniCode."<br>";
-		echo "สถานะ: ".$Position."<br>";
-        echo "คณะ: ".$Faculty."<br>";
-        echo "สาขา: ".$Branch."<br>";
+		echo "ชื่อจริง: ".$Fname."<br /><br />";
+		echo "นามสกุล: ".$Lname."<br /><br />";
+		echo "วันเดือนปีเกิด: ".$Birthday."<br /><br />";
+		echo "อีเมล์: ".$Email."<br /><br />";
+		echo "เบอร์โทร: ".$Phone."<br /><br />";
+		echo "ชื่อผู้ใช้งาน: ".$Username."<br /><br />";
+		echo "รหัสผู้ใช้งาน: ".$Password."<br /><br />";
+		echo "รหัสประจำตัว: ".$UniCode."<br /><br />";
+		echo "สถานะ: ".$Position."<br /><br />";
+        echo "คณะ: ".$Faculty."<br /><br />";
+        echo "สาขา: ".$Branch."<br /><br />";
 
 		$sql_insert="INSERT INTO person (Person_Fname ,Person_Lname ,Person_Birthday ,Person_email ,Person_Phone ,Person_Username ,Person_Password ,Person_UniversityCode, Person_Position, Fac_Id, Branch_Id)
 		VALUES('".$Fname."', '".$Lname."', '".$Birthday."', '".$Email."', ".$Phone.", '".$Username."',  '".$Password."', ".$UniCode.",'".$Position."',".$Faculty.",".$Branch.");";
@@ -96,7 +97,7 @@ $mysqli->close();
               <label>
 	  
               
-              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Person.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
+              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_person_admin.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Password.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
              &nbsp;&nbsp;<center><div align="center"></div> <a href="main_admin.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>
 			</label></td>

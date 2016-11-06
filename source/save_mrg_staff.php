@@ -1,11 +1,7 @@
 <?php
-
-include("config.php");
-?>
-
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<?php
+session_start ();
+include ("layout.php");
+include ("config.php");
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
 	$Title_Id = $_POST['Title_Id'];
@@ -39,32 +35,66 @@ include("config.php");
 	$objQuerybranch = $mysqli->query($strSQLbranch);
 	$objResultbranch = $objQuerybranch->fetch_assoc();
 	$Branch2=$objResultbranch[Branch_Name];
+	
+	?>
+	<div id="kk-content">
+	<div class="w3-container">
+	
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td  valign="top">	
+		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#E57373">		
+	<tr>
+	
+    <td  valign="top">
+	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
+		<tr>
+<td colspan="2" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">ข้อมูลเจ้าหน้าที่</font></strong></div></td>			  
+        </tr> 	
+      <tr>
+        <td>	 
+ 
+ <br />
+	<?php
 
-		echo "คำนำหน้าชื่อ: ".$Title_Id."<br>";
-		echo "ชื่อจริง: ".$Fname."<br>";
-		echo "นามสกุล: ".$Lname."<br>";
-		echo "วันเดือนปีเกิด: ".$Year."-".$Month."-".$Day."<br>";
-		echo "อีเมล์: ".$Email."<br>";
-		echo "เบอร์โทร: ".$Phone."<br>";
-		echo "ชื่อผู้ใช้งาน: ".$Username."<br>";
-		echo "รหัสผู้ใช้งาน: ".$Password."<br>";
-		echo "รหัสประจำตัว: ".$UniCode."<br>";
-		echo "สถานะ: ".$Position."<br>";
-        echo "คณะ: ".$Faculty2."<br>";
-        echo "สาขา: ".$Branch2."<br>";
+		echo "คำนำหน้าชื่อ: ".$Title_Id."<br /><br />";
+		echo "ชื่อจริง: ".$Fname."<br /><br />";
+		echo "นามสกุล: ".$Lname."<br /><br />";
+		echo "วันเดือนปีเกิด: ".$Year."-".$Month."-".$Day."<br /><br />";
+		echo "อีเมล์: ".$Email."<br /><br />";
+		echo "เบอร์โทร: ".$Phone."<br /><br />";
+		echo "ชื่อผู้ใช้งาน: ".$Username."<br /><br />";
+		echo "รหัสผู้ใช้งาน: ".$Password."<br /><br />";
+		echo "รหัสประจำตัว: ".$UniCode."<br /><br />";
+		echo "สถานะ: ".$Position."<br /><br />";
+        echo "คณะ: ".$Faculty2."<br /><br />";
+        echo "สาขา: ".$Branch2."<br /><br />";
 
 		$sql_insert="INSERT INTO person (Title_Id ,Person_Fname ,Person_Lname ,Person_Birthday ,Person_email ,Person_Phone ,Person_Username ,Person_Password ,Person_UniversityCode, Person_Position, Fac_Id, Branch_Id)
 		VALUES('".$Title_Id."','".$Fname."', '".$Lname."', '".$Birthday."', '".$Email."', ".$Phone.", '".$Username."',  '".$Password."', ".$UniCode.",'".$Position."',".$Faculty.",".$Branch.");";
 		// $result = $mysqli->query($sql);
 
 		if ($mysqli->query($sql_insert) == TRUE) {
-		    echo "สมัครสมาชิกเรียบร้อย";
+		    echo "สมัครสมาชิกเรียบร้อย<br /><br />";
 		} else {
-		    echo "Error: " .$sql_insert. "<br>" . $mysqli->error;
+		    echo "Error: " .$sql_insert. "<br /><br />" . $mysqli->error;
 		}
 	}
     
         $mysqli->close();
 
 ?>
-<br><a href="mrg_staff.php">BACK</a><p> 
+<input type="button" value="กลับ" onclick="javascript:window.location.href='mrg_staff.php'"/>
+<br /><br />
+
+</td>
+          </tr>
+        </table>
+		</td>
+		</tr>
+        </table>
+		</td>	
+		</tr>
+</table>
+		</div>
+</div>
