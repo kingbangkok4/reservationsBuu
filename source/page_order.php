@@ -84,7 +84,7 @@ function chkForm(){
 </script>
 <td width="800" valign="top">
 
-<form name="form4" id="myyes" action="order_detail.php" method="post" onsubmit="return checkform(this);">
+<form name="form4" id="myyes" action="order_detail.php" method="post" onsubmit="return chkform(this);">
 	  
 		<table width="750" height="260" bgcolor="#FFFACD" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">	
 

@@ -1,31 +1,26 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- //header("location: index.php");
- exit(); 
- }
+<?php
+session_start ();
+include ("layout.php");
+include ("config.php");
+?>
+<div id="kk-content">
+	<div class="w3-container">
 
- ?>
- <body bgcolor=#FFCC99>
-<?php include"header.php";?>
 <table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-  	<td><br /></td>
-  </tr>
   <tr> 
   
 
 
-    <td width="80%" valign="top">	
-		<table width="750" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#FF6666">		
+    <td width="100%" valign="top">	
+		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#64B5F6">		
 	<tr>
-			  <td colspan="2" height = "40" bgcolor="#FF6666"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
+			  <td colspan="2" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
         </tr> 
 	<tr>
 	
 
-    <td width="80%" valign="top">
-	<table width="750" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
+    <td width="100%" valign="top">
+	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
       <tr>
         <td>&nbsp;</td>
       </tr>	
@@ -70,18 +65,19 @@ $mysqli->close();
 	?>
 </td>
       </tr>	
+      <br />
 <?	  
-		echo "ชื่อจริง: ".$Fname."<br>";
-		echo "นามสกุล: ".$Lname."<br>";
-		echo "วันเดือนปีเกิด: ".$Birthday."<br>";
-		echo "อีเมล์: ".$Email."<br>";
-		echo "เบอร์โทร: ".$Phone."<br>";
-		echo "ชื่อผู้ใช้งาน: ".$Username."<br>";
-		echo "รหัสผู้ใช้งาน: ".$Password."<br>";
-		echo "รหัสประจำตัว: ".$UniCode."<br>";
-		echo "สถานะ: ".$Position."<br>";
-        echo "คณะ: ".$Faculty."<br>";
-        echo "สาขา: ".$Branch."<br>";
+		echo "ชื่อจริง: ".$Fname."<br /><br />";
+		echo "นามสกุล: ".$Lname."<br /><br />";
+		echo "วันเดือนปีเกิด: ".$Birthday."<br /><br />";
+		echo "อีเมล์: ".$Email."<br /><br />";
+		echo "เบอร์โทร: ".$Phone."<br /><br />";
+		echo "ชื่อผู้ใช้งาน: ".$Username."<br /><br />";
+		echo "รหัสผู้ใช้งาน: ".$Password."<br /><br />";
+		echo "รหัสประจำตัว: ".$UniCode."<br /><br />";
+		echo "สถานะ: ".$Position."<br /><br />";
+        echo "คณะ: ".$Faculty."<br /><br />";
+        echo "สาขา: ".$Branch."<br /><br />";
 
 		$sql_insert="INSERT INTO person (Person_Fname ,Person_Lname ,Person_Birthday ,Person_email ,Person_Phone ,Person_Username ,Person_Password ,Person_UniversityCode, Person_Position, Fac_Id, Branch_Id)
 		VALUES('".$Fname."', '".$Lname."', '".$Birthday."', '".$Email."', ".$Phone.", '".$Username."',  '".$Password."', ".$UniCode.",'".$Position."',".$Faculty.",".$Branch.");";
@@ -102,8 +98,8 @@ $mysqli->close();
               <label>
 	  
               
-              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Person.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Password.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
+              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_person_staff.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
+             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_password_staff.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
              &nbsp;&nbsp;<center><div align="center"></div> <a href="main_staff.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>
 			</label>
 			
@@ -119,12 +115,6 @@ $mysqli->close();
 
 	  
   </tr>
-  <tr>
-  	<td><br /></td>
-  </tr>
-  <tr>
-              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
 </table>
 
-  
+  </div></div>

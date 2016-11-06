@@ -120,8 +120,8 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 
 		  
-          <td align="center"><a href="edit_mrg.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
-          <td align="center"><a href="edit_mrg_password.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg_staff.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg_staff_password.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
           <td align="center"><a href="delete_mrg.php?Person_Id=<?=$row["Person_Id"]?>" onclick="return confirm ('ยืนยันการลบข้อมูลบุคลากร') "><img src="image/4del.png" width="24" height="24" border="0" /></a></td>
         </tr>
 	<?php
@@ -186,8 +186,8 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 
 		  
  		  
-          <td align="center"><a href="edit_mrg.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
-          <td align="center"><a href="edit_mrg_password.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg_staff.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg_staff_password.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/3edit.png" width="24" height="24" border="0" /></a></td>
           <td align="center"><a href="delete_mrg.php?Person_Id=<?=$row["Person_Id"]?>" onclick="return confirm ('ยืนยันการลบข้อมูลบุคลากร') "><img src="image/4del.png" width="24" height="24" border="0" /></a></td>
          </tr>
 	<?php

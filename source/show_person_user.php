@@ -102,8 +102,8 @@ $mysqli->close();
               <label>
 	  
               
-              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Person.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_Password.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
+              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_person_user.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
+             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_password_user.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
              &nbsp;&nbsp;<center><div align="center"></div> <a href="main_user.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>
 			</label>
 			

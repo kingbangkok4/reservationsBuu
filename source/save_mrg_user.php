@@ -84,7 +84,7 @@ include ("config.php");
         $mysqli->close();
 
 ?>
-<input type="button" value="กลับ" onclick="javascript:window.location.href='mrg_staff.php'"/>
+<input type="button" value="กลับ" onclick="javascript:window.location.href='mrg_user.php'"/>
 <br /><br />
 
 </td>

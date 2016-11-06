@@ -22,10 +22,10 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 	if($result){
 		
 echo "<script> alert('ลบข้อมูลเจ้าหน้าที่เรียบร้อย')</script>";
-echo "<meta http-equiv='refresh' content='2;url=mrg_person.php'/>";
+echo "<meta http-equiv='refresh' content='2;url=mrg_user.php'/>";
 }else{
 echo "<script> alert('!!!เกิดข้อผิดพลาด!!!ไม่สามารถลบข้อมูลได้')</script>";
-echo "<meta http-equiv='refresh' content='2;url=mrg_person.php'/>";
+echo "<meta http-equiv='refresh' content='2;url=mrg_user.php'/>";
 }
 ?>
   <img src="image/loading.png" width="250" height="250" />

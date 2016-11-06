@@ -2,16 +2,22 @@
 session_start ();
 include ("layout.php");
 include ("config.php");
-?>
+
+	$strSQL = "SELECT * FROM type_product WHERE TypeP_Id='".$_GET[TypeP_Id]."'";
+	$objQuery = $mysqli->query($strSQL);
+	$objResult = $objQuery->fetch_assoc();
+	$TypeP_Nametype=$objResult[TypeP_Nametype];
+	
+ ?>
 <div id="kk-content">
 	<div class="w3-container">
 
 <script type="text/javascript">
-
-function chkForm(){
+function chkform(){
     
     if(document.frm.txtFname.value == ""){
         alert('กรุณากรอกชื่อจริง');
+	
         frm.txtFname.focus();
         return false;
     }else if(document.frm.txtLname.value == ''){
@@ -27,16 +33,6 @@ function chkForm(){
     }else if(document.frm.txtPhone.value == ''){
         alert('กรุณากรอกเบอร์โทรศัพท์');
         document.frm.txtPhone.focus();
-        return false;
-        
-    }else if(document.frm.txtUsername.value == ''){
-        alert('กรุณากรอกชื่อผู้ใช้งาน');
-        document.frm.txtUsername.focus();
-        return false;
-        
-    }else if(document.frm.txtPassword.value == ''){
-        alert('กรุณากรอกพาสเวิร์ด');
-        document.frm.txtPassword.focus();
         return false;
         
     }else if(document.frm.txtUniversityCode.value == ''){
@@ -58,10 +54,9 @@ function chkForm(){
         return false;
     }
 }
-    
-</script>
 
-    <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+</script>
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
 		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#64B5F6">		
@@ -70,56 +65,47 @@ function chkForm(){
     <td  valign="top">
 	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
 		<tr>
-<td colspan="2" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">แบบฟอร์มเพิ่มข้อมูลสินค้า</font></strong></div></td>			  
+<td colspan="2" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">แบบฟอร์มแก้ไขข้อมูลประเภทสินค้า</font></strong></div></td>			  
         </tr> 	
       <tr>
-        <td>
+        <td>	 
+ 
+ <form name="form4" id="myyes" action="save_edit_type_product.php" method="post" onsubmit="return chkform(this);">
+ <br />
+ 
 	<?php
-
-mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
-mysql_select_db($dbname) or die("MySQL select database failed");
-mysql_query("SET NAMES UTF8 ") or die (mysql_error());
-
-
 	
-	$sql = "select * from person  where Person_Fname like '%$idper%'";
-		
-	$result = mysql_query($sql) or die (mysql_error());
-	$row = mysql_fetch_array($result);
-	$per_level=$row['Person_Id'];
-	?>	
-		
-<form name="frm" action="save_data_product.php" enctype="multipart/form-data" method="post" onSubmit="return chkForm();">
-<br />
-
-<?php
-
-echo "รหัสสินค้า  : <input type='text' name ='Product_Code'><br /><br />";
-echo "ชื่อข้อมูลสินค้า  : <input type='text' name ='Product_Name'><br /><br />";
-echo "ราคา  : <input type='text' name ='Product_Price'><br /><br />";
-echo "จำนวนสินค้าคงเหลือ  : <input type='text' name ='Product_Stock'><br /><br />";
-echo "รูปภาพ  : <input type='file' name ='Product_picture'accept='image/*'><br /><br />";
-
-
+  if ($result->num_rows >0){
+	while($row = $result->fetch_assoc()){
+		header("location: main_admin.php");	
+	}
+ }else {
+ 
+ }
+$mysqli->close();
+	
+echo "<input type='hidden' name ='TypeP_Id' value='".$_GET[TypeP_Id]."'>";
+echo "<input type='hidden' name ='status' value='person'>";
+echo "ชื่อประเภทสินค้า  : <input type='text' name ='TypeP_Nametype' value='".$TypeP_Nametype."'><br /><br />";
 ?>
 
+		  
 	
-<input type="submit" name="subRegis" value="เพิ่มข้อมูล"/>&nbsp; &nbsp;
-<input type="button" name="submit" value="กลับ"onClick="jascript:history.go(-1)">
+				<input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
+				<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
+				
 
 <br /><br />
-            </form>
+			
+			</form>
 			</td>
-          </tr>	 	  
-		  
+          </tr>
         </table>
 		</td>
 		</tr>
-
         </table>
 		</td>	
 		</tr>
-
 </table>
 		</div>
 </div>

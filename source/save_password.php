@@ -55,7 +55,7 @@ $Person_confirm = $_POST["Person_confirm"];
 			if($_POST[mg]==null){
 				echo" <meta http-equiv='refresh' content='0; url=edit_password.php' />";
 			}else{
-				echo" <meta http-equiv='refresh' content='0; url=edit_mrg_password.php?Person_Id=$Person_Id' />";
+				echo" <meta http-equiv='refresh' content='0; url=edit_mrg_staff_password.php?Person_Id=$Person_Id' />";
 			}
 			//echo "<script> alert('รหัสผ่านเดิมไม่ถูกต้อง')</script>";
 			//echo" <meta http-equiv='refresh' content='0; url=edit_password.php' />";		
@@ -85,7 +85,7 @@ $sql = "update person set Person_Password='$Person_new' where Person_Id='$Person
 			if($_POST[mg]==null){
 					echo" <meta http-equiv='refresh' content='0; url=show_person.php' />";
 			}else if($_POST[status]=="person"){
-					echo" <meta http-equiv='refresh' content='0; url=mrg_person.php' />";
+					echo" <meta http-equiv='refresh' content='0; url=mrg_user.php' />";
 			}else{
 					echo" <meta http-equiv='refresh' content='0; url=mrg_staff.php?' />";
 			}	

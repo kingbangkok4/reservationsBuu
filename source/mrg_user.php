@@ -1,61 +1,36 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- //header("location: index.php");
- exit(); 
- }
- include("config.php");
- ?>
+<?php
+session_start ();
+include ("layout.php");
+include ("config.php");
+?>
+<div id="kk-content">
+	<div class="w3-container">
 
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<head>
-
-<body bgcolor=#FFCC99>
-
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
-  <tr align="center"> 
-  <td width="100%" colspan="2">
-<?php include"header.php";?>
-</td>
-  </tr > 
-  <tr align="center"> 
-  <td width="25%" >
-<?php include"menu_staff.php";?>
-</td>
-  <td width="75%" >
-  
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
 
-    <td width="80%" valign="top">
-<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFCC66" id="details1">		
+    <td width="100%" valign="top">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#64B5F6" id="details1">		
 		<tr height="50">
-<td colspan="8" height = "40" bgcolor="#FF6666"><div align="center"><strong><font size = "5">จัดการข้อมูลบุคลากร</font></strong></div></td>			  
+<td colspan="8" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">จัดการข้อมูลผู้ใช้</font></strong></div></td>			  
         </tr> 
 		
 		
 <form method="post" action="" >
-<table width="1200" border="0" align="center" cellpadding="0" cellspacing="0" >		
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" >		
 		<tr>
               <td>&nbsp;</td>
         </tr>
-            <tr bgcolor="#FFB6C1">
-				<td valign="top" bgcolor="#FFB6C1" align="">&nbsp;ค้นหาชื่อ-สกุล (จากบางคำ):</td>
+            <tr bgcolor="#64B5F6">
+				<td valign="top" bgcolor="#64B5F6" align="">&nbsp;ค้นหาชื่อ-สกุล (จากบางคำ):</td>
 				<td align="center" width=""><input type="text" name="idper" id="idper" /></td>
 				<td align="left">
 					<button type="submit" name="search" id="button"><img src="image/search.png" title="ปุ่มค้นหาชื่อลบุคลากร " /> </button>
 				</td> 				
 				
-				<td valign="top" bgcolor="#FFB6C1" align="right">เพิ่มข้อมูลผู้ใช้:&nbsp;</td>	
-				<td align="left" valign="top" bgcolor="#FFB6C1">
-					<a href="add_mrg_person.php"><button type="button" name="button" id="button"><img src="image/add.png" title="ปุ่มเพิ่มข้อมูลบุคลากร" /> </button> 
+				<td valign="top" bgcolor="#64B5F6" align="right">เพิ่มข้อมูลผู้ใช้:&nbsp;</td>	
+				<td align="left" valign="top" bgcolor="#64B5F6">
+					<a href="add_mrg_user.php"><button type="button" name="button" id="button"><img src="image/add.png" title="ปุ่มเพิ่มข้อมูลบุคลากร" /> </button> 
 				</td>				
             </tr>
 				
@@ -63,22 +38,18 @@ if($_SESSION["strUsername"] ==  null){
 </form>	
 
  <form method="post" action="" >
-<table width="1200" border="1" bordercolor="#FF9999" align="center" cellpadding="0" cellspacing="0" >
+<table width="100%" border="1" bordercolor="#64B5F6" align="center" cellpadding="0" cellspacing="0" >
         <tr>
-          <td width="" bgcolor="#FF6666"><div align="center">id</div></td>
-          <td width="" bgcolor="#FF6666"><div align="center">ชื่อผู้ใช้งาน</div></td>  	  
-          <td width="" bgcolor="#FF6666"><div align="center">รหัสผ่าน</div></td>
-          <td width="" bgcolor="#FF6666"><div align="center">ชื่อ - นามสกุล</div></td> 
-		  <!--<td width="" bgcolor="#FF9900"><div align="center">วันเดือนปีเกิด</div></td>-->
-          <td width="" bgcolor="#FF6666"><div align="center">เบอร์โทร</div></td>
-          <!--<td width="" bgcolor="#FF9900"><div align="center">อีเมล์</div></td>--> 	
-          <!--<td width="" bgcolor="#FF9900"><div align="center">สถานะ</div></td>-->
-          <!--<td width="" bgcolor="#FF9900"><div align="center">รหัสประจำตัว</div></td>-->
-          <td width="" bgcolor="#FF6666"><div align="center">คณะ</div></td> 	
-          <td width="" bgcolor="#FF6666"><div align="center">สาขา</div></td> 	
-          <td width="" bgcolor="#FF6666"><div align="center">แก้ไข</div></td>	
-          <td width="" bgcolor="#FF6666"><div align="center">แก้ไขรหัสผ่าน</div></td>
-          <td width="" bgcolor="#FF6666"><div align="center">ลบ</div></td>
+          <td width="" bgcolor="#90CAF9"><div align="center">id</div></td>
+          <td width="" bgcolor="#90CAF9"><div align="center">ชื่อผู้ใช้งาน</div></td>  	  
+          <td width="" bgcolor="#90CAF9"><div align="center">รหัสผ่าน</div></td>
+          <td width="" bgcolor="#90CAF9"><div align="center">ชื่อ - นามสกุล</div></td> 
+          <td width="" bgcolor="#90CAF9"><div align="center">เบอร์โทร</div></td>
+          <td width="" bgcolor="#90CAF9"><div align="center">คณะ</div></td> 	
+          <td width="" bgcolor="#90CAF9"><div align="center">สาขา</div></td> 	
+          <td width="" bgcolor="#90CAF9"><div align="center">แก้ไข</div></td>	
+          <td width="" bgcolor="#90CAF9"><div align="center">แก้ไขรหัสผ่าน</div></td>
+          <td width="" bgcolor="#90CAF9"><div align="center">ลบ</div></td>
         </tr>
 	
 <?php
@@ -136,18 +107,14 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
           <td align="center"><?=$row["Person_Username"]?></td>
           <td align="center"><?=$row["Person_Password"]?></td>
           <td align="center"><?=$row["Title_Id"]?> <?=$row["Person_Fname"]?> <?=$row["Person_Lname"]?></td>
-          <!--<td align="center"><?=$row["Person_Birthday"]?></td>-->
-          <td align="center"><?=$row["Person_Phone"]?></td>		  
-          <!--<td align="center"><?=$row["Person_email"]?></td>-->		
-          <!--<td align="center"><?=$row["Person_Position"]?></td>-->		    
-          <!--<td align="center"><?=$row["Person_UniversityCode"]?></td>-->		  	    
+          <td align="center"><?=$row["Person_Phone"]?></td>		  	    
           <td align="center"><?=$Faculty?></td>		  
           <td align="center"><?=$Branch?></td>		  
 
 
 
 		  
-          <td align="center"><a href="edit_mrg_person.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/ed.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg_user.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/ed.png" width="24" height="24" border="0" /></a></td>
           <td align="center"><a href="edit_person_password.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/pass.png" width="24" height="24" border="0" /></a></td>
           <td align="center"><a href="delete_person.php?Person_Id=<?=$row["Person_Id"]?>" onclick="return confirm ('ยืนยันการลบข้อมูลบุคลากร') "><img src="image/Delete_Icon.png" width="24" height="24" border="0" /></a></td>
         </tr>
@@ -213,7 +180,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 
 		  
  		  
-          <td align="center"><a href="edit_mrg.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/ed.png" width="24" height="24" border="0" /></a></td>
+          <td align="center"><a href="edit_mrg_staff.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/ed.png" width="24" height="24" border="0" /></a></td>
           <td align="center"><a href="edit_person_password.php?Person_Id=<?=$row["Person_Id"]?>"><img src="image/pass.png" width="24" height="24" border="0" /></a></td>
           <td align="center"><a href="delete_mrg.php?Person_Id=<?=$row["Person_Id"]?>" onclick="return confirm ('ยืนยันการลบข้อมูลบุคลากร') "><img src="image/Delete_Icon.png" width="24" height="24" border="0" /></a></td>
          </tr>
@@ -234,29 +201,19 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 
 
 
+
 	  
 </table>
 </form>		  
 	  
-	  
-
-
-	  
+    
       </table>
 	  </td>
 
   </tr>
-  		<tr>
-              <td bgcolor="#FF9999" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
 </table>
 
-</td>
-  </tr>  
-</table>
-   
 
+</div>
+</div>
 
-</body>
-</head>
-</html>

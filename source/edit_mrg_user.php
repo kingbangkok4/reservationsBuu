@@ -2,8 +2,8 @@
 session_start ();
 include ("layout.php");
 include ("config.php");
- 
-	$strSQL = "SELECT * FROM person WHERE Person_Username='".$_SESSION[strUsername]."'";
+
+	$strSQL = "SELECT * FROM person WHERE Person_Id='".$_GET[Person_Id]."'";
 	$objQuery = $mysqli->query($strSQL);
 	$objResult = $objQuery->fetch_assoc();
 	$Fname=$objResult[Person_Fname];
@@ -26,10 +26,10 @@ include ("config.php");
 	$objResultbranch = $objQuerybranch->fetch_assoc();
 	$Branch=$objResultbranch[Branch_Name];
  ?>
-
- <div id="kk-content">
-	<div class="w3-container">   	
-
+<div id="kk-content">
+	<div class="w3-container">
+	
+	
 <script type="text/javascript">
 function chkForm(){
     
@@ -83,17 +83,15 @@ function chkForm(){
     <td  valign="top">
 	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
 		<tr>
-<td colspan="2" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">แบบฟอร์มแก้ไขข้อมูลส่วนตัว</font></strong></div></td>			  
+<td colspan="2" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">แบบฟอร์มแก้ไขข้อมูลผู้ใช้</font></strong></div></td>			  
         </tr> 	
       <tr>
-        <td>	
-
-<form name="frm" action="save_person.php" method="post" onSubmit="return chkForm();">
-	  
+        <td>	 
+ 
+ <form name="form4" id="myyes" action="save_person.php" method="post" onsubmit="return chkform(this);">
  <br />
 	<?php
 	
-	//$result = $mysqli->query($sql);
 
   if ($result->num_rows >0){
 	while($row = $result->fetch_assoc()){
@@ -103,29 +101,21 @@ function chkForm(){
  
  }
 $mysqli->close();
+
+echo "<input type='hidden' name ='Person_Id' value='".$_GET[Person_Id]."'>";
 echo "ชื่อจริง  : <input type='text' name ='txtFname' value='".$Fname."'><br /><br />";
 echo "นามสกุล  : <input type='text' name ='txtLname' value='".$Lname."'><br /><br />";
 echo "วันเดือนปีเกิด : ";
 ?>
-<input type='date' name ='birthday' value='<?=$Birthday?>'>
-
-<br /><br />
-
-<?php
+<input type='date' name ='birthday' value='<?=$Birthday?>'><br /><br />
+<?php 
 echo "อีเมล  : <input type='text' name ='txtemail'  value='".$Email."'><br /><br />";
 echo "เบอร์โทร : <input type='tel' name ='txtPhone'   value='".$Phone."' id ='Phone' minlength = '9' maxlength = '10'><br /><br />";
 echo "รหัสประจำตัว  : <input type='int' name ='txtUniversityCode'   value='".$UniCode."' id ='Unicode'><br /><br />";
 echo "สถานะ  : ";?>
     <select name = 'txtPosition' id="Position">
-	<?
-		if($Position!=null){
-			echo "<option value='$Position'>$Position</option>";	
-		}else{
-			echo "<option value=''>เลือกสถานะ</option>";
-		}
-	?>
-			<option value='นักศึกษา'>นักศึกษา</option>
-			<option value='อาจารย์'>อาจารย์</option>
+            <option value='student'>Student</option>
+            <option value='teacher'>Teacher</option>
     </select><br /><br />
 	
     <a id="showFac">คณะ : </a>
@@ -161,15 +151,17 @@ echo "สถานะ  : ";?>
 		<option value='8'>สาขาเทคโนโลยีผลิตภัณฑ์ธรรมชาติ</option>
 		<option value='9'>สาขาวิชาการจัดการ</option>
 	
-    </select>
-<br /><br />
+    </select><br /><br />
+
+
+
+
 <input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
 <input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
 
-<p id="showfac"></p>
-<p id="showbra"></p>
-
-</form>
+<br /><br />
+			
+			</form>
 			</td>
           </tr>
         </table>

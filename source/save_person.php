@@ -121,7 +121,7 @@ Person_Position='$Person_Position',Fac_Id='$Fac_Id',Branch_Id='$Branch_Id' where
 						 
 					}
 			}else if($_POST[status]=="person"){
-					echo" <meta http-equiv='refresh' content='0; url=mrg_person.php' />";
+					echo" <meta http-equiv='refresh' content='0; url=mrg_user.php' />";
 			}else {
 					echo" <meta http-equiv='refresh' content='0; url=mrg_staff.php' />";
 			}

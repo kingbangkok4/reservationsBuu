@@ -88,7 +88,7 @@ function chkForm(){
       <tr>
         <td>	 
  
- <form name="form4" id="myyes" action="save_person.php" method="post" onsubmit="return checkform(this);">
+ <form name="form4" id="myyes" action="save_person.php" method="post" onsubmit="return chkform(this);">
  <br />
 	<?php
 	
@@ -158,9 +158,7 @@ echo "สถานะ  : ";?>
 <input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
 <input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
 
-<p id="showfac"></p>
-<p id="showbra"></p>
-		
+<br /><br />
 			
 			</form>
 			</td>
