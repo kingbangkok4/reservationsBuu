@@ -12,6 +12,7 @@ function chkForm(){
         alert('กรุณากรอกชื่อจริง');
         frm.txtFname.focus();
         return false;
+        
     }else if(document.frm.txtLname.value == ''){
         alert('กรุณากรอกนามสกุล');
         document.frm.txtLname.focus();
@@ -46,10 +47,12 @@ function chkForm(){
         alert('กรุณาเลือกสถานะ');
         document.frm.txtPosition.focus();
         return false;
+        
     }else if(document.frm.Month.value == ''){
         alert('กรุณาเลือกเดือน');
         document.frm.Month.focus();
         return false;
+        
     }else if(document.frm.Day.value == ''){
         alert('กรุณาเลือกวันที่');
         document.frm.Day.focus();
@@ -62,6 +65,7 @@ function CheckNum(){
     	}
 }
 </script>
+<br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
@@ -228,7 +232,8 @@ echo "สถานะ  : ";?>
         </table>
 		</td>	
 		</tr>
-
 </table>
+<br />
+
 		</div>
 </div>

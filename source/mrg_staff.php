@@ -6,6 +6,7 @@ include ("config.php");
 <div id="kk-content">
 	<div class="w3-container">
 
+<br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
 
@@ -213,7 +214,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 
   </tr>
 </table>
-
+<br />
 
 </div>
 </div>

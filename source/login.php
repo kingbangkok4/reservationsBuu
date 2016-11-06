@@ -1,5 +1,6 @@
 <?php
 session_start ();
+session_unset();
 session_destroy ();
 include ("layout.php");
 ?>
@@ -8,23 +9,22 @@ include ("layout.php");
 		alt="ระบบสั่งจองสินค้าในมหาวิทยาลัยบุรพา วิทยาเขตสระแก้ว"
 		style="width: 100%">
 	<div class="w3-container">
-		<br /> <br />
-		<div class="w3-center">Click Here!!!</div>
+		<br />
+		<div class="w3-center">กดปุ่มเพื่อสมัครสมาชิก!!!</div>
+		<br />
 		<div class="w3-center">
 			<a href="regis.php"> <img src="./image/pic_1.jpg" /></a>
 		</div>
-		<br /> <br />
+		<br />
 		<div class="w3-center">-------------------------------------------------</div>
-		<br /> <br />
-		<div class="w3-center">เข้าสู่ระบบ</div>
 		<br />
 		<form name="form1" method="post" action="check_login.php"
 			class="w3-center">
-			Username : <input type="text" name='txtUsername'> <br> <br> Password
+			ชื่อผู้ใช้ : <input type="text" name='txtUsername'> <br> <br> รหัสผ่าน
 			: <input type="password" name='txtPassword'> 
 <? echo $code_error;?>
-<br> <br> <input type="submit" name="Submit" value="Login">
+<br> <br> <input type="submit" name="Submit" value="เข้าสู่ระบบ">
 		</form>
-		<br> <br>
+		<br />
 	</div>
 </div>

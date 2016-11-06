@@ -56,6 +56,7 @@ function chkform(){
 }
 
 </script>
+<br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
@@ -92,7 +93,7 @@ echo "ชื่อประเภทสินค้า  : <input type='text' nam
 		  
 	
 				<input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
-				<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
+				<input name="" id="" type="button" onClick="javascript:window.location.href='mrg_type_product.php';" value="ยกเลิก" />
 				
 
 <br /><br />
@@ -107,5 +108,7 @@ echo "ชื่อประเภทสินค้า  : <input type='text' nam
 		</td>	
 		</tr>
 </table>
+<br />
+
 		</div>
 </div>

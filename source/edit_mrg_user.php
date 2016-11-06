@@ -74,6 +74,7 @@ function chkForm(){
 }
 
 </script>
+<br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
@@ -157,7 +158,7 @@ echo "สถานะ  : ";?>
 
 
 <input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
-<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
+<input name="" id="" type="button" onClick="javascript:window.location.href='mrg_user.php';" value="ยกเลิก" />
 
 <br /><br />
 			
@@ -171,5 +172,6 @@ echo "สถานะ  : ";?>
 		</td>	
 		</tr>
 </table>
+<br />
 		</div>
 </div>

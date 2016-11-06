@@ -74,6 +74,7 @@ function chkForm(){
 }
 
 </script>
+<br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
@@ -117,15 +118,7 @@ echo "เบอร์โทร : <input type='tel' name ='txtPhone'   value='".$
 echo "รหัสประจำตัว  : <input type='int' name ='txtUniversityCode'   value='".$UniCode."' id ='Unicode'><br /><br />";
 echo "สถานะ  : ";?>
     <select name = 'txtPosition' id="Position">
-	<?
-		if($Position!=null){
-			echo "<option value='$Position'>$Position</option>";	
-		}else{
-			echo "<option value=''>เลือกสถานะ</option>";
-		}
-	?>
-			<option value='นักศึกษา'>นักศึกษา</option>
-			<option value='อาจารย์'>อาจารย์</option>
+			<option value="admin">ผู้ดูแลระบบ</option>
     </select><br /><br />
 	
     <a id="showFac">คณะ : </a>
@@ -179,5 +172,7 @@ echo "สถานะ  : ";?>
 		</td>	
 		</tr>
 </table>
+<br />
+
 		</div>
 </div>

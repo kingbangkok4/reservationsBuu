@@ -39,7 +39,7 @@ include ("config.php");
 	?>
 	<div id="kk-content">
 	<div class="w3-container">
-	
+	<br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
@@ -49,7 +49,7 @@ include ("config.php");
     <td  valign="top">
 	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
 		<tr>
-<td colspan="2" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">บันทึกข้อมูลเจ้าหน้าที่</font></strong></div></td>			  
+<td colspan="2" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">บันทึกข้อมูลเจ้าหน้าที่สำเร็จ</font></strong></div></td>			  
         </tr> 	
       <tr>
         <td>	 
@@ -96,5 +96,7 @@ include ("config.php");
 		</td>	
 		</tr>
 </table>
+<br />
+
 		</div>
 </div>

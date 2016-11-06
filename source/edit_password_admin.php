@@ -63,6 +63,7 @@ if(document.form4.Person_confirm.value == ""){
 }
 
 </script>
+<br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
@@ -121,5 +122,8 @@ if(document.form4.Person_confirm.value == ""){
 		</td>	
 		</tr>
 </table>
+
+
+<br />
 		</div>
 </div>

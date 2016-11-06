@@ -5,7 +5,7 @@ include ("config.php");
 ?>
 <div id="kk-content">
 	<div class="w3-container">
-
+<br />
 <table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
   
@@ -113,5 +113,5 @@ $mysqli->close();
 	  
   </tr>
 </table>
-
+<br />
   </div></div>
