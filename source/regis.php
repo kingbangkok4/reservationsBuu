@@ -4,8 +4,7 @@ include ("layout.php");
 ?>
 <div id="kk-content">
 	<div class="w3-container">
-
-<script type="text/javascript">
+	<script type="text/javascript">
 $(document).ready(function(){
                   $("#Phone").numeric();
                   $("#Unicode").numeric();
@@ -120,8 +119,22 @@ function chkForm(){
 
 </script>
 
+	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr>
+    <td  valign="top">	
+		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC">		
+	<tr>
+	
+    <td  valign="top">
+	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
+		<tr>
+<td colspan="2" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">แบบฟอร์มสมัครสมาชิก</font></strong></div></td>			  
+        </tr> 	
+      <tr>
+        <td>
+
 <form name="frm" action="save.php" method="post" onSubmit="return chkForm();">
-<br/>
+<br />
 <a id="showtitle">เลือกคำนำหน้าช่ื่อ : </a>
     <select name = "Title_Id" id="Title_Id">
     <option value="">เลือกคำนำหน้าชื่อ</option>
@@ -132,11 +145,11 @@ function chkForm(){
 	<option value="ดร.">ดร.</option>
 	
     </select>
-<br>
+<br /><br />
 <?php
 
-echo "ชื่อจริง  : <input type='text' name ='txtFname'><br>";
-echo "นามสกุล  : <input type='text' name ='txtLname'><br>";
+echo "ชื่อจริง  : <input type='text' name ='txtFname'><br /><br />";
+echo "นามสกุล  : <input type='text' name ='txtLname'><br /><br />";
 echo "วันเดือนปีเกิด : ";
 ?>
 <select name="Day" id="Day">
@@ -203,20 +216,20 @@ echo "วันเดือนปีเกิด : ";
  				?>
 
 </select> &nbsp;&nbsp;	
-<br>
+<br /><br />
 
 <?php
-echo "อีเมล  : <input type='text' name ='txtemail'><br>";
-echo "เบอร์โทร : <input type='tel' name ='txtPhone' id ='Phone' minlength = '9' maxlength = '10'><br>";
-echo "ชื่อผู้ใช้งาน  : <input type='text' name ='txtUsername'><br>";
-echo "รหัสผ่าน  : <input type='password' name ='txtPassword'><br>";
-echo "รหัสประจำตัว  : <input type='int' name ='txtUniversityCode' id ='Unicode'><br>";
+echo "อีเมล  : <input type='text' name ='txtemail'><br /><br />";
+echo "เบอร์โทร : <input type='tel' name ='txtPhone' id ='Phone' minlength = '9' maxlength = '10'><br /><br />";
+echo "ชื่อผู้ใช้งาน  : <input type='text' name ='txtUsername'><br /><br />";
+echo "รหัสผ่าน  : <input type='password' name ='txtPassword'><br /><br />";
+echo "รหัสประจำตัว  : <input type='int' name ='txtUniversityCode' id ='Unicode'><br /><br />";
 echo "สถานะ  : ";?>
     <select name = 'txtPosition' id="Position">
             <option value=''>เลือกสถานะ</option>
 			<option value='student'>นักศึกษา</option>
 			<option value='teacher'>อาจารย์</option>
-    </select><br>
+    </select><br /><br />
 	
     <a id="showFac">คณะ : </a>
     <select name = 'Faculty' id="Faculty">
@@ -224,7 +237,7 @@ echo "สถานะ  : ";?>
     <option value='1'>คณะวิทยาศาสตร์และสังคมศาสตร์</option>
     <option value='2'>คณะเทคโนโลยีการเกษตร</option>
     <option value='3'>พาณิชยศาสตร์และบริหารธุรกิจ</option>
-    </select><br>
+    </select><br /><br />
     
     <a id="showBranch">สาขา : </a>
     <select name = 'Branch' id="Branch">
@@ -242,12 +255,23 @@ echo "สถานะ  : ";?>
     </select>
     <br/><br/>
 <input type="submit" name="subRegis" value="สมัครสมาชิก"/>&nbsp; &nbsp;
-<input type="button" value="กลับ" onclick="window.location.href="/>
-<a href="login.php" disabled></a>
+<input type="button" value="กลับ" onclick="javascript:window.location.href='login.php'"/>
 
 <p id="showfac"></p>
 <p id="showbra"></p>
 
 </form>
+</td>
+          </tr>	 	  
+		  
+        </table>
+		</td>
+		</tr>
+
+        </table>
+		</td>	
+		</tr>
+
+</table>
 </div>
 </div>

@@ -1,59 +1,35 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- //header("location: index.php");
- exit(); 
- }
- include("config.php");
- ?>
+<?php
+session_start ();
+include ("layout.php");
+include ("config.php");
+?>
+<div id="kk-content">
+	<div class="w3-container">
 
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<head>
-
-<body bgcolor=#FFCC99>
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
-  <tr align="center"> 
-  <td width="100%" colspan="2">
-<?php include"header.php";?>
-</td>
-  </tr > 
-  <tr align="center"> 
-  <td width="25%" >
-<?php include"menu_admin.php";?>
-</td>
-  <td width="75%" >
-  
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
 
-    <td width="80%" valign="top">
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FF3333" id="details1">		
+    <td width="100%" valign="top">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#E57373" id="details1">		
 		<tr height="50">
-<td colspan="8" height = "40" bgcolor="#FF3333"><div align="center"><strong><font size = "5">จัดการข้อมูลเจ้าหน้าที่</font></strong></div></td>			  
+<td colspan="8" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">จัดการเจ้าหน้าที่</font></strong></div></td>			  
         </tr> 
 		
 		
 <form method="post" action="" >
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" >		
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" >		
 		<tr>
               <td>&nbsp;</td>
         </tr>
-            <tr bgcolor="#FF3333">
-				<td valign="top" bgcolor="#FF3333" align="">&nbsp;ค้นหาชื่อ-สกุล (จากบางคำ):</td>
+            <tr bgcolor="#E57373">
+				<td valign="top" bgcolor="#E57373" align="">&nbsp;ค้นหาชื่อ-สกุล (จากบางคำ):</td>
 				<td align="center" width=""><input type="text" name="idper" id="idper" /></td>
 				<td align="left">
 					<button type="submit" name="search" id="button"><img src="image/5search.png" title="ปุ่มค้นหาชื่อลบุคลากร " /> </button>
 				</td> 				
 				
-				<td valign="top" bgcolor="#FF3333" align="right">เพิ่มข้อมูลบุคลากร :&nbsp;</td>	
-				<td align="left" valign="top" bgcolor="#FF3333">
+				<td valign="top" bgcolor="#E57373" align="right">เพิ่มเจ้าหน้าที่:&nbsp;</td>	
+				<td align="left" valign="top" bgcolor="#E57373">
 					<a href="add_mrg_staff.php"><button type="button" name="button" id="button"><img src="image/9add.png" title="ปุ่มเพิ่มข้อมูลบุคลากร" /> </button> 
 				</td>				
             </tr>
@@ -62,22 +38,22 @@ if($_SESSION["strUsername"] ==  null){
 </form>	
 
  <form method="post" action="" >
-<table width="900" border="1" bordercolor="#FF3333" align="center" cellpadding="0" cellspacing="0" >
+<table width="100%" border="1" bordercolor="#E57373" align="center" cellpadding="0" cellspacing="0" >
         <tr>
-          <td width="" bgcolor="#FF6633"><div align="center">id</div></td>
-          <td width="" bgcolor="#FF6633"><div align="center">ชื่อผู้ใช้งาน</div></td>  	  
-          <td width="" bgcolor="#FF6633"><div align="center">รหัสผ่าน</div></td>
-          <td width="" bgcolor="#FF6633"><div align="center">ชื่อ - นามสกุล</div></td> 
+          <td width="" bgcolor="#EF9A9A"><div align="center">id</div></td>
+          <td width="" bgcolor="#EF9A9A"><div align="center">ชื่อผู้ใช้งาน</div></td>  	  
+          <td width="" bgcolor="#EF9A9A"><div align="center">รหัสผ่าน</div></td>
+          <td width="" bgcolor="#EF9A9A"><div align="center">ชื่อ - นามสกุล</div></td> 
 		  <!--<td width="" bgcolor="#FF9900"><div align="center">วันเดือนปีเกิด</div></td>-->
-          <td width="" bgcolor="#FF6633"><div align="center">เบอร์โทร</div></td>
+          <td width="" bgcolor="#EF9A9A"><div align="center">เบอร์โทร</div></td>
           <!--<td width="" bgcolor="#FF9900"><div align="center">อีเมล์</div></td>--> 	
           <!--<td width="" bgcolor="#FF9900"><div align="center">สถานะ</div></td>-->
           <!--<td width="" bgcolor="#FF9900"><div align="center">รหัสประจำตัว</div></td>-->
-          <td width="" bgcolor="#FF6633"><div align="center">คณะ</div></td> 	
-          <td width="" bgcolor="#FF6633"><div align="center">สาขา</div></td> 	
-          <td width="" bgcolor="#FF6633"><div align="center">แก้ไข</div></td>	
-          <td width="" bgcolor="#FF6633"><div align="center">แก้ไขรหัสผ่าน</div></td>
-          <td width="" bgcolor="#FF6633"><div align="center">ลบ</div></td>
+          <td width="" bgcolor="#EF9A9A"><div align="center">คณะ</div></td> 	
+          <td width="" bgcolor="#EF9A9A"><div align="center">สาขา</div></td> 	
+          <td width="" bgcolor="#EF9A9A"><div align="center">แก้ไข</div></td>	
+          <td width="" bgcolor="#EF9A9A"><div align="center">แก้ไขรหัสผ่าน</div></td>
+          <td width="" bgcolor="#EF9A9A"><div align="center">ลบ</div></td>
         </tr>
 	
 <?php
@@ -88,7 +64,6 @@ mysql_connect($dbhost,$dbuser,$dbpass) or die("MySQL connect failed");
 mysql_select_db($dbname) or die("MySQL select database failed");
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
-	include("config.php");
 	
 		$sql = "select * from person  where Person_Fname like '%$idper%' and Person_Position='staff'";
 		//ของstaff จัดการข้อมูลนิสิต และอาจารย์ $sql = "select * from person  where Person_Fname like '%$idper%' and Person_Position='student' and Person_Position='teacher'";
@@ -226,13 +201,6 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 		
 }
 ?>  
-
-
-
-
-
-
-	  
 </table>
 </form>		  
 	  
@@ -244,17 +212,9 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 	  </td>
 
   </tr>
-  		<tr>
-              <td bgcolor="#FFDAB9" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
 </table>
 
-</td>
-  </tr>  
-</table>
-   
 
+</div>
+</div>
 
-
-</head>
-</html>

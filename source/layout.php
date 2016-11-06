@@ -32,7 +32,8 @@ function w3_close() {
 <nav class="w3-sidenav w3-white w3-card-2" style="display:none" id="mySidenav">
   <a href="javascript:void(0)"
   onclick="w3_close()"
-  class="w3-closenav w3-large">Close &times;</a>
+  class="w3-closenav w3-large">ปิด &times;</a>
+  <!-- 
   <a href="#">Link 1</a>
   <a href="#">Link 2</a>
   <a href="#">Link 3</a>
@@ -47,12 +48,29 @@ function w3_close() {
       </div>
   </div>
   <a href="#">Link 7</a>
+   -->
+  <?php
+  if ($_SESSION["Login_Position"] == "admin") {
+  	include ("menu_admin.php");
+  } elseif ($_SESSION["Login_Position"] == "staff") {
+  	include ("menu_staff.php");
+  } elseif ($_SESSION["Login_Position"] == "student" || $_SESSION["Login_Position"] == "teacher") {
+  	include ("menu_user.php");
+  } else {
+  	
+  }
+  ?>
 </nav>
 
 <div id="main">
 
 <header class="w3-container w3-teal">
   <span class="w3-opennav w3-xlarge" onclick="w3_open()" id="openNav">&#9776;</span>
+  <?php if (isset ( $_SESSION["strUsername"])) {
+  ?>
+  <span class="w3-right">ผู้ใช้: <span style="font-weight: bold;"><?=$_SESSION["strUsername"]?></span></span>
+  <?php }
+  ?>
   <h1 class="w3-center">ระบบสั่งจองสินค้าในมหาวิทยาลัยบุรพา วิทยาเขตสระแก้ว</h1>
 </header>
 

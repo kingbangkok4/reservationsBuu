@@ -1,10 +1,11 @@
 <?php
 
-include("config.php");
+include ("config.php");
+include ("layout.php");
 ?>
 
-
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<div id="kk-content">
+	<div class="w3-container">
 <?php
 
 	if($_SERVER['REQUEST_METHOD'] == 'POST'){
@@ -67,4 +68,8 @@ include("config.php");
         $mysqli->close();
 
 ?>
-<br><a href="login.php">BACK</a><p> 
+<br>
+<input type="button" value="กลับ" onclick="javascript:window.location.href='login.php'"/>
+
+</div>
+</div> 

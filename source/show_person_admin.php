@@ -1,31 +1,26 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- //header("location: index.php");
- exit(); 
- }
+<?php
+session_start ();
+include ("layout.php");
+include ("config.php");
+?>
+<div id="kk-content">
+	<div class="w3-container">
 
- ?>
- <body bgcolor=#FFCC99>
-<?php include"header.php";?>
 <table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-  	<td><br /></td>
-  </tr>
   <tr> 
   
 
 
-    <td width="80%" valign="top">	
-		<table width="750" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#FF6666">		
+    <td width="100%" valign="top">	
+		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#E57373">		
 	<tr>
-			  <td colspan="2" height = "40" bgcolor="#FF6666"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
+			  <td colspan="2" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
         </tr> 
 	<tr>
 	
 
-    <td width="80%" valign="top">
-	<table width="750" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
+    <td width="100%" valign="top">
+	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
       <tr>
         <td>&nbsp;</td>
       </tr>	
@@ -34,7 +29,6 @@ if($_SESSION["strUsername"] ==  null){
       <tr>
 <td>
 	<?php
-	include "config.php";
 	
 	$strSQL = "SELECT * FROM person WHERE Person_Username='".$_SESSION[strUsername]."'";
 	$objQuery = $mysqli->query($strSQL);
@@ -117,12 +111,6 @@ $mysqli->close();
 
 	  
   </tr>
-  <tr>
-  	<td><br /></td>
-  </tr>
-  <tr>
-              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
 </table>
 
-  
+  </div></div>
