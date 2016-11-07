@@ -92,6 +92,17 @@ function chkForm(){
  
  <form name="form4" id="myyes" action="save_person.php" method="post" onsubmit="return chkform(this);">
  <br />
+<a id="showtitle">เลือกคำนำหน้าช่ื่อ : </a>
+    <select name = "Title_Id" id="Title_Id">
+    <option value="">เลือกคำนำหน้าชื่อ</option>
+	<option value="นาย">นาย</option>
+	<option value="นางสาว">นางสาว</option>
+	<option value="อาจารย์">อาจารย์</option>
+	<option value="ว่าที่ร้อยตรี">ว่าที่ร้อยตรี</option>
+	<option value="ดร.">ดร.</option>
+	
+    </select>
+<br /><br />
 	<?php
 	
 
@@ -158,7 +169,7 @@ echo "สถานะ  : ";?>
 
 
 <input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
-<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
+<input name="" id="" type="button" onClick="javascript:window.location.href='mrg_staff.php';" value="ยกเลิก" />
 
 <br /><br />
 			

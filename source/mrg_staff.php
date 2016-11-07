@@ -45,11 +45,7 @@ include ("config.php");
           <td width="" bgcolor="#EF9A9A"><div align="center">ชื่อผู้ใช้งาน</div></td>  	  
           <td width="" bgcolor="#EF9A9A"><div align="center">รหัสผ่าน</div></td>
           <td width="" bgcolor="#EF9A9A"><div align="center">ชื่อ - นามสกุล</div></td> 
-		  <!--<td width="" bgcolor="#FF9900"><div align="center">วันเดือนปีเกิด</div></td>-->
           <td width="" bgcolor="#EF9A9A"><div align="center">เบอร์โทร</div></td>
-          <!--<td width="" bgcolor="#FF9900"><div align="center">อีเมล์</div></td>--> 	
-          <!--<td width="" bgcolor="#FF9900"><div align="center">สถานะ</div></td>-->
-          <!--<td width="" bgcolor="#FF9900"><div align="center">รหัสประจำตัว</div></td>-->
           <td width="" bgcolor="#EF9A9A"><div align="center">คณะ</div></td> 	
           <td width="" bgcolor="#EF9A9A"><div align="center">สาขา</div></td> 	
           <td width="" bgcolor="#EF9A9A"><div align="center">แก้ไข</div></td>	

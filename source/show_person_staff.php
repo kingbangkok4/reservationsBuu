@@ -5,31 +5,14 @@ include ("config.php");
 ?>
 <div id="kk-content">
 	<div class="w3-container">
-
-<table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-  
-
-
-    <td width="100%" valign="top">	
-		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#64B5F6">		
+<br />
+		<table width="100%" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#64B5F6">		
 	<tr>
-			  <td colspan="2" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
+			  <td height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
         </tr> 
 	<tr>
-	
-
-    <td width="100%" valign="top">
-	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
-      <tr>
-        <td>&nbsp;</td>
-      </tr>	
-			
-	
-      <tr>
 <td>
 	<?php
-	include "config.php";
 	
 	$strSQL = "SELECT * FROM person WHERE Person_Username='".$_SESSION[strUsername]."'";
 	$objQuery = $mysqli->query($strSQL);
@@ -63,8 +46,6 @@ include ("config.php");
  }
 $mysqli->close();
 	?>
-</td>
-      </tr>	
       <br />
 <?	  
 		echo "ชื่อจริง: ".$Fname."<br /><br />";
@@ -83,38 +64,18 @@ $mysqli->close();
 		VALUES('".$Fname."', '".$Lname."', '".$Birthday."', '".$Email."', ".$Phone.", '".$Username."',  '".$Password."', ".$UniCode.",'".$Position."',".$Faculty.",".$Branch.");";
 ?>
 
-
-
-
-</tr>
-	  
-		  
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td colspan="2"><label></label>
-              <label>
-	  
               
-              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_person_staff.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_password_staff.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="main_staff.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>
-			</label>
+             <a href="edit_person_staff.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a>&nbsp;&nbsp;
+             <a href="edit_password_staff.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a>&nbsp;&nbsp;
+             <a href="main_staff.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a>
 			
-			</td>
+
+				<br /><br />
 			
-          </tr>
-      </table>
-	  </td>
-	  
-		</tr>
-        </table>
 		</td>	
 
 	  
   </tr>
 </table>
-
+<br />
   </div></div>

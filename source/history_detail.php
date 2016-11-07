@@ -1,48 +1,35 @@
 <?php
-session_start();
+session_start ();
+include ("layout.php");
+include ("config.php");
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>ตะกร้าสินค้า</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<?php
-    
-if(!isset($_SESSION["strPerson_Id"]))
-{
-	
-    header("location:login.php");
-	exit();
-}
+<div id="kk-content">
+	<div class="w3-container">
 
+<br />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
 
-    include("config.php");
+    <td width="100%" valign="top">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC" id="details1">		
+		<tr height="50">
+<td colspan="8" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">ประวัติการสั่งซื้อ</font></strong></div></td>			  
+        </tr> 
 
-
-?>
-<body bgcolor=#FFCC99>
-<?php include"header.php";?>
-<table width="100%"  border="0">
-<tr>
-<td><br /></td>
-</tr>
-<tr>
-<td>
-<table width="400"  border="1" align="center">
-  <tr bgcolor="#FF6666">
-    <td width="100"><center>Order ID</center></td>
-    <td width="100"><center>Product Code</center></td>
-    <td width="100"><center>Product Name</center></td>
-    <td width=""><center>Picture</center></td>
-    <td width="80"><center>Qty</center></td>
-    <td width="80"><center>Price</center></td>
-    <td width="80"><center>Total Price</center></td>
-    <td width="80"><center>Type</center></td>
-    <td width="100"><center>Approval Status</center></td>
-    <td width="100"><center>Status</center></td>
-    <td width="150"><center>Post Script</center></td>
+<form action="history_detail.php" method="post">		
+<table width="100%" border="1" bordercolor="#4DB6AC" align="center" cellpadding="0" cellspacing="0" >
+  <tr bgcolor="#80CBC4">
+    <td ><center>Order ID</center></td>
+    <td ><center>Product Code</center></td>
+    <td ><center>Product Name</center></td>
+    <td ><center>Picture</center></td>
+    <td ><center>Qty</center></td>
+    <td ><center>Price</center></td>
+    <td ><center>Total Price</center></td>
+    <td ><center>Type</center></td>
+    <td ><center>Approval Status</center></td>
+    <td ><center>Status</center></td>
+    <td ><center>Post Script</center></td>
 
 
   </tr>
@@ -50,9 +37,10 @@ if(!isset($_SESSION["strPerson_Id"]))
 
 	  if(isset($_POST["txtOrder_Id"]))
 	  {
-          
+
 		$strSQL = "SELECT orders_detail.* , product.* FROM orders_detail, product WHERE orders_detail.Order_Id = '".$_POST["txtOrder_Id"]."' and orders_detail.Product_Code = product.Product_Code";
 		$objQuery = mysqli_query($mysqli,$strSQL);
+		
 		while($objResult = mysqli_fetch_array($objQuery)){
 	  ?>
 	  <tr>
@@ -76,25 +64,21 @@ if(!isset($_SESSION["strPerson_Id"]))
   
   ?>
 
-        
+
 </table>
-</td>
-</tr>
-<tr>
-<td style="text-align: center;">
-<a href="print.php?Order_Id=<?$_POST["txtOrder_Id"]?>">Print</a>
-</td>
-</tr>
-<tr>
-<td><br /></td>
-</tr>
-<tr>
-              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
+
+<br />
+<input name="" id="" type="button" onClick="javascript:window.location.href='print.php?Order_Id=<?=$_POST["txtOrder_Id"]?>';" value="พิมพ์รายงาน" />
+</form>		  
+	  
+
+      </table>
+	  </td>
+
+  </tr>
 </table>
-<?php
-mysqli_close($mysqli);
-?>
-</body>
-</html>
+<br />
+
+</div>
+</div>
 

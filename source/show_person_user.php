@@ -1,40 +1,18 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- //header("location: index.php");
- exit(); 
- }
-
- ?>
- <body bgcolor=#FFCC99>
-<?php include"header.php";?>
-<table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-  	<td><br /></td>
-  </tr>
-  <tr> 
-  
-
-
-    <td width="80%" valign="top">	
-		<table width="750" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#FF6666">		
+<?php
+session_start ();
+include ("layout.php");
+include ("config.php");
+?>
+<div id="kk-content">
+	<div class="w3-container">
+<br />
+		<table width="100%" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC">		
 	<tr>
-			  <td colspan="2" height = "40" bgcolor="#FF6666"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
+			  <td height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
         </tr> 
 	<tr>
-	
-
-    <td width="80%" valign="top">
-	<table width="750" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
-      <tr>
-        <td>&nbsp;</td>
-      </tr>	
-			
-	
-      <tr>
 <td>
 	<?php
-	include "config.php";
 	
 	$strSQL = "SELECT * FROM person WHERE Person_Username='".$_SESSION[strUsername]."'";
 	$objQuery = $mysqli->query($strSQL);
@@ -68,63 +46,35 @@ if($_SESSION["strUsername"] ==  null){
  }
 $mysqli->close();
 	?>
-</td>
-      </tr>	
+      <br />
 <?	  
-		echo "ชื่อจริง: ".$Fname."<br>";
-		echo "นามสกุล: ".$Lname."<br>";
-		echo "วันเดือนปีเกิด: ".$Birthday."<br>";
-		echo "อีเมล์: ".$Email."<br>";
-		echo "เบอร์โทร: ".$Phone."<br>";
-		echo "ชื่อผู้ใช้งาน: ".$Username."<br>";
-		echo "รหัสผู้ใช้งาน: ".$Password."<br>";
-		echo "รหัสประจำตัว: ".$UniCode."<br>";
-		echo "สถานะ: ".$Position."<br>";
-        echo "คณะ: ".$Faculty."<br>";
-        echo "สาขา: ".$Branch."<br>";
+		echo "ชื่อจริง: ".$Fname."<br /><br />";
+		echo "นามสกุล: ".$Lname."<br /><br />";
+		echo "วันเดือนปีเกิด: ".$Birthday."<br /><br />";
+		echo "อีเมล์: ".$Email."<br /><br />";
+		echo "เบอร์โทร: ".$Phone."<br /><br />";
+		echo "ชื่อผู้ใช้งาน: ".$Username."<br /><br />";
+		echo "รหัสผู้ใช้งาน: ".$Password."<br /><br />";
+		echo "รหัสประจำตัว: ".$UniCode."<br /><br />";
+		echo "สถานะ: ".$Position."<br /><br />";
+        echo "คณะ: ".$Faculty."<br /><br />";
+        echo "สาขา: ".$Branch."<br /><br />";
 
 		$sql_insert="INSERT INTO person (Person_Fname ,Person_Lname ,Person_Birthday ,Person_email ,Person_Phone ,Person_Username ,Person_Password ,Person_UniversityCode, Person_Position, Fac_Id, Branch_Id)
 		VALUES('".$Fname."', '".$Lname."', '".$Birthday."', '".$Email."', ".$Phone.", '".$Username."',  '".$Password."', ".$UniCode.",'".$Position."',".$Faculty.",".$Branch.");";
 ?>
 
 
-
-
-</tr>
-	  
-		  
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td colspan="2"><label></label>
-              <label>
-	  
-              
-              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_person_user.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_password_user.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="main_user.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>
-			</label>
+             <a href="edit_person_user.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a>&nbsp;&nbsp;
+             <a href="edit_password_user.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a>&nbsp;&nbsp;
+             <a href="main_user.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a>
+		
+			<br /><br />
 			
-			</td>
-			
-          </tr>
-      </table>
-	  </td>
-	  
-		</tr>
-        </table>
 		</td>	
 
 	  
   </tr>
-  <tr>
-  	<td><br /></td>
-  </tr>
-  <tr>
-              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
 </table>
-
-  
+<br />
+  </div></div>

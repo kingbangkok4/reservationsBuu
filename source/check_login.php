@@ -14,15 +14,16 @@ $result = $mysqli->query($sql);
         $_SESSION["strPerson_Id"] = $row["Person_Id"];
 	  if($row[Person_Position]=="admin"){
 		  
-		$_SESSION["Login_Position"] = "admin";
+		$_SESSION["Login_Position"] = $row[Person_Position];
 		header("location: main_admin.php");
 		
 	  }else if($row[Person_Position]=="staff"){
 		  
-		$_SESSION["Login_Position"] = "staff";
+	  	$_SESSION["Login_Position"] = $row[Person_Position];
 		header("location: main_staff.php");
 		  
 	  }else{
+	  	$_SESSION["Login_Position"] = $row[Person_Position];
 		header("location: main_user.php");
 		  
 	  }

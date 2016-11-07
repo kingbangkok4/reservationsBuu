@@ -6,27 +6,11 @@ include ("config.php");
 <div id="kk-content">
 	<div class="w3-container">
 <br />
-<table style="12px" width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr> 
-  
-
-
-    <td width="100%" valign="top">	
-		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#E57373">		
+		<table width="100%" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#E57373">		
 	<tr>
-			  <td colspan="2" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
+			  <td height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">ข้อมูลส่วนตัว</font></strong></div></td>
         </tr> 
 	<tr>
-	
-
-    <td width="100%" valign="top">
-	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">
-      <tr>
-        <td>&nbsp;</td>
-      </tr>	
-			
-	
-      <tr>
 <td>
 	<?php
 	
@@ -62,8 +46,6 @@ include ("config.php");
  }
 $mysqli->close();
 	?>
-</td>
-      </tr>	
       <br />
 <?	  
 		echo "ชื่อจริง: ".$Fname."<br /><br />";
@@ -83,31 +65,12 @@ $mysqli->close();
 ?>
 
 
-
-
-</tr>
-	  
-		  
-          <tr>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-          </tr>
-          <tr>
-            <td colspan="2"><label></label>
-              <label>
-	  
-              
-              &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_person_admin.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="edit_password_admin.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a> </div></center>
-             &nbsp;&nbsp;<center><div align="center"></div> <a href="main_admin.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a> </div></center>
-			</label></td>
+             <a href="edit_person_admin.php?Person_Id=<?=$Person_Id;?>"><img src="image/editcus.png" width="120" height="33" border="0" /></a>&nbsp;&nbsp;
+             <a href="edit_password_admin.php?Person_Id=<?=$Person_Id;?>"><img src="image/editpass.png" width="120" height="33" border="0" /></a>&nbsp;&nbsp;
+             <a href="main_admin.php"><img src="image/cancel.png" width="120" height="33" border="0" /></a>
 			
-          </tr>
-      </table>
-	  </td>
-	  
-		</tr>
-        </table>
+			<br /><br />
+			
 		</td>	
 
 	  

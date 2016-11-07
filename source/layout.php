@@ -34,16 +34,9 @@ function w3_close() {
   onclick="w3_close()"
   class="w3-closenav w3-large">ปิด &times;</a>
   <?php
-  if ($_SESSION["Login_Position"] == "admin") {
-  	include ("menu_admin.php");
-  } elseif ($_SESSION["Login_Position"] == "staff") {
-  	include ("menu_staff.php");
-  } elseif ($_SESSION["Login_Position"] == "student" || $_SESSION["Login_Position"] == "teacher") {
-  	include ("menu_user.php");
-  } else {
-  	
-  }
+  	include ("menu.php");
   ?>
+  <a href="login.php">ออกจากระบบ</a>
 </nav>
 
 <div id="main">

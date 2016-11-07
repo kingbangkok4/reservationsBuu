@@ -1,24 +1,12 @@
-<?
- session_start();
-if($_SESSION["strUsername"] ==  null){
- header("location: index.php");
- exit(); 
- }
- include("config.php");
- 
- 
- ?>
+<?php
+session_start ();
+include ("layout.php");
+include ("config.php");
+?>
+<div id="kk-content">
+	<div class="w3-container">
 
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<head>
-<script>
-
+<script type="text/javascript">
 function chkNull(){
     
     if(document.frm.idper.value == ""){
@@ -29,9 +17,6 @@ function chkNull(){
        var text = $("#idper").val();
     }
 }
-
-</script>
-<script language="javascript">
 function Button(theButton){
     var theForm = theButton.form;
     if(theButton.name=="btn_reserv"){
@@ -45,76 +30,48 @@ function Button(theButton){
     }
 }
 </script>
-<body bgcolor=#FFCC99>
 
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">  
-  <tr align="center"> 
-  <td width="100%" colspan="2">
-<?php include"header.php";?>
-</td>
-  </tr > 
-  <tr align="center"> 
-  <td width="25%" >
-<?php include"menu_user.php";?>
-</td>
-  <td width="75%" >
-  
-<table width="100%" border="1" align="center" cellpadding="0" cellspacing="0">
+<br />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr> 
 
-    <td width="80%" valign="top">
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#FFCC66" id="details1">		
+    <td width="100%" valign="top">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC" id="details1">		
 		<tr height="50">
-<td colspan="8" height = "40" bgcolor="#FF6666"><div align="center"><strong><font size = "5">
-<?php
- include("config.php");
- $sql = "SELECT * FROM type_product WHERE TypeP_Id=".$_GET['TypeP_Id'];
- $result = $mysqli->query($sql);
- if ($result->num_rows >0){
- 	while($row = $result->fetch_assoc()){
- 		echo $row[TypeP_Nametype];
- 	}
- }
- $mysqli->close();
- ?>
-</font></strong></div></td>			  
+<td colspan="8" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">สินค้าทั่วไป</font></strong></div></td>			  
         </tr> 
 		
 		
 <form name ="frm" method="post" action="" >
-<table width="900" border="0" align="center" cellpadding="0" cellspacing="0" >		
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" >		
 		<tr>
               <td>&nbsp;</td>
         </tr>
-            <tr bgcolor="#FFB6C1">
-				<td valign="top" bgcolor="#FFB6C1" align="">&nbsp;ค้นหาชื่อสินค้า(จากบางคำ):</td>
+            <tr bgcolor="#4DB6AC">
+				<td valign="top" bgcolor="#4DB6AC" align="">&nbsp;ค้นหาชื่อสินค้า(จากบางคำ):</td>
 				<td align="center" width=""><input type="text" name="idper" id="idper" value="<?=$_POST[idper]?>" /></td>
 				<td align="left">
 					<button type="submit" name="search" id="button" onclick = "return chkNull();"><img src="image/search.png" title="ปุ่มค้นหา "/> </button>
                     <input type ="submit" name="allsearch" value ="แสดงสินค้าทั้งหมด">
                 </td>
 				
-				<!--<td valign="top" bgcolor="#FFB6C1" align="right">เพิ่มข้อมูล :&nbsp;</td>	
-				<td align="left" valign="top" bgcolor="#FFB6C1">
-					<a href="add_data_product.php"><button type="button" name="button" id="button"><img src="image/add.png" title="ปุ่มเพิ่มข้อมูล" /> </button> 
-				</td>-->				
             </tr>
 				
 </table>
 </form>	
 
 
-<table width="900" border="1" bordercolor="#FF9999" align="center" cellpadding="0" cellspacing="0" >
+<table width="100%" border="1" bordercolor="#4DB6AC" align="center" cellpadding="0" cellspacing="0" >
         <tr>
-          <!--<td width="" bgcolor="#FF6666"><div align="center">id</div></td>-->
-          <td width="" bgcolor="#FF6666"><div align="center">รหัสสินค้า</div></td>  	  
-          <td width="" bgcolor="#FF6666"><div align="center">ชื่อสินค้า</div></td>
-          <td width="" bgcolor="#FF6666"><div align="center">ราคา</div></td> 
-		 <!-- <td width="" bgcolor="#FF6666"><div align="center">จำนวนสินค้าคงเหลือ</div></td>-->
-		  <td width="" bgcolor="#FF6666"><div align="center">รูปภาพ</div></td>
-          <td width="" bgcolor="#FF6666"><div align="center">สั่งซื้อ</div></td>
-          <td width="" bgcolor="#FF6666"><div align="center">สั่งจอง</div></td>
-          <!--<td width="" bgcolor="#FF6666"><div align="center">แก้ไขรหัสผ่าน</div></td>-->
+          <!--<td width="" bgcolor="#80CBC4"><div align="center">id</div></td>-->
+          <td width="" bgcolor="#80CBC4"><div align="center">รหัสสินค้า</div></td>  	  
+          <td width="" bgcolor="#80CBC4"><div align="center">ชื่อสินค้า</div></td>
+          <td width="" bgcolor="#80CBC4"><div align="center">ราคา</div></td> 
+		 <!-- <td width="" bgcolor="#80CBC4"><div align="center">จำนวนสินค้าคงเหลือ</div></td>-->
+		  <td width="" bgcolor="#80CBC4"><div align="center">รูปภาพ</div></td>
+          <td width="" bgcolor="#80CBC4"><div align="center">สั่งซื้อ</div></td>
+          <td width="" bgcolor="#80CBC4"><div align="center">สั่งจอง</div></td>
+          <!--<td width="" bgcolor="#80CBC4"><div align="center">แก้ไขรหัสผ่าน</div></td>-->
           
         </tr>
 	
@@ -130,7 +87,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 		//$sql = "select * from person  where Person_Fname like '%$idper%' and Person_Position='staff'";
 		//ของstaff จัดการข้อมูลนิสิต และอาจารย์ 
-		$sql = "select * from product  where Product_Name Like '%$idper%' and TypeP_Id=".$_GET['TypeP_Id'];
+		$sql = "select * from product  where Product_Name Like '%$idper%'";
 		
 		$result = mysql_query($sql) or die (mysql_error());
 		$num_rows = mysql_num_rows($result);
@@ -254,7 +211,7 @@ mysql_select_db($dbname) or die("MySQL select database failed");
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 		$idper=$_POST['idper'];
-		$sql = "select * from product  where Product_Name Like '%$idper%' and TypeP_Id=".$_GET['TypeP_Id'];
+		$sql = "select * from product  where Product_Name Like '%$idper%'";
 		$result = mysql_query($sql) or die (mysql_error());
 		$num_rows = mysql_num_rows($result);
 	
@@ -341,37 +298,22 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 ?>  
 
 
-
-
-
-
-	  
 </table>
-
+</form>		  
 	  
 	  
 
-<br><p align="right"><a href="show_product.php">View Cart</a> | <a href="clear.php">Clear Cart</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<p>
+
+	  
       </table>
-
 	  </td>
 
   </tr>
-  		<tr>
-              <td bgcolor="#FF9999" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
 </table>
+<br />
 
-</td>
-  </tr>  
-</table>
-   
-<iframe NAME="iframe1" WIDTH="0" HEIGHT="0"></iframe>
-<iframe NAME="iframe2" WIDTH="0" HEIGHT="0"></iframe>
+<input name="" id="" type="button" onClick="javascript:window.location.href='show_product.php';" value="ดูสินค้าในตะกร้า" />  <input name="" id="" type="button" onClick="javascript:window.location.href='clear.php';" value="ลบสินค้าในตะกร้าทั้งหมด" />
+<br /><br />
 
-</body>
-</head>
-</html>
-
-</table>	
-</body>
+</div>
+</div>

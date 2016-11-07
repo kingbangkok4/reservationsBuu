@@ -78,13 +78,13 @@ function chkForm(){
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
-		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#E57373">		
+		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC">		
 	<tr>
 	
     <td  valign="top">
 	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
 		<tr>
-<td colspan="2" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">แบบฟอร์มแก้ไขข้อมูลส่วนตัว</font></strong></div></td>			  
+<td colspan="2" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">แบบฟอร์มแก้ไขข้อมูลส่วนตัว</font></strong></div></td>			  
         </tr> 	
       <tr>
         <td>	
@@ -165,7 +165,7 @@ echo "สถานะ  : ";?>
     </select>
 <br /><br />
 <input type="submit" name="button" id="button" value="บันทึกข้อมูล" id = "submit">&nbsp; &nbsp; &nbsp; 
-<input name="" id="" type="button" onClick="Javascript:history.back();" value="ยกเลิก" />
+<input name="" id="" type="button" onClick="javascript:window.location.href='show_person_user.php';" value="ยกเลิก" />
 
 <p id="showfac"></p>
 <p id="showbra"></p>

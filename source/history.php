@@ -1,40 +1,27 @@
 <?php
-session_start();
+session_start ();
+include ("layout.php");
+include ("config.php");
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>ตะกร้าสินค้า</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
-<?php
-    
-if(!isset($_SESSION["strPerson_Id"]))
-{
-	
-    header("location:login.php");
-	exit();
-}
+<div id="kk-content">
+	<div class="w3-container">
 
+<br />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
 
-    include("config.php");
+    <td width="100%" valign="top">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC" id="details1">		
+		<tr height="50">
+<td colspan="8" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">ประวัติการสั่งซื้อ</font></strong></div></td>			  
+        </tr> 
 
-
-?> 
-<body bgcolor=#FFCC99>
-<?php include"header.php";?>
-<table width="100%"  border="0">
-<tr>
-<td><br /></td>
-</tr>
-<tr>
-<td>
-<table width="400"  border="1" align="center">
-  <tr bgcolor="#FF6666">
-    <td width="100"><center>Order ID</center></td>
-    <td width="100"><center>Order Date</center></td>
-    <td width="80"><center>View</center></td>
+		
+<table width="100%" border="1" bordercolor="#4DB6AC" align="center" cellpadding="0" cellspacing="0" >
+  <tr bgcolor="#80CBC4">
+    <td ><center>Order ID</center></td>
+    <td ><center>Order Date</center></td>
+    <td ><center></center></td>
 
   </tr>
   <?php
@@ -67,32 +54,32 @@ if(!isset($_SESSION["strPerson_Id"]))
 		while($objResult = mysqli_fetch_array($objQuery)){
 	  ?>
 	  <tr>
-        <form action="history_detail.php" method="post">
+        
 		<td><center><?=$objResult["Order_Id"];?></center></td>
 		<td><center><?=$objResult["Order_Date"];?></center></td>
-        <td align="center"><input type="hidden" name="txtOrder_Id" id="txtOrder_Id" value="<?php echo $objResult["Order_Id"];?>"><input type="submit" name="btn_view" value="View"></td>
+        <td align="center">
+        <form action="history_detail.php" method="post">
+	        <input type="hidden" name="txtOrder_Id" id="txtOrder_Id" value="<?=$objResult["Order_Id"];?>">
+	        <input type="submit" name="btn_view" value="ดูรายละเอียด">
+        </form>
+        </td>
 	  </tr>
-    </form>
+    
 	  <?php
           }
 	  }
   
   ?>
+</table>		  
+	  
 
-        
+      </table>
+	  </td>
+
+  </tr>
 </table>
-</td>
-</tr>
-<tr>
-<td><br /></td>
-</tr>
-<tr>
-              <td bgcolor="#FF6666" colspan = "8" height = "40"><div align="center"><strong>มหาวิทยาลัยบูรพา  วิทยาเขตสระแก้ว 2016</strong></div></td>
-        </tr>
-</table>
-<?php
-mysqli_close($mysqli);
-?>
-</body>
-</html>
+<br />
+
+</div>
+</div>
 

@@ -67,13 +67,13 @@ if(document.form4.Person_confirm.value == ""){
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
-		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#E57373">		
+		<table width="100%" height="260" border="2" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC">		
 	<tr>
 	
     <td  valign="top">
 	<table width="100%" height="260" border="0" align="center" cellpadding="0" cellspacing="0" id="details1">		
 		<tr>
-<td colspan="2" height = "40" bgcolor="#E57373"><div align="center"><strong><font size = "5">แบบฟอร์มเปลี่ยนรหัสผ่าน</font></strong></div></td>			  
+<td colspan="2" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">แบบฟอร์มเปลี่ยนรหัสผ่าน</font></strong></div></td>			  
         </tr> 	
       <tr>
         <td>
