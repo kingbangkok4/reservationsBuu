@@ -15,19 +15,16 @@ if ($_SESSION ["Login_Position"] == "admin") {
 } elseif ($_SESSION ["Login_Position"] == "student" || $_SESSION ["Login_Position"] == "teacher") {
 	?>
 <a href="main_user.php">หน้าหลัก</a>
+<a href="product.php">สินค้า</a>
+<!--
 <div class="w3-dropdown-hover">
 	<a class="w3-padding" href="javascript:void(0)">สินค้า <i
 		class="fa fa-caret-down"></i></a>
 	<div class="w3-dropdown-content w3-white w3-card-4">
 		<a href="product_template.php">สินค้าทั่วไป</a>
-		<a href="product_template.php">ชุดครุย</a>
-		<?php
-	if ($_SESSION ["Login_Position"] == "teacher") {
-		?>
-		<a href="product_template.php">หนังสือ</a>
-		<?php }?>
 	</div>
 </div>
+-->
 <a href="history.php">ประวัติการสั่งซื้อ</a>
 <a href="show_person_user.php">แก้ไขข้อมูลส่วนตัว</a>
 <?php

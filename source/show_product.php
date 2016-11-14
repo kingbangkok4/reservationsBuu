@@ -1,19 +1,26 @@
 <?php
-session_start();
-include("config.php");
+session_start ();
+include ("layout.php");
+include ("config.php");
 ?>
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
-"http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<title>ตะกร้าสินค้า</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-</head>
+<div id="kk-content">
+	<div class="w3-container">
+
+<br />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
+
+    <td width="100%" valign="top">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC" id="details1">		
+		<tr height="50">
+<td colspan="8" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">ตะกร้าสินค้า</font></strong></div></td>			  
+        </tr> 
+        
 <?php
     
 if(!isset($_SESSION["intLineBuy"]) && !isset($_SESSION["intLineReserv"]))
 {
-	echo "Cart Empty";
+	echo "<h1>ไม่พบสินค้าในตะกร้า</h1>";
 //    echo "<br>intLineBuy = ".$_SESSION["intLineBuy"];
 //     echo "<br>intLineReserv = ".$_SESSION["intLineReserv"];
 	exit();
@@ -29,15 +36,15 @@ if (!$objCon) {
 mysqli_set_charset($objCon, "utf8");
 ?>
   <form action="update.php" method="post">
-<table width="400"  border="1">
+<table width="100%" border="1" bordercolor="#4DB6AC" align="center" cellpadding="0" cellspacing="0" >
   <tr>
-    <td width="101"><center>ProductID</center></td>
-    <td width="82"><center>ProductName</center></td>
-    <td width=""><center>Picture</center></td>
-    <td width="82"><center>Price</center></td>
-    <td width="79"><center>Qty</center></td>
-    <td width="79"><center>Total</center></td>
-    <td width="10"><center>Del</center></td>
+    <td width="" bgcolor="#80CBC4"><center>ProductID</center></td>
+    <td width="" bgcolor="#80CBC4"><center>ProductName</center></td>
+    <td width="" bgcolor="#80CBC4"><center>Picture</center></td>
+    <td width="" bgcolor="#80CBC4"><center>Price</center></td>
+    <td width="" bgcolor="#80CBC4"><center>Qty</center></td>
+    <td width="" bgcolor="#80CBC4"><center>Total</center></td>
+    <td width="" bgcolor="#80CBC4"><center>Del</center></td>
   </tr>
   <?php
   $Total = 0;
@@ -126,31 +133,37 @@ mysqli_set_charset($objCon, "utf8");
 <?php
     }
 }
-          
-          
-          
   ?>
 </table>
 <br>
 <table width="400"  border="0">
   <tr>
   <td><input type="submit" value="Update"></td>
-  <td align="right">Sum Total <?php echo number_format($SumTotal,2);?></td>
+  <td align="right">ราคาสินค้าทั้งหมด <?php echo number_format($SumTotal,2);?> บาท</td>
   </tr>
   </table>
-</form>
-<br><a href="product1-test.php">Go to Product</a>
-<?php
+
+
+</table>
+</form>		  
+
+
+	  
+      </table>
+	  </td>
+
+  </tr>
+</table>
+<br />
+
+<input name="" id="" type="button" onClick="javascript:window.location.href='product.php';" value="ไปหน้าสินค้า" />  <?php
 	if($SumTotal > 0)
 	{
-?>
-	| <a href="checkout.php">CheckOut</a>
-<?php
+?><input name="" id="" type="button" onClick="javascript:window.location.href='checkout.php';" value="ลบสินค้าในตะกร้า" /><?php
 	}
+	mysqli_close($objCon);
 ?>
-<?php
-mysqli_close($objCon);
-?>
-</body>
-</html>
+<br /><br />
 
+</div>
+</div>
