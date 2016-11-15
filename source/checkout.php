@@ -1,19 +1,23 @@
 <?php
-session_start();
+session_start ();
+include ("layout.php");
+include ("config.php");
 ?>
-<html>
-<head>
-<title>ยืนยันการสั่งซื้อ</title>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-</head>
+<div id="kk-content">
+	<div class="w3-container">
+
+
 <?php
 
 if(!isset($_SESSION["intLineBuy"]) && !isset($_SESSION["intLineReserv"]))
 {
-	echo "Cart Empty";
-	exit();
-}
-include("config.php");
+	?>
+	<h1>ไม่พบสินค้าในตะกร้า</h1>
+	<input name="" id="" type="button" onClick="javascript:window.location.href='product.php';" value="ไปหน้าสินค้า" />
+	<?php
+	
+	//exit();
+}else{
 $objCon = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname );
 if (!$objCon) {
     echo $objCon->connect_error;
@@ -21,9 +25,18 @@ if (!$objCon) {
 }
 mysqli_set_charset($objCon, "utf8");
 ?>
+<br />
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
+  <tr> 
 
-<table width="400"  border="1">
-  <tr>
+    <td width="100%" valign="top">
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC" id="details1">		
+		<tr height="50">
+<td colspan="8" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">ตะกร้าสินค้า</font></strong></div></td>			  
+        </tr> 
+        
+<table width="100%" border="1" bordercolor="#4DB6AC" align="center" cellpadding="0" cellspacing="0" >
+  <tr bgcolor="#80CBC4">
     <td width="101"><center>ProductID</center></td>
     <td width="82"><center>ProductName</center></td>
     <td width=""><center>Picture</center></td>
@@ -80,14 +93,28 @@ mysqli_set_charset($objCon, "utf8");
   }
   ?>
 </table>
-<br>
-Sum Total <?php echo number_format($SumTotal,2);?>
+
+
+
+
+
+ 
+      </table>
+	  </td>
+
+  </tr>
+</table>
+<br />
+
+ราคาสินค้าทั้งหมด <?php echo number_format($SumTotal,2);?> บาท
 <br><br>
-<a href="save_checkout.php">Confirm</a>
+<input name="" id="" type="button" onClick="javascript:window.location.href='save_checkout.php';" value="ยืนยันสั่งซื้อสินค้า" />
 
 <?php
 mysqli_close($objCon);
+}
 ?>
-</body>
-</html>
+<br /><br />
 
+</div>
+</div>

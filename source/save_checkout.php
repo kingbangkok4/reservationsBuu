@@ -1,12 +1,8 @@
 <?php
 session_start();
-include("include/date.php");
-$serverName = "localhost";
-$userName = "root";
-$userPassword = "1234";
-$dbName = "project";
-
-$objCon = mysqli_connect($serverName,$userName,$userPassword,$dbName);
+//include("include/date.php");
+include("config.php");
+$objCon = $mysqli;
 if (!$objCon) {
 	echo $objCon->connect_error;
 	exit();
@@ -78,6 +74,6 @@ unset($_SESSION["strQtyReserv"]);
 
 
 //header("location:finish_order.php?OrderID=".$strOrderID);
-        header("location: product1-test.php");
+        header("location: product.php");
     }
 ?>

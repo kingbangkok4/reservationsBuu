@@ -5,6 +5,15 @@ include ("config.php");
 ?>
 <div id="kk-content">
 	<div class="w3-container">
+	
+<?php
+    
+if(!isset($_SESSION["intLineBuy"]) && !isset($_SESSION["intLineReserv"]))
+{
+	echo "<h1>ไม่พบสินค้าในตะกร้า</h1>";
+	//exit();
+}else{
+?>
 
 <br />
 <table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
@@ -16,18 +25,9 @@ include ("config.php");
 <td colspan="8" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">ตะกร้าสินค้า</font></strong></div></td>			  
         </tr> 
         
+
+
 <?php
-    
-if(!isset($_SESSION["intLineBuy"]) && !isset($_SESSION["intLineReserv"]))
-{
-	echo "<h1>ไม่พบสินค้าในตะกร้า</h1>";
-//    echo "<br>intLineBuy = ".$_SESSION["intLineBuy"];
-//     echo "<br>intLineReserv = ".$_SESSION["intLineReserv"];
-	exit();
-}
-
-
-
 $objCon = mysqli_connect( $dbhost, $dbuser, $dbpass, $dbname );
 if (!$objCon) {
     echo $objCon->connect_error;
@@ -155,13 +155,17 @@ mysqli_set_charset($objCon, "utf8");
   </tr>
 </table>
 <br />
+<?php 
+	mysqli_close($objCon);
+}
+?>
 
 <input name="" id="" type="button" onClick="javascript:window.location.href='product.php';" value="ไปหน้าสินค้า" />  <?php
 	if($SumTotal > 0)
 	{
-?><input name="" id="" type="button" onClick="javascript:window.location.href='checkout.php';" value="ลบสินค้าในตะกร้า" /><?php
+?><input name="" id="" type="button" onClick="javascript:window.location.href='checkout.php';" value="ไปหน้ายืนยันสินค้า" /><?php
 	}
-	mysqli_close($objCon);
+	
 ?>
 <br /><br />
 
