@@ -5,7 +5,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว </title>
+<title>ระบบสั่งจองสินค้าในมหาวิทยาลัยบูรพา วิทยาเขตสระแก้ว</title>
 </head>
 <body>
 
@@ -25,10 +25,10 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 	$result=mysql_query($sql);
 	if($result){
 		
-echo "<script> alert('ลบข้อมูลเรียบร้อย')</script>";
+echo "<script> alert('อนุมัติสินค้าเรียบร้อย')</script>";
 echo "<meta http-equiv='refresh' content='2;url=mrg_approve.php'/>";
 }else{
-echo "<script> alert('!!!เกิดข้อผิดพลาด!!!ไม่สามารถลบข้อมูลได้')</script>";
+echo "<script> alert('!!!เกิดข้อผิดพลาด!!!ไม่สามารถอนุมัติสินค้าได้')</script>";
 echo "<meta http-equiv='refresh' content='2;url=mrg_approve.php'/>";
 }
 ?>

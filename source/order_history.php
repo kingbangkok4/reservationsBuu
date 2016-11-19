@@ -8,7 +8,7 @@ if($_SESSION["strUsername"] ==  null){
  ?>
   
 <html>
-<title>ระบบสั่งจองสินค้าในมหาลัยบูรพา วิทยาเขตสระแก้ว</title>
+<title>ระบบสั่งจองสินค้าในมหาวิทยาลัยบูรพา วิทยาเขตสระแก้ว</title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>

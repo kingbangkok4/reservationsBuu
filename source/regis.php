@@ -119,6 +119,7 @@ function chkForm(){
 
 </script>
 
+<br />
 	<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0">
   <tr>
     <td  valign="top">	
@@ -268,7 +269,7 @@ echo "สถานะ  : ";?>
 		</td>
 		</tr>
 
-        </table>
+        </table><br />
 		</td>	
 		</tr>
 

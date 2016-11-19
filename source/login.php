@@ -5,6 +5,19 @@ session_destroy ();
 include ("layout.php");
 ?>
 <div id="kk-content">
+
+
+<script type="text/javascript">
+function Button(theButton){
+    var theForm = theButton.form;
+    if(theButton.name=="btn_sign_in"){
+        theForm.action="check_login.php";
+    }else{
+        theForm.action="send_password_to_user.php";
+    }
+}
+</script>
+
 	<img src="image/pitt.jpg"
 		alt="ระบบสั่งจองสินค้าในมหาวิทยาลัยบุรพา วิทยาเขตสระแก้ว"
 		style="width: 100%">
@@ -23,7 +36,7 @@ include ("layout.php");
 			ชื่อผู้ใช้ : <input type="text" name='txtUsername'> <br> <br> รหัสผ่าน
 			: <input type="password" name='txtPassword'> 
 <? echo $code_error;?>
-<br> <br> <input type="submit" name="Submit" value="เข้าสู่ระบบ">
+<br /> <br /> <input type="submit" name="btn_sign_in" value="เข้าสู่ระบบ" onClick="Button(this);"> <input type="submit" name="btn_forget_password" value="ลืมรหัสผ่าน" onClick="Button(this);">
 		</form>
 		<br />
 	</div>
