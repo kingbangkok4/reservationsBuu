@@ -36,7 +36,6 @@ function w3_close() {
   <?php
   	include ("menu.php");
   ?>
-  <a href="login.php">ออกจากระบบ</a>
 </nav>
 
 <div id="main">

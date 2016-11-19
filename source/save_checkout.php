@@ -44,6 +44,12 @@ mysqli_set_charset($objCon, "utf8");
 				('".$strOrderID."','".$_SESSION["strProductIDBuy"][$i]."','".$_SESSION["strQty"][$i]."','".$Type."','".$Approval_Status."','".$Status."')
 			  ";
 			  mysqli_query($objCon,$strSQL);
+			  
+			  $updateQtyStrSQL = 
+				"UPDATE product
+				SET Product_Stock=Product_Stock-".$_SESSION["strQty"][$i]."
+				WHERE Product_Code='".$_SESSION["strProductIDBuy"][$i]."'";
+			  mysqli_query($objCon,$updateQtyStrSQL);
 	  }
   }
         
