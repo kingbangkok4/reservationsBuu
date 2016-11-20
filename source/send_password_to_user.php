@@ -20,17 +20,18 @@
   $sql = "SELECT * FROM person WHERE Person_Username='".$strUsername."'";
   $result = $mysqli->query($sql);
   
-  echo "<script> alert('".$strUsername.",".$result->num_rows."')</script>";
+  echo "<script> console.log('".$strUsername.",".$result->num_rows."')</script>";
   
   if ($result->num_rows >0){
   	while($row = $result->fetch_assoc()){
-  		
+  		echo "<script> console.log('prepare mail')</script>";
   		$mail = new PHPMailer();
   		$mail->IsHTML(true);
   		$mail->IsSMTP();  // telling the class to use SMTP
   		$mail->SMTPAuth   = true; // SMTP authentication
   		$mail->Host       = "smtp.gmail.com"; // SMTP server
   		$mail->Port       = 465; // SMTP Port
+  		//$mail->SMTPSecure = 'ssl';
   		$mail->Username   = "manuwin99@gmail.com"; // SMTP account username
   		$mail->Password   = "0884854100";        // SMTP account password
   		
@@ -42,19 +43,21 @@
   		
   		$mail->Subject    = "รหัสผ่านเข้าระบบสั่งจองสินค้าในมหาวิทยาลัยบูรพา วิทยาเขตสระแก้ว"; // email subject
   		$mail->Body       = "สวัสดี ".$row[Person_Fname]." ".$row[Person_Lname]."<br /><br /> รหัสผ่านของคุณ คือ ".$row[Person_Password];
-  		$mail->set('X-Priority', '1');
+  		//$mail->set('X-Priority', '1');
+  		
+  		echo "<script> console.log('before send mail')</script>";
   		
   		if($mail->Send()) {
   			echo "<script> alert('ส่งรหัสผ่านไปที่ email ของผู้ใช้เรียบร้อย')</script>";
-  			echo "<meta http-equiv='refresh' content='2;url=login.php'/>";
+  			//echo "<meta http-equiv='refresh' content='2;url=login.php'/>";
   		} else {
   			echo "<script> alert('!!!เกิดข้อผิดพลาด!!!ไม่สามารถส่ง email ได้!!!".$mail->ErrorInfo."')</script>";
-  			echo "<meta http-equiv='refresh' content='2;url=login.php'/>";
+  			//echo "<meta http-equiv='refresh' content='2;url=login.php'/>";
   		}
   	}
   }else {
   	echo "<script> alert('!!!เกิดข้อผิดพลาด!!!ไม่พบข้อมูลผู้ใช้')</script>";
-  	echo "<meta http-equiv='refresh' content='2;url=login.php'/>";
+  	//echo "<meta http-equiv='refresh' content='2;url=login.php'/>";
   }
   
   

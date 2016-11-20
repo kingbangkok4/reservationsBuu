@@ -36,9 +36,9 @@ function Button(theButton){
   <tr> 
 
     <td width="100%" valign="top">
-<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#4DB6AC" id="details1">		
+<table width="100%" border="0" align="center" cellpadding="0" cellspacing="0" bordercolor="#64B5F6" id="details1">		
 		<tr height="50">
-<td colspan="8" height = "40" bgcolor="#4DB6AC"><div align="center"><strong><font size = "5">สินค้า</font></strong></div></td>			  
+<td colspan="8" height = "40" bgcolor="#64B5F6"><div align="center"><strong><font size = "5">สินค้า</font></strong></div></td>			  
         </tr> 
 		
 		
@@ -47,8 +47,8 @@ function Button(theButton){
 		<tr>
               <td>&nbsp;</td>
         </tr>
-            <tr bgcolor="#4DB6AC">
-				<td valign="top" bgcolor="#4DB6AC" align="">&nbsp;ค้นหาชื่อสินค้า(จากบางคำ):</td>
+            <tr bgcolor="#64B5F6">
+				<td valign="top" bgcolor="#64B5F6" align="">&nbsp;ค้นหาชื่อสินค้า(จากบางคำ):</td>
 				<td align="center" width=""><input type="text" name="idper" id="idper" value="<?=$_POST[idper]?>" /></td>
 				<td align="left">
 					<button type="submit" name="search" id="button" onclick = "return chkNull();"><img src="image/search.png" title="ปุ่มค้นหา "/> </button>
@@ -61,17 +61,17 @@ function Button(theButton){
 </form>	
 
 
-<table width="100%" border="1" bordercolor="#4DB6AC" align="center" cellpadding="0" cellspacing="0" >
+<table width="100%" border="1" bordercolor="#64B5F6" align="center" cellpadding="0" cellspacing="0" >
         <tr>
-          <!--<td width="" bgcolor="#80CBC4"><div align="center">id</div></td>-->
-          <td width="" bgcolor="#80CBC4"><div align="center">รหัสสินค้า</div></td>  	  
-          <td width="" bgcolor="#80CBC4"><div align="center">ชื่อสินค้า</div></td>
-          <td width="" bgcolor="#80CBC4"><div align="center">ราคา</div></td> 
-		 <!-- <td width="" bgcolor="#80CBC4"><div align="center">จำนวนสินค้าคงเหลือ</div></td>-->
-		  <td width="" bgcolor="#80CBC4"><div align="center">รูปภาพ</div></td>
-          <td width="" bgcolor="#80CBC4"><div align="center">สั่งซื้อ</div></td>
-          <td width="" bgcolor="#80CBC4"><div align="center">สั่งจอง</div></td>
-          <!--<td width="" bgcolor="#80CBC4"><div align="center">แก้ไขรหัสผ่าน</div></td>-->
+          <!--<td width="" bgcolor="#90CAF9"><div align="center">id</div></td>-->
+          <td width="" bgcolor="#90CAF9"><div align="center">รหัสสินค้า</div></td>  	  
+          <td width="" bgcolor="#90CAF9"><div align="center">ชื่อสินค้า</div></td>
+          <td width="" bgcolor="#90CAF9"><div align="center">ราคา</div></td> 
+		 <!-- <td width="" bgcolor="#90CAF9"><div align="center">จำนวนสินค้าคงเหลือ</div></td>-->
+		  <td width="" bgcolor="#90CAF9"><div align="center">รูปภาพ</div></td>
+          <td width="" bgcolor="#90CAF9"><div align="center">สั่งซื้อ</div></td>
+          <!-- <td width="" bgcolor="#90CAF9"><div align="center">สั่งจอง</div></td> -->
+          <!--<td width="" bgcolor="#90CAF9"><div align="center">แก้ไขรหัสผ่าน</div></td>-->
           
         </tr>
 	
@@ -149,7 +149,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
         </td>
         
         
-        
+        <!-- 
         <td align="center"><input type="hidden" name="txtProductID" id="txtProductID" value="<?php echo $row["Product_Code"];?>">
         <select name="txtQtyReserv">
         <?php for($qty=1;$qty<=10;$qty++)
@@ -172,7 +172,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
            <?php
         }
         ?>
-        </td>
+        </td> -->
         </form>
         </tr>
 	<?php
@@ -258,7 +258,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
         </td>
         
         
-        
+        <!-- 
         <td align="center"><input type="hidden" name="txtProductIDReserv" value="<?php echo $row["Product_Code"];?>" size="2">
         <select name="txtQtyReserv">
         <?php for($qty=1;$qty<=10;$qty++)
@@ -281,7 +281,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
             <?php
         }
         ?>
-         </td>
+         </td> -->
          </form>
          </tr>
         
@@ -289,7 +289,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 	}
 	
 	?>
-		<tr><td colspan="8" align = "right"><br>
+		<tr><td colspan=7" align = "right"><br>
 		<? echo	"Search &nbsp; ชื่อสินค้า  &nbsp; '$idper' &nbsp; Show &nbsp;  $num_rows  &nbsp;Record	&nbsp;"; ?>	
 		</td></tr>
 <?
@@ -312,7 +312,7 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 </table>
 <br />
 
-<input name="" id="" type="button" onClick="javascript:window.location.href='show_product.php';" value="ดูสินค้าในตะกร้า" />  <input name="" id="" type="button" onClick="javascript:window.location.href='clear.php';" value="ลบสินค้าในตะกร้าทั้งหมด" />
+<input name="" id="" type="button" onClick="javascript:window.location.href='show_product_staff.php';" value="ดูสินค้าในตะกร้า" />  <input name="" id="" type="button" onClick="javascript:window.location.href='clear.php';" value="ลบสินค้าในตะกร้าทั้งหมด" />
 <br /><br />
 
 </div>

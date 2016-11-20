@@ -57,7 +57,7 @@ mysqli_set_charset($objCon, "utf8");
         {
             if($_SESSION["strProductIDReserv"][$i] != "")
             {
-                $Type = "Reserve";
+                $Type = "Reserv";
                 $Status = "รออนุมัติ";
                 $Approval_Status = "รออนุมัติ";
                 $strSQL = "
@@ -80,6 +80,6 @@ unset($_SESSION["strQtyReserv"]);
 
 
 //header("location:finish_order.php?OrderID=".$strOrderID);
-        header("location: product.php");
+        header("location: product_staff.php");
     }
 ?>

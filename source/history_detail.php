@@ -29,6 +29,9 @@ include ("config.php");
     <td ><center>Type</center></td>
     <td ><center>Approval Status</center></td>
     <td ><center>Status</center></td>
+    <td ><center>Approve</center></td>
+    <td ><center>Arrived</center></td>
+    <td ><center>Received</center></td>
     <td ><center>Post Script</center></td>
 
 
@@ -54,6 +57,33 @@ include ("config.php");
         <td><center><?=$objResult["Type"];?></center></td>
         <td><center><?=$objResult["Approval_Status"];?></center></td>
         <td><center><?=$objResult["Status"];?></center></td>
+        <td><center>
+        <?php
+        if (isset($objResult["Approve_Status"]) && $objResult["Approve_Status"]=="T"){
+        ?>
+        <img src="image/red-sign-green-icon-right-mark-symbol-minus.png" width="50" height="50" border="0" />
+        <?php 
+		}
+        ?>
+        </center></td>
+        <td><center>
+        <?php
+        if (isset($objResult["Arrived_Status"]) && $objResult["Arrived_Status"]=="T"){
+        ?>
+        <img src="image/red-sign-green-icon-right-mark-symbol-minus.png" width="50" height="50" border="0" />
+        <?php 
+		}
+        ?>
+        </center></td>
+        <td><center>
+        <?php
+        if (isset($objResult["Received_Status"]) && $objResult["Received_Status"]=="T"){
+        ?>
+        <img src="image/red-sign-green-icon-right-mark-symbol-minus.png" width="50" height="50" border="0" />
+        <?php 
+		}
+        ?>
+        </center></td>
         <td><center><?=$objResult["Post_Script"];?></center></td>
 
 

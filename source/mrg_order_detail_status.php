@@ -63,7 +63,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 		 
 		$sql = //"select * from product  where Product_Name Like '%$idper%' ";
-		"SELECT orders_detail.* , product.* FROM orders_detail, product WHERE product.Product_Name Like '%$idper%' and orders_detail.Product_Code = product.Product_Code and orders_detail.type = 'Reserv'";
+		"SELECT orders_detail.* , product.* FROM orders_detail, product WHERE product.Product_Name Like '%$idper%' and orders_detail.Product_Code = product.Product_Code and orders_detail.type = 'Reserve'";
 		
 		$result = mysql_query($sql) or die (mysql_error());
 		$num_rows = mysql_num_rows($result);
@@ -103,7 +103,9 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 	        <td><center><?=$row["Type"];?></center></td>
 	        <td><center><?=$row["Approval_Status"];?></center></td>
 	        <td><center><?=$row["Status"];?></center></td>
-	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="อนุมัติ" /></center></td>
+	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับการสั่งจอง" /> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="แจ้งของมา" /> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับสินค้าแล้ว" /></center></td>
         </tr>
 	<?php
 	}?>
@@ -130,7 +132,7 @@ mysql_select_db($dbname) or die("MySQL select database failed");
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 		$idper=$_POST['idper'];
-		$sql = "SELECT orders_detail.* , product.* FROM orders_detail, product WHERE product.Product_Name Like '%$idper%' and orders_detail.Product_Code = product.Product_Code and orders_detail.type = 'Reserv'";
+		$sql = "SELECT orders_detail.* , product.* FROM orders_detail, product WHERE product.Product_Name Like '%$idper%' and orders_detail.Product_Code = product.Product_Code and orders_detail.type = 'Reserve'";
 		$result = mysql_query($sql) or die (mysql_error());
 		$num=mysql_num_rows($result);
 	
@@ -153,7 +155,9 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 	        <td><center><?=$row["Type"];?></center></td>
 	        <td><center><?=$row["Approval_Status"];?></center></td>
 	        <td><center><?=$row["Status"];?></center></td>
-	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="อนุมัติ" /></center></td>
+	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับการสั่งจอง" /> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='ready_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="แจ้งของมา" /> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='Received_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับสินค้าแล้ว" /></center></td>
          </tr>
 	<?php
 	}
