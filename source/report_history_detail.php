@@ -6,8 +6,10 @@ header('Content-Disposition: attachment; filename="report.doc"');
 include("config.php");
 mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
-$sql = "select * from product"; //ดึงข้อมูลจาก เทเบิล word 
-$dbquery = mysql_db_query($dbname, $sql);
+
+$orderId = $_GET["Order_Id"];
+$sql = "SELECT orders_detail.* , product.* FROM orders_detail, product WHERE orders_detail.Order_Id = '".$orderId."' and orders_detail.Product_Code = product.Product_Code"; //ดึงข้อมูลจาก เทเบิล word 
+$result = mysql_db_query($dbname, $sql);
 ?>
 <style>
 table, th, td {
@@ -22,14 +24,23 @@ th, td {
 
 <table>
 <tr>
-    <th>รหัส</th>
-    <th>รหัสสินค้า</th>
-    <th>ชื่อสินค้า</th>
-    <th>ราคา</th>
-    <th>คงเหลือ</th>
+    <th >Order ID</td>
+    <th >Product Code</td>
+    <th >Product Name</td>
+    <th >Picture</td>
+    <th >Qty</td>
+    <th >Price</td>
+    <th >Total Price</td>
+    <th >Type</td>
+    <!-- <td ><center>Approval Status</td> -->
+    <th >Status</td>
+    <th >Approve</td>
+    <th >Arrived</td>
+    <th >Received</td>
+    <th >Post Script</td>
     
   </tr>
-<? while($result = mysql_fetch_array($dbquery)) { ?>
+<? while($result = mysql_fetch_array($result)) { ?>
 
 
 <tr>

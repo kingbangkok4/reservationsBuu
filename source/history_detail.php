@@ -98,7 +98,7 @@ include ("config.php");
 </table>
 
 <br />
-<input name="" id="" type="button" onClick="javascript:window.location.href='print.php?Order_Id=<?=$_POST["txtOrder_Id"]?>';" value="พิมพ์รายงาน" />
+<input name="" id="" type="button" onClick="javascript:window.location.href='report_history_detail.php?Order_Id=<?=$_POST["txtOrder_Id"]?>';" value="พิมพ์รายงาน" />
 </form>		  
 	  
 
