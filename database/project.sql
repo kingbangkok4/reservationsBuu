@@ -2,21 +2,21 @@
 -- version 2.10.3
 -- http://www.phpmyadmin.net
 -- 
--- โฮสต์: localhost
--- เวลาในการสร้าง: 
--- รุ่นของเซิร์ฟเวอร์: 5.0.51
--- รุ่นของ PHP: 5.2.6
+-- Host: localhost
+-- Generation Time: Nov 22, 2016 at 12:09 AM
+-- Server version: 5.0.51
+-- PHP Version: 5.2.6
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 
 -- 
--- ฐานข้อมูล: `project`
+-- Database: `project`
 -- 
 
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `book_order_detail`
+-- Table structure for table `book_order_detail`
 -- 
 
 CREATE TABLE `book_order_detail` (
@@ -34,14 +34,14 @@ CREATE TABLE `book_order_detail` (
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- 
--- dump ตาราง `book_order_detail`
+-- Dumping data for table `book_order_detail`
 -- 
 
 
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `branch`
+-- Table structure for table `branch`
 -- 
 
 CREATE TABLE `branch` (
@@ -52,7 +52,7 @@ CREATE TABLE `branch` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
 
 -- 
--- dump ตาราง `branch`
+-- Dumping data for table `branch`
 -- 
 
 INSERT INTO `branch` VALUES (1, 'สาขาเทคโนโลยีสารสนเทศ', 1);
@@ -68,7 +68,7 @@ INSERT INTO `branch` VALUES (9, 'สาขาวิชาการจัดก�
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `faculty`
+-- Table structure for table `faculty`
 -- 
 
 CREATE TABLE `faculty` (
@@ -78,7 +78,7 @@ CREATE TABLE `faculty` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=4 ;
 
 -- 
--- dump ตาราง `faculty`
+-- Dumping data for table `faculty`
 -- 
 
 INSERT INTO `faculty` VALUES (1, 'คณะวิทยาศาสตร์และสังคมศาสตร์');
@@ -88,7 +88,7 @@ INSERT INTO `faculty` VALUES (3, 'คณะพาณิชยศาสตร์�
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `gownorder`
+-- Table structure for table `gownorder`
 -- 
 
 CREATE TABLE `gownorder` (
@@ -104,7 +104,7 @@ CREATE TABLE `gownorder` (
 ) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=11 ;
 
 -- 
--- dump ตาราง `gownorder`
+-- Dumping data for table `gownorder`
 -- 
 
 INSERT INTO `gownorder` VALUES (1, 0, '', 0, 0, 58, '0000-00-00', '-');
@@ -117,70 +117,7 @@ INSERT INTO `gownorder` VALUES (9, 0, '', 0, 160, 58, '0000-00-00', 'อ้ว�
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `list_of_order`
--- 
-
-CREATE TABLE `list_of_order` (
-  `List_Id` int(11) NOT NULL auto_increment,
-  `Product_Id` int(11) NOT NULL,
-  `List_Amount` int(11) NOT NULL,
-  `orderDe_Id` int(11) NOT NULL,
-  PRIMARY KEY  (`List_Id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=28 ;
-
--- 
--- dump ตาราง `list_of_order`
--- 
-
-INSERT INTO `list_of_order` VALUES (12, 1, 1, 8);
-INSERT INTO `list_of_order` VALUES (15, 2, 1, 9);
-INSERT INTO `list_of_order` VALUES (14, 1, 1, 9);
-INSERT INTO `list_of_order` VALUES (17, 2, 1, 10);
-INSERT INTO `list_of_order` VALUES (16, 1, 1, 10);
-INSERT INTO `list_of_order` VALUES (19, 2, 1, 11);
-INSERT INTO `list_of_order` VALUES (18, 1, 1, 11);
-INSERT INTO `list_of_order` VALUES (13, 2, 1, 8);
-INSERT INTO `list_of_order` VALUES (20, 0, 1, 13);
-INSERT INTO `list_of_order` VALUES (21, 2, 2, 13);
-INSERT INTO `list_of_order` VALUES (22, 3, 1, 13);
-INSERT INTO `list_of_order` VALUES (23, 0, 1, 13);
-INSERT INTO `list_of_order` VALUES (24, 0, 1, 14);
-INSERT INTO `list_of_order` VALUES (25, 2, 1, 14);
-INSERT INTO `list_of_order` VALUES (26, 0, 1, 14);
-INSERT INTO `list_of_order` VALUES (27, 5, 1, 14);
-
--- --------------------------------------------------------
-
--- 
--- โครงสร้างตาราง `orderlist`
--- 
-
-CREATE TABLE `orderlist` (
-  `order_id` int(11) NOT NULL auto_increment,
-  `Person_Username` varchar(20) NOT NULL,
-  `Product_Id` int(11) NOT NULL,
-  `order_amount` int(11) NOT NULL,
-  PRIMARY KEY  (`order_id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=30 ;
-
--- 
--- dump ตาราง `orderlist`
--- 
-
-INSERT INTO `orderlist` VALUES (29, 'lek', 0, 0);
-INSERT INTO `orderlist` VALUES (28, 'lek', 2, 2);
-INSERT INTO `orderlist` VALUES (27, 'pp', 2, 1);
-INSERT INTO `orderlist` VALUES (26, 'zoo', 4, 1);
-INSERT INTO `orderlist` VALUES (25, 'zoo', 4, 3);
-INSERT INTO `orderlist` VALUES (24, 'zoo', 4, 1);
-INSERT INTO `orderlist` VALUES (23, 'zoo', 5, 1);
-INSERT INTO `orderlist` VALUES (22, 'zoo', 5, 1);
-INSERT INTO `orderlist` VALUES (21, 'zoo', 5, 2);
-
--- --------------------------------------------------------
-
--- 
--- โครงสร้างตาราง `orders`
+-- Table structure for table `orders`
 -- 
 
 CREATE TABLE `orders` (
@@ -188,10 +125,10 @@ CREATE TABLE `orders` (
   `Order_Date` datetime NOT NULL,
   `Person_Id` int(11) NOT NULL,
   PRIMARY KEY  (`Order_Id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=24 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=39 ;
 
 -- 
--- dump ตาราง `orders`
+-- Dumping data for table `orders`
 -- 
 
 INSERT INTO `orders` VALUES (00003, '2016-04-10 12:45:46', 43);
@@ -215,11 +152,26 @@ INSERT INTO `orders` VALUES (00020, '2016-04-11 15:41:48', 43);
 INSERT INTO `orders` VALUES (00021, '2016-04-11 19:56:40', 43);
 INSERT INTO `orders` VALUES (00022, '2016-04-20 18:45:26', 43);
 INSERT INTO `orders` VALUES (00023, '2016-06-23 19:53:13', 43);
+INSERT INTO `orders` VALUES (00024, '2016-11-15 20:50:15', 45);
+INSERT INTO `orders` VALUES (00025, '2016-11-15 21:31:18', 45);
+INSERT INTO `orders` VALUES (00026, '2016-11-19 14:40:53', 45);
+INSERT INTO `orders` VALUES (00027, '2016-11-19 14:53:34', 45);
+INSERT INTO `orders` VALUES (00028, '2016-11-19 15:12:51', 45);
+INSERT INTO `orders` VALUES (00029, '2016-11-19 15:14:58', 45);
+INSERT INTO `orders` VALUES (00030, '2016-11-19 15:15:08', 45);
+INSERT INTO `orders` VALUES (00031, '2016-11-19 15:16:03', 45);
+INSERT INTO `orders` VALUES (00032, '2016-11-19 15:31:26', 45);
+INSERT INTO `orders` VALUES (00033, '2016-11-19 15:31:49', 45);
+INSERT INTO `orders` VALUES (00034, '2016-11-19 18:12:36', 45);
+INSERT INTO `orders` VALUES (00035, '2016-11-19 18:12:40', 45);
+INSERT INTO `orders` VALUES (00036, '2016-11-20 15:42:08', 54);
+INSERT INTO `orders` VALUES (00037, '2016-11-21 11:06:18', 45);
+INSERT INTO `orders` VALUES (00038, '2016-11-21 11:08:28', 45);
 
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `orders_detail`
+-- Table structure for table `orders_detail`
 -- 
 
 CREATE TABLE `orders_detail` (
@@ -227,42 +179,58 @@ CREATE TABLE `orders_detail` (
   `Order_Id` int(5) unsigned zerofill NOT NULL,
   `Product_Code` varchar(11) NOT NULL,
   `Qty` int(11) NOT NULL,
-  `Type` varchar(6) NOT NULL,
-  `Approval_Status` varchar(10) default NULL,
+  `Type` varchar(10) NOT NULL,
   `Approval_By` int(11) default NULL,
   `Approval_Date` date default NULL,
   `Status` varchar(30) NOT NULL,
+  `Approve_Status` varchar(1) default NULL,
+  `Arrived_Status` varchar(1) default NULL,
+  `Received_Status` varchar(1) default NULL,
   `Post_Script` text,
   PRIMARY KEY  (`Detail_Id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=41 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
 
 -- 
--- dump ตาราง `orders_detail`
+-- Dumping data for table `orders_detail`
 -- 
 
-INSERT INTO `orders_detail` VALUES (37, 00021, 'p100', 6, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (36, 00021, 'p7', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (35, 00020, 'p4', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (34, 00020, 'p3', 8, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (33, 00019, 'p7', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (32, 00018, 'p6', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (23, 00007, 'p5', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (24, 00008, 'p3', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (25, 00008, 'p7', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (26, 00012, 'p2', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (27, 00013, 'p3', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (28, 00014, 'p7', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (29, 00015, 'p3', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (30, 00016, 'p7', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (31, 00017, 'p7', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (38, 00022, 'p8', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (39, 00023, 'p8', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
-INSERT INTO `orders_detail` VALUES (40, 00023, 'p0', 1, 'Buy', 'อนุมัติ', NULL, NULL, 'สินค้าพร้อมแล้ว', NULL);
+INSERT INTO `orders_detail` VALUES (37, 00021, 'p100', 6, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (36, 00021, 'p7', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (35, 00020, 'p4', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (34, 00020, 'p3', 8, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (33, 00019, 'p7', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (32, 00018, 'p6', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (23, 00007, 'p5', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (24, 00008, 'p3', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (25, 00008, 'p7', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (26, 00012, 'p2', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (27, 00013, 'p3', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (28, 00014, 'p7', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (29, 00015, 'p3', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (30, 00016, 'p7', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (31, 00017, 'p7', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (38, 00022, 'p8', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (39, 00023, 'p8', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (40, 00023, 'p0', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (41, 00024, 'A0001', 55, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (42, 00024, '777', 77, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (43, 00025, 'p100', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (44, 00026, 'p8', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (45, 00027, '777', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (46, 00028, 'A0001', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (47, 00029, 'A0001', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (48, 00030, 'A0001', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (49, 00031, 'A0001', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (50, 00032, 'p0', 1, 'Buy', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (51, 00033, 'p0', 1, 'Approve', NULL, NULL, 'สินค้าพร้อมแล้ว', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (52, 00034, 'p0', 1, 'Reserve', NULL, NULL, 'รออนุมัติ', 'F', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (53, 00035, 'p0', 1, 'Reserve', NULL, NULL, 'รออนุมัติ', 'T', 'F', 'F', NULL);
+INSERT INTO `orders_detail` VALUES (54, 00036, 'p0', 5, 'Reserve', NULL, NULL, 'รออนุมัติ', 'F', 'F', 'F', NULL);
 
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `person`
+-- Table structure for table `person`
 -- 
 
 CREATE TABLE `person` (
@@ -280,26 +248,30 @@ CREATE TABLE `person` (
   `Fac_Id` int(11) NOT NULL,
   `Branch_Id` int(11) NOT NULL,
   PRIMARY KEY  (`Person_Id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=49 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=55 ;
 
 -- 
--- dump ตาราง `person`
+-- Dumping data for table `person`
 -- 
 
 INSERT INTO `person` VALUES (5, '', 'nutsudapan', 'kaenvichit', '2016-01-29', 'kik@hotmail.com', 0881010109, 'nutsudapan', '12345', 55410797, 'staff', 1, 1);
-INSERT INTO `person` VALUES (17, '', 'ณัฐสุดาพรรณ', 'แก่นวิจิตร', '2016-03-09', 'nut@hotmail.com', 0884854100, 'admin', '797', 55410797, 'admin', 1, 1);
+INSERT INTO `person` VALUES (17, '', 'ณัฐสุดาพรรณ', 'แก่นวิจิตร', '2016-03-09', 'nut3@hotmail.com', 0884854100, 'admin', '797', 55410797, 'admin', 1, 1);
 INSERT INTO `person` VALUES (24, '', 'กอบบุญ', 'ปัญญา', '2013-03-05', 'kobboon@hotmail.com', 0811111100, 'kobboon', 'kob', 55410075, 'student', 1, 1);
 INSERT INTO `person` VALUES (38, '', 'ณัฐสุดาพรรณ', 'แก่นวิจิตร', '2016-04-05', 'kookkik@hotmail.com', 0811111111, 'pp', '797', 55410797, 'student', 1, 1);
 INSERT INTO `person` VALUES (43, 'นางสาว', 'สุภาพร', 'เพลิงพิศ', '2015-01-01', 'lek@hotmail.com', 0887478977, 'lek', 'ok', 55410421, 'student', 1, 1);
-INSERT INTO `person` VALUES (44, '', 'สดใส', 'สดชื่น', '2016-08-26', 'sodsai@hotmail.com', 0884854999, 'abb', '10', 57710139, 'staff', 2, 8);
-INSERT INTO `person` VALUES (45, '', 'หลอกลวง', 'ใจหมา', '1995-02-28', 'zoo@hotmail.com', 0891111999, 'zoo', '555', 55410500, 'student', 2, 8);
+INSERT INTO `person` VALUES (44, '', 'สดใส', 'สดชื่น', '2016-08-26', 'sodsai1@hotmail.com', 0884854999, 'abb', '10', 57710139, 'staff', 2, 8);
+INSERT INTO `person` VALUES (45, '', 'หลอกลวง', 'ใจหมา', '1995-02-28', 'zoo@hotmail.com', 0891111998, 'zoo', '555', 55410500, 'student', 2, 8);
 INSERT INTO `person` VALUES (47, '', 'ศักรินทร์', 'ดาวร้าย', '1990-04-05', 'sak@hotmail.com', 0821312546, 'sak', '081', 55410212, 'staff', 1, 4);
 INSERT INTO `person` VALUES (48, '', 'บูรพา', 'สระแก้ว', '1997-12-03', 'sakaeo@hotmail.com', 0884854566, 'sakaeo', '797', 55410797, 'student', 1, 1);
+INSERT INTO `person` VALUES (49, 'นาย', 'ทดสอบ', 'นะจ๊ะ', '2016-01-01', 'test@localhost.com', 0987654321, 'tt', '11', 12345, 'student', 1, 1);
+INSERT INTO `person` VALUES (50, 'นาย', 'จนท', 'จนท', '2016-01-01', 'staff@localhost.com', 0987654321, 's1', '1', 11111, 'staff', 3, 2);
+INSERT INTO `person` VALUES (54, 'นาย', 'สมชาย', 'เข็มกลัด', '2016-01-10', 'somchai@localhost.com', 0999999999, 'sc', '11', 12345, 'teacher', 2, 0);
+INSERT INTO `person` VALUES (53, 'นาย', 'a', 'b', '2016-01-01', 'a@localhost.com', 0987654321, 'a001', '1', 1, 'staff', 2, 9);
 
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `product`
+-- Table structure for table `product`
 -- 
 
 CREATE TABLE `product` (
@@ -309,39 +281,41 @@ CREATE TABLE `product` (
   `Product_Price` int(11) NOT NULL,
   `Product_Stock` int(11) NOT NULL,
   `Product_picture` text NOT NULL,
+  `TypeP_Id` int(11) NOT NULL,
   PRIMARY KEY  (`Product_Id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=50 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=53 ;
 
 -- 
--- dump ตาราง `product`
+-- Dumping data for table `product`
 -- 
 
-INSERT INTO `product` VALUES (3, 'p100', 'เข็มขัด', 100, 8, 'p3');
-INSERT INTO `product` VALUES (12, 'p0', 'ที่หนีบ', 50, 1, 'p0');
-INSERT INTO `product` VALUES (4, 'p4', 'เน็กไท', 300, 9, 'p4.png');
-INSERT INTO `product` VALUES (8, 'p6', 'ตุ้งติ้ง', 25, 2, 'p6.png');
-INSERT INTO `product` VALUES (11, 'p7', 'หัวเข็มขัด', 100, 2, 'หัวเข็มขัด.png');
-INSERT INTO `product` VALUES (17, 'p8', 'กระดุม', 20, 5, 'pp.jpg');
-INSERT INTO `product` VALUES (49, '4', '4', 4, 4, '280616_115515.png');
-INSERT INTO `product` VALUES (46, '3', '3', 3, 3, '280616_115112.jpg');
-INSERT INTO `product` VALUES (47, '777', '7', 7, 77, '280616_115221.jpg');
+INSERT INTO `product` VALUES (3, 'p100', 'เข็มขัด', 100, 8, 'p3', 10);
+INSERT INTO `product` VALUES (12, 'p0', 'ที่หนีบ', 50, 0, 'p0', 0);
+INSERT INTO `product` VALUES (4, 'p4', 'เน็กไท', 300, 9, 'p4.png', 10);
+INSERT INTO `product` VALUES (8, 'p6', 'ตุ้งติ้ง', 25, 2, 'p6.png', 10);
+INSERT INTO `product` VALUES (11, 'p7', 'หัวเข็มขัด', 100, 2, 'หัวเข็มขัด.png', 10);
+INSERT INTO `product` VALUES (17, 'p8', 'กระดุม', 20, 5, 'pp.jpg', 10);
+INSERT INTO `product` VALUES (47, '777', '7', 7, 75, '280616_115221.jpg', 0);
+INSERT INTO `product` VALUES (50, 'A0001', 'A0001', 111, 109, '301016_135611.jpg', 0);
 
 -- --------------------------------------------------------
 
 -- 
--- โครงสร้างตาราง `type_product`
+-- Table structure for table `type_product`
 -- 
 
 CREATE TABLE `type_product` (
   `TypeP_Id` int(11) NOT NULL auto_increment,
   `TypeP_Nametype` varchar(20) NOT NULL,
   PRIMARY KEY  (`TypeP_Id`)
-) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+) ENGINE=MyISAM  DEFAULT CHARSET=utf8 AUTO_INCREMENT=12 ;
 
 -- 
--- dump ตาราง `type_product`
+-- Dumping data for table `type_product`
 -- 
 
-INSERT INTO `type_product` VALUES (1, 'ชุดครุย');
+INSERT INTO `type_product` VALUES (1, 'ชุดครุย1');
 INSERT INTO `type_product` VALUES (3, 'หนังสือ');
 INSERT INTO `type_product` VALUES (5, 'อุปกรณ์');
+INSERT INTO `type_product` VALUES (10, 'เครื่องแต่งกาย');
+INSERT INTO `type_product` VALUES (11, 'เครื่องเขียน');
