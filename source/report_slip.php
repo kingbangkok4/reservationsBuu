@@ -22,22 +22,22 @@ th, td {
 
 <table>
 <tr>
-    <th>รหัส</th>
-    <th>รหัสสินค้า</th>
-    <th>ชื่อสินค้า</th>
-    <th>ราคา</th>
-    <th>คงเหลือ</th>
+    <th><center>รหัส</center></th>
+    <th><center>รหัสสินค้า</center></th>
+    <th><center>ชื่อสินค้า</center></th>
+    <th><center>ราคา</center></th>
+    <th><center>คงเหลือ</center></th>
     
   </tr>
 <? while($result = mysql_fetch_array($dbquery)) { ?>
 
 
 <tr>
-<td><?= $result[Product_Id];?></td> 
-<td><?= $result[Product_Code];?></td> 
-<td><?= $result[Product_Name];?></td> 
-<td><?= $result[Product_Price];?></td> 
-<td><?= $result[Product_Stock];?></td> 
+<td><center><?= $result[Product_Id];?></center></td> 
+<td><center><?= $result[Product_Code];?></center></td> 
+<td><center><?= $result[Product_Name];?></center></td> 
+<td><center><?= $result[Product_Price];?></center></td> 
+<td><center><?= $result[Product_Stock];?></center></td> 
 
 
 </tr>

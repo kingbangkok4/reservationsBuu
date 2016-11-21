@@ -61,7 +61,7 @@ mysqli_set_charset($objCon, "utf8");
                 $Status = "รออนุมัติ";
                 $Approval_Status = "รออนุมัติ";
                 $strSQL = "
-                INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Approval_Status,Status)
+                INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Status)
                 VALUES
                 ('".$strOrderID."','".$_SESSION["strProductIDReserv"][$i]."','".$_SESSION["strQtyReserv"][$i]."','".$Type."','".$Status."')
                 ";

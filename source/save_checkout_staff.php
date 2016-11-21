@@ -39,7 +39,7 @@ mysqli_set_charset($objCon, "utf8");
           $Status = "สินค้าพร้อมแล้ว";
           $Approval_Status = "อนุมัติ";
 			  $strSQL = "
-				INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Approval_Status,Status)
+				INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Status)
 				VALUES
 				('".$strOrderID."','".$_SESSION["strProductIDBuy"][$i]."','".$_SESSION["strQty"][$i]."','".$Type."','".$Status."')
 			  ";
@@ -61,7 +61,7 @@ mysqli_set_charset($objCon, "utf8");
                 $Status = "รออนุมัติ";
                 $Approval_Status = "รออนุมัติ";
                 $strSQL = "
-                INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Approval_Status,Status)
+                INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Status)
                 VALUES
                 ('".$strOrderID."','".$_SESSION["strProductIDReserv"][$i]."','".$_SESSION["strQtyReserv"][$i]."','".$Type."','".$Status."')
                 ";
