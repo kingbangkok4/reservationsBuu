@@ -41,7 +41,7 @@ mysqli_set_charset($objCon, "utf8");
 			  $strSQL = "
 				INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Approval_Status,Status)
 				VALUES
-				('".$strOrderID."','".$_SESSION["strProductIDBuy"][$i]."','".$_SESSION["strQty"][$i]."','".$Type."','".$Approval_Status."','".$Status."')
+				('".$strOrderID."','".$_SESSION["strProductIDBuy"][$i]."','".$_SESSION["strQty"][$i]."','".$Type."','".$Status."')
 			  ";
 			  mysqli_query($objCon,$strSQL);
 			  
@@ -63,7 +63,7 @@ mysqli_set_charset($objCon, "utf8");
                 $strSQL = "
                 INSERT INTO orders_detail (Order_Id,Product_Code,Qty,Type,Approval_Status,Status)
                 VALUES
-                ('".$strOrderID."','".$_SESSION["strProductIDReserv"][$i]."','".$_SESSION["strQtyReserv"][$i]."','".$Type."','".$Approval_Status."','".$Status."')
+                ('".$strOrderID."','".$_SESSION["strProductIDReserv"][$i]."','".$_SESSION["strQtyReserv"][$i]."','".$Type."','".$Status."')
                 ";
                 mysqli_query($objCon,$strSQL);
             }
