@@ -27,7 +27,7 @@ include ("config.php");
     <td ><center>Price</center></td>
     <td ><center>Total Price</center></td>
     <td ><center>Type</center></td>
-    <td ><center>Approval Status</center></td>
+    <!-- <td ><center>Approval Status</center></td> -->
     <td ><center>Status</center></td>
     <td ><center>Approve</center></td>
     <td ><center>Arrived</center></td>
@@ -55,7 +55,7 @@ include ("config.php");
         <td><center><?=$objResult["Product_Price"];?></center></td>
         <td><center><?=$objResult["Product_Price"]*$objResult["Qty"];?></center></td>
         <td><center><?=$objResult["Type"];?></center></td>
-        <td><center><?=$objResult["Approval_Status"];?></center></td>
+        <!-- <td><center><?=$objResult["Approval_Status"];?></center></td> -->
         <td><center><?=$objResult["Status"];?></center></td>
         <td><center>
         <?php

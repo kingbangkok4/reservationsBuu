@@ -13,6 +13,17 @@ if ($_SESSION ["Login_Position"] == "admin") {
 <a href="product_staff.php">สินค้า</a>
 <!-- <a href="mrg_user.php">จัดการข้อมูลผู้ใช้</a> -->
 <a href="mrg_order_detail_status.php">การอนุมัติสินค้า</a>
+<div class="w3-dropdown-hover">
+	<a class="w3-padding" href="javascript:void(0)">รายงาน <i
+		class="fa fa-caret-down"></i></a>
+	<div class="w3-dropdown-content w3-white w3-card-4">
+		<a href="stock_report.php">รายงานสต๊อกสินค้า</a>
+		<a href="reserve_report.php">รายงานการสั่งจองสินค้า</a>
+		<!-- <a href="_report.php">สินค้าทั่วไป</a> -->
+		<a href="_report.php">รายงานใบสั่งจอง</a>
+		<a href="slip_report.php">รายงานออกใบเสร็จ</a>
+	</div>
+</div>
 <a href="show_person_staff.php">แก้ไขข้อมูลส่วนตัว</a>
 <a href="login.php">ออกจากระบบ</a>
 <?php
