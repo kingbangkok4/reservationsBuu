@@ -1,12 +1,12 @@
 <?
 
 header('Content-type: application/ms-word'); //การผลเป็นไฟล์ word 
-header('Content-Disposition: attachment; filename="รายงานการสั่งจองสินค้า.doc"');
+header('Content-Disposition: attachment; filename="รายงานการขายสินค้า.doc"');
 
 include("config.php");
 mysql_connect($dbhost, $dbuser, $dbpass) or die(mysql_error());
 mysql_query("SET NAMES UTF8 ") or die (mysql_error());
-$sql = "SELECT orders_detail.* , product.* FROM orders_detail, product WHERE orders_detail.Product_Code = product.Product_Code and orders_detail.type = 'Reserve'"; //ดึงข้อมูลจาก เทเบิล word 
+$sql = "SELECT orders_detail.* , product.* FROM orders_detail, product WHERE orders_detail.Product_Code = product.Product_Code and orders_detail.type = 'Buy'"; //ดึงข้อมูลจาก เทเบิล word 
 $dbquery = mysql_db_query($dbname, $sql);
 ?>
 <style>

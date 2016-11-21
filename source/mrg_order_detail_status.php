@@ -39,7 +39,7 @@ include ("config.php");
  <form method="post" action="" >
 <table width="100%" border="1" bordercolor="#64B5F6" align="center" cellpadding="0" cellspacing="0" >
         <tr>
-          <td ><center>Order ID</center></td>
+          	<td ><center>Order ID</center></td>
 		    <td ><center>Product Code</center></td>
 		    <td ><center>Product Name</center></td>
 		    <td ><center>Picture</center></td>
@@ -47,7 +47,7 @@ include ("config.php");
 		    <td ><center>Price</center></td>
 		    <td ><center>Total Price</center></td>
 		    <td ><center>Type</center></td>
-		    <td ><center>Approval Status</center></td>
+			<!-- <td ><center>Approval Status</center></td> -->
 		    <td ><center>Status</center></td>
 		    <td ><center></center></td>
         </tr>
@@ -101,7 +101,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 	        <td><center><?=$row["Product_Price"];?></center></td>
 	        <td><center><?=$row["Product_Price"]*$row["Qty"];?></center></td>
 	        <td><center><?=$row["Type"];?></center></td>
-	        <td><center><?=$row["Approval_Status"];?></center></td>
+	        <!-- <td><center><?=$row["Approval_Status"];?></center></td> -->
 	        <td><center><?=$row["Status"];?></center></td>
 	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับการสั่งจอง" /> 
 	        <input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="แจ้งของมา" /> 

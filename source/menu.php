@@ -17,11 +17,14 @@ if ($_SESSION ["Login_Position"] == "admin") {
 	<a class="w3-padding" href="javascript:void(0)">รายงาน <i
 		class="fa fa-caret-down"></i></a>
 	<div class="w3-dropdown-content w3-white w3-card-4">
-		<a href="report_stock.php">รายงานสต๊อกสินค้า</a>
-		<a href="report_reserve.php">รายงานการสั่งจองสินค้า</a>
-		<!-- <a href="_report.php">สินค้าทั่วไป</a> -->
+		<a href="stock_report.php">รายงานสต๊อกสินค้า</a>
+		<a href="buy_daily_report.php">รายงานการขายสินค้าประจำวัน</a>
+		<a href="buy_report.php">รายงานการขายสินค้า</a>
+		<a href="reserve_daily_report.php">รายงานการสั่งจองสินค้าประจำวัน</a>
+		<a href="reserve_report.php">รายงานการสั่งจองสินค้า</a>
+		<!-- <a href="_report.php">สินค้าทั่วไป</a>
 		<a href="report.php">รายงานใบสั่งจอง</a>
-		<a href="report_slip.php">รายงานออกใบเสร็จ</a>
+		<a href="report_slip.php">รายงานออกใบเสร็จ</a> -->
 	</div>
 </div>
 <a href="show_person_staff.php">แก้ไขข้อมูลส่วนตัว</a>
