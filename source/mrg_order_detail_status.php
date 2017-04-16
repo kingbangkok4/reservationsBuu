@@ -63,7 +63,7 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 		 
 		$sql = //"select * from product  where Product_Name Like '%$idper%' ";
-		"SELECT orders_detail.* , product.* FROM orders_detail, product WHERE product.Product_Name Like '%$idper%' and orders_detail.Product_Code = product.Product_Code and orders_detail.type = 'Reserve'";
+		"SELECT orders_detail.* , product.* FROM orders_detail, product WHERE product.Product_Name Like '%$idper%' and orders_detail.Product_Code = product.Product_Code and (orders_detail.type = 'Reserve' or orders_detail.type = 'Approve' or orders_detail.type = 'Ready')";
 		
 		$result = mysql_query($sql) or die (mysql_error());
 		$num_rows = mysql_num_rows($result);
@@ -103,9 +103,10 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 	        <td><center><?=$row["Type"];?></center></td>
 	        <!-- <td><center><?=$row["Approval_Status"];?></center></td> -->
 	        <td><center><?=$row["Status"];?></center></td>
-	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับการสั่งจอง" /> 
-	        <input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="แจ้งของมา" /> 
-	        <input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับสินค้าแล้ว" /></center></td>
+	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับการสั่งจอง" <?=$row["Type"]=="Reserve"?"":"disabled";?>/> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='ready_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="แจ้งของมา" <?=$row["Type"]=="Approve"?"":"disabled";?>/> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='recieve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับสินค้าแล้ว" <?=$row["Type"]=="Ready"?"":"disabled";?>/>
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='cancel_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="ยกเลิกสินค้า"/></center></td>
         </tr>
 	<?php
 	}?>
@@ -153,11 +154,12 @@ echo "<script>alert('ไม่พบข้อมูลที่ต้องก�
 	        <td><center><?=$row["Product_Price"];?></center></td>
 	        <td><center><?=$row["Product_Price"]*$row["Qty"];?></center></td>
 	        <td><center><?=$row["Type"];?></center></td>
-	        <td><center><?=$row["Approval_Status"];?></center></td>
+	        <!-- <td><center><?=$row["Approval_Status"];?></center></td> -->
 	        <td><center><?=$row["Status"];?></center></td>
-	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับการสั่งจอง" /> 
-	        <input name="" id="" type="button" onClick="javascript:window.location.href='ready_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="แจ้งของมา" /> 
-	        <input name="" id="" type="button" onClick="javascript:window.location.href='Received_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับสินค้าแล้ว" /></center></td>
+	        <td><center><input name="" id="" type="button" onClick="javascript:window.location.href='approve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับการสั่งจอง" <?=$row["Type"]=="Reserve"?"":"disabled";?>/> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='ready_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="แจ้งของมา" <?=$row["Type"]=="Approve"?"":"disabled";?>/> 
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='recieve_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="รับสินค้าแล้ว" <?=$row["Type"]=="Ready"?"":"disabled";?>/>
+	        <input name="" id="" type="button" onClick="javascript:window.location.href='cancel_product.php?Detail_Id=<?=$row["Detail_Id"]?>';" value="ยกเลิกสินค้า"/></center></td>
          </tr>
 	<?php
 	}

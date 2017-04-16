@@ -18,16 +18,16 @@ mysql_query("SET NAMES UTF8 ") or die (mysql_error());
 
 	$Detail_Id=$_GET[Detail_Id];
 	$sql = "UPDATE orders_detail
-			SET Status='อนุมัติ',
-			Type='Approve'
+			SET Status='ยกเลิก',
+			Type='Cancel'
 			WHERE Detail_Id=".$Detail_Id;
 	$result=mysql_query($sql);
 	if($result){
 		
-echo "<script> alert('อนุมัติสินค้าเรียบร้อย')</script>";
+echo "<script> alert('ยกเลิกสินค้าเรียบร้อยแล้ว')</script>";
 echo "<meta http-equiv='refresh' content='2;url=mrg_order_detail_status.php'/>";
 }else{
-echo "<script> alert('!!!เกิดข้อผิดพลาด!!!ไม่สามารถอนุมัติสินค้าได้')</script>";
+echo "<script> alert('!!!เกิดข้อผิดพลาด!!!ไม่สามารถยกเลิกสินค้าได้')</script>";
 echo "<meta http-equiv='refresh' content='2;url=mrg_order_detail_status.php'/>";
 }
 ?>
